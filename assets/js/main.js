@@ -72,8 +72,8 @@ function initializeParallax() {
         
         function updateParallax() {
             const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            const scale = 1 + (scrolled * 0.0002);
+            const rate = scrolled * 0.3; // Changed to positive for downward movement
+            const scale = 1 + (scrolled * 0.0001);
             parallaxBg.style.transform = `translateY(${rate}px) scale(${scale})`;
             ticking = false;
         }
