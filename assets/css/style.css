@@ -697,10 +697,10 @@ body {
     background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
     border: 2px solid var(--saffron-gold);
     border-radius: 20px;
-    padding: 3rem;
+    padding: 2.5rem;
     display: flex;
-    align-items: flex-start;
-    gap: 2rem;
+    align-items: center;
+    gap: 3rem;
     box-shadow: 0 10px 30px rgba(244, 163, 0, 0.1);
     transition: all 0.3s ease;
 }
@@ -708,6 +708,20 @@ body {
 .custom-sourcing-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(244, 163, 0, 0.15);
+}
+
+.custom-sourcing-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.custom-sourcing-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .custom-sourcing-icon {
@@ -723,40 +737,33 @@ body {
     flex-shrink: 0;
 }
 
-.custom-sourcing-content {
-    flex: 1;
-}
-
 .custom-sourcing-content h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: var(--deep-earth-brown);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .custom-sourcing-tagline {
     font-family: 'Lora', serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--saffron-gold);
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.custom-sourcing-description {
-    margin-bottom: 2rem;
-}
-
-.custom-sourcing-description p {
+.custom-sourcing-content p {
     font-family: 'Lora', serif;
     color: var(--gray-700);
-    line-height: 1.8;
-    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
 
 .custom-sourcing-benefits {
     list-style: none;
-    margin: 0 0 2rem 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -767,6 +774,7 @@ body {
     font-family: 'Lora', serif;
     color: var(--gray-700);
     font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .custom-sourcing-benefits li:before {
@@ -775,10 +783,6 @@ body {
     left: 0;
     color: var(--saffron-gold);
     font-weight: bold;
-}
-
-.custom-sourcing-content .btn {
-    margin-top: 1rem;
 }
 
 /* Quality Section */
@@ -1545,7 +1549,18 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .custom-sourcing-left {
+        flex-direction: column;
+        text-align: center;
         gap: 1.5rem;
+    }
+    
+    .custom-sourcing-right {
+        align-items: center;
+        text-align: center;
     }
     
     .custom-sourcing-icon {
@@ -1556,7 +1571,7 @@ body {
     }
     
     .custom-sourcing-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .quality-content {
