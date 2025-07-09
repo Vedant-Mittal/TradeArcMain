@@ -70,6 +70,13 @@ body {
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 70px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .nav-logo {
@@ -77,17 +84,35 @@ body {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--deep-earth-brown);
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: var(--saffron-gold);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
 }
 
 /* Dropdown Menu */
 .nav-dropdown {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-menu {
@@ -137,11 +162,28 @@ body {
     text-decoration: none;
     color: var(--deep-earth-brown);
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .nav-link:hover {
     color: var(--saffron-gold);
+    transform: translateY(-1px);
+}
+
+.nav-link i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .nav-link i {
+    transform: rotate(180deg);
 }
 
 .nav-toggle {
@@ -1217,6 +1259,14 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1226,8 +1276,27 @@ body {
         background: white;
         flex-direction: column;
         justify-content: flex-start;
+        align-items: flex-start;
         padding: 2rem;
         transition: left 0.3s ease;
+        gap: 1rem;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        height: auto;
+    }
+    
+    .nav-link {
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .nav-link:hover {
+        transform: none;
+        padding-left: 1rem;
     }
     
     .nav-menu.active {
@@ -1236,6 +1305,8 @@ body {
     
     .nav-toggle {
         display: flex;
+        align-items: center;
+        z-index: 1001;
     }
     
     .nav-toggle.active span:nth-child(1) {
