@@ -687,27 +687,43 @@ body {
 }
 
 /* Custom Sourcing Section */
-.custom-sourcing {
-    margin-top: 3rem;
-    padding-top: 3rem;
-    border-top: 1px solid rgba(244, 163, 0, 0.2);
-}
-
-.custom-sourcing-card {
+.custom-sourcing-section {
+    padding: 6rem 0;
     background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
-    border: 2px solid var(--saffron-gold);
-    border-radius: 20px;
-    padding: 3rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    box-shadow: 0 10px 30px rgba(244, 163, 0, 0.1);
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.custom-sourcing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(244, 163, 0, 0.15);
+.custom-sourcing-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(244,163,0,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.custom-sourcing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.custom-sourcing-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    min-height: 500px;
+}
+
+.custom-sourcing-text {
+    padding-right: 2rem;
 }
 
 .custom-sourcing-icon {
@@ -720,53 +736,55 @@ body {
     justify-content: center;
     color: var(--deep-earth-brown);
     font-size: 2rem;
-    flex-shrink: 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(244, 163, 0, 0.2);
 }
 
-.custom-sourcing-content {
-    flex: 1;
-}
-
-.custom-sourcing-content h3 {
+.custom-sourcing-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--deep-earth-brown);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .custom-sourcing-tagline {
     font-family: 'Lora', serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--saffron-gold);
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .custom-sourcing-description {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .custom-sourcing-description p {
     font-family: 'Lora', serif;
     color: var(--gray-700);
     line-height: 1.8;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
 .custom-sourcing-benefits {
     list-style: none;
-    margin: 0 0 2rem 0;
+    margin: 0 0 3rem 0;
     padding: 0;
 }
 
 .custom-sourcing-benefits li {
     position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.75rem;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
     font-family: 'Lora', serif;
     color: var(--gray-700);
     font-weight: 500;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 .custom-sourcing-benefits li:before {
@@ -775,10 +793,79 @@ body {
     left: 0;
     color: var(--saffron-gold);
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
-.custom-sourcing-content .btn {
-    margin-top: 1rem;
+.custom-sourcing-text .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(244, 163, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.custom-sourcing-text .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(244, 163, 0, 0.4);
+}
+
+.custom-sourcing-image {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 3rem 2rem 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.overlay-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.overlay-content i {
+    font-size: 1.5rem;
+    color: var(--saffron-gold);
+}
+
+.overlay-content span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* Quality Section */
@@ -1541,22 +1628,55 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .custom-sourcing-card {
-        flex-direction: column;
+    .custom-sourcing-section {
+        padding: 3rem 0;
+    }
+    
+    .custom-sourcing-container {
+        padding: 0 1rem;
+    }
+    
+    .custom-sourcing-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        min-height: auto;
+    }
+    
+    .custom-sourcing-text {
+        padding-right: 0;
         text-align: center;
-        padding: 2rem;
-        gap: 1.5rem;
+    }
+    
+    .custom-sourcing-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .custom-sourcing-tagline {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .custom-sourcing-description p {
+        font-size: 1rem;
+    }
+    
+    .custom-sourcing-benefits {
+        text-align: left;
+        max-width: 400px;
+        margin: 0 auto 2rem;
     }
     
     .custom-sourcing-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-        margin: 0 auto;
+        margin: 0 auto 1.5rem;
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
     }
     
-    .custom-sourcing-content h3 {
-        font-size: 1.5rem;
+    .custom-sourcing-image {
+        min-height: 300px;
+        order: -1;
     }
     
     .quality-content {
