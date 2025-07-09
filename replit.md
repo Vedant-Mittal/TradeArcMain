@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a premium export business website for TradeArk, showcasing Indian Fox Nut exports and sustainable cork décor products. The project features modern responsive design, parallax effects, smooth scrolling, and interactive elements targeting international HoReCa markets.
+This is a premium export business website for TradeArk, showcasing Indian Makhana exports and sustainable cork décor products. The project features modern responsive design, parallax effects, smooth scrolling, and interactive elements targeting international HoReCa markets.
 
 ## Recent Changes (July 2025)
 
@@ -15,6 +15,15 @@ This is a premium export business website for TradeArk, showcasing Indian Fox Nu
 - **CTAs Optimized**: Reduced repetitive CTAs to main and secondary actions per section
 - **Responsive Design**: Consistent mobile-first approach across both pages
 
+**Latest Updates - July 9, 2025:**
+- **Brand Terminology**: Changed "Fox Nut" to "Makhana" throughout the website for better brand positioning
+- **Hero Background**: Updated with "Cargo Container Lot" image for professional export business look
+- **Product Images**: Added authentic TradeArk images - Makhana Bowl Image for home page product section, Leaves Growing on Cork Pot for cork décor section
+- **Product Pages Enhanced**: Added Makhana in Bowl as hero image for Makhana page, Makhana Hand Image above About Makhana section, Restaurant Image as HoReCa hero, Brown Corks Wine Glass above Why Cork section
+- **SEO Improvements**: Updated all meta titles and descriptions to use "Makhana" instead of "Fox Nut", added descriptive alt text for all images
+- **UI Fixes**: Fixed pillar alignment in Our Mission section, changed testimonial star colors to yellow (#FFD700)
+- **Content Cleanup**: Removed Newsletter section from footer and cleaned up related CSS styling
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -25,7 +34,7 @@ This is a client-side static website with multiple pages for product details. Th
 
 - **Frontend**: Multi-page HTML structure with shared CSS and JavaScript
 - **Main Page**: index.html serves as the primary landing page
-- **Product Pages**: Dedicated detail pages for Fox Nut and Cork HoReCa products
+- **Product Pages**: Dedicated detail pages for Makhana and Cork HoReCa products
 - **Deployment**: Static file hosting (can be served from any web server)
 - **No Database**: No data persistence required
 - **No API**: No server-side functionality
@@ -34,7 +43,7 @@ This is a client-side static website with multiple pages for product details. Th
 
 ### HTML Structure
 - `index.html` serves as the main landing page
-- `products/makhana.html` - Detailed Fox Nut product page
+- `products/makhana.html` - Detailed Makhana product page
 - `products/horeca.html` - Detailed Cork HoReCa décor product page
 - Semantic HTML5 structure with proper meta tags
 - Responsive viewport configuration

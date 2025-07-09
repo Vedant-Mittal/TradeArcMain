@@ -127,7 +127,7 @@ body {
     width: 110%;
     height: 130%;
     background: linear-gradient(135deg, rgba(91,58,41,0.7) 0%, rgba(45,55,72,0.8) 100%), 
-                url('../images/hero-bg.jpg');
+                url('../images/TradeArk Images/Cargo Container Lot.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -411,12 +411,14 @@ body {
 .about-pillars {
     display: grid;
     gap: 2rem;
+    align-items: start;
 }
 
 .pillar {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    height: 100%;
 }
 
 .pillar-icon {
@@ -784,12 +786,12 @@ body {
 }
 
 .testimonial-rating i {
-    color: var(--saffron-gold);
+    color: #FFD700;
     font-size: 1.2rem;
 }
 
 .testimonial-rating .star {
-    color: var(--saffron-gold);
+    color: #FFD700;
 }
 
 .testimonial-content p {
@@ -1067,41 +1069,7 @@ body {
     transform: translateY(-2px);
 }
 
-.newsletter-form {
-    display: flex;
-    gap: 0.5rem;
-}
 
-.newsletter-form input {
-    flex: 1;
-    padding: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-family: 'Lora', serif;
-}
-
-.newsletter-form input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.newsletter-form button {
-    padding: 0.75rem 1.5rem;
-    background: var(--saffron-gold);
-    color: var(--deep-earth-brown);
-    border: none;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.newsletter-form button:hover {
-    background: #e69500;
-    transform: translateY(-2px);
-}
 
 .footer-bottom {
     text-align: center;
@@ -1340,9 +1308,7 @@ body {
         text-align: center;
     }
     
-    .newsletter-form {
-        flex-direction: column;
-    }
+
 }
 
 @media (max-width: 480px) {
