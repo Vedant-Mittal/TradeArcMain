@@ -738,15 +738,16 @@ body {
 }
 
 .cta-buttons .btn-outline {
-    border-color: white;
-    color: white;
+    border-color: var(--saffron-gold);
+    color: var(--saffron-gold);
     font-weight: 600;
+    background: transparent;
 }
 
 .cta-buttons .btn-outline:hover {
-    background: white;
+    background: var(--saffron-gold);
     color: var(--deep-earth-brown);
-    border-color: white;
+    border-color: var(--saffron-gold);
 }
 
 /* Testimonials Section */
@@ -785,6 +786,10 @@ body {
 .testimonial-rating i {
     color: var(--saffron-gold);
     font-size: 1.2rem;
+}
+
+.testimonial-rating .star {
+    color: var(--saffron-gold);
 }
 
 .testimonial-content p {

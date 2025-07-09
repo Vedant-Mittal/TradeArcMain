@@ -96,8 +96,9 @@ function initializeScrollEffects() {
     
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !entry.target.classList.contains('animate-fade-in')) {
                 entry.target.classList.add('animate-fade-in');
+                observer.unobserve(entry.target); // Stop observing after animation
             }
         });
     }, observerOptions);
@@ -489,7 +490,7 @@ style.textContent = `
     }
     
     .animate-fade-in {
-        animation: fadeIn 0.6s ease-in-out;
+        animation: fadeIn 0.8s ease-in-out forwards;
     }
     
     @keyframes fadeIn {
