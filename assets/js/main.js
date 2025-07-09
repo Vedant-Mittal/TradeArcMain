@@ -253,12 +253,52 @@ function goToTestimonial(index) {
 
 // Initialize Animations
 function initializeAnimations() {
-    // Add staggered animation delays to elements
-    const cards = document.querySelectorAll('.product-card, .why-us-card, .pillar');
-    cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.2}s`;
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, entry.target.dataset.delay || 0);
+            }
+        });
+    }, observerOptions);
+
+    // Add animation classes to elements
+    document.querySelectorAll('.section-header').forEach((el, index) => {
+        el.classList.add('fade-in');
+        el.dataset.delay = index * 100;
+        observer.observe(el);
     });
-    
+
+    document.querySelectorAll('.product-card').forEach((el, index) => {
+        el.classList.add('scale-in');
+        el.dataset.delay = index * 200;
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.why-us-card').forEach((el, index) => {
+        el.classList.add('fade-in');
+        el.dataset.delay = index * 150;
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.pillar').forEach((el, index) => {
+        el.classList.add('slide-left');
+        el.dataset.delay = index * 100;
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.cert-item').forEach((el, index) => {
+        el.classList.add('slide-right');
+        el.dataset.delay = index * 100;
+        observer.observe(el);
+    });
+
     // Initialize number counting animation for stats
     const stats = document.querySelectorAll('.stat-number');
     const statsObserver = new IntersectionObserver(function(entries) {
@@ -489,32 +529,49 @@ style.textContent = `
         background: rgba(255, 255, 255, 0.2);
     }
     
-    .animate-fade-in {
-        animation: fadeIn 0.6s ease-in-out forwards;
-        opacity: 1 !important;
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* Initial hidden state for animated elements */
-    .section-header:not(.animate-fade-in),
-    .product-card:not(.animate-fade-in),
-    .why-us-card:not(.animate-fade-in),
-    .pillar:not(.animate-fade-in),
-    .cert-item:not(.animate-fade-in),
-    .quality-stats:not(.animate-fade-in),
-    .testimonial-card:not(.animate-fade-in) {
+    /* New smooth animations */
+    .fade-in {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
+        transition: all 0.8s ease-out;
+    }
+    
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .slide-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 0.8s ease-out;
+    }
+    
+    .slide-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .slide-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.8s ease-out;
+    }
+    
+    .slide-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .scale-in {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.8s ease-out;
+    }
+    
+    .scale-in.visible {
+        opacity: 1;
+        transform: scale(1);
     }
 `;
 document.head.appendChild(style);
