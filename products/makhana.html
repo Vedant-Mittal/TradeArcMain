@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fox Nut (Makhana) – Premium Indian Snack Export | TradeArk</title>
+    <meta name="description" content="Explore TradeArk's premium Indian fox nut (makhana) products – raw, roasted & flavored options for B2B buyers with private-label packaging.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .product-hero {
+            background: linear-gradient(135deg, rgba(244, 163, 0, 0.9), rgba(91, 58, 41, 0.9)), url('../assets/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .breadcrumb {
+            padding: 1rem 0;
+            background: var(--gray-50);
+        }
+        
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .breadcrumb-list li {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-list a {
+            color: var(--deep-earth-brown);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-list a:hover {
+            color: var(--saffron-gold);
+        }
+        
+        .product-section {
+            padding: 4rem 0;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .product-image {
+            background: linear-gradient(135deg, var(--saffron-gold), var(--warm-terracotta));
+            border-radius: 20px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        
+        .variant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .variant-card {
+            background: white;
+            border: 2px solid var(--gray-100);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .variant-card:hover {
+            border-color: var(--saffron-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 10px;
+        }
+        
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--saffron-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-earth-brown);
+            flex-shrink: 0;
+        }
+        
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .use-case-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .packaging-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .packaging-card {
+            background: linear-gradient(135deg, var(--gray-50), white);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .variant-grid,
+            .benefits-grid,
+            .use-cases-grid,
+            .packaging-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-hero {
+                min-height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>TradeArk</h2>
+                </div>
+                
+                <nav class="nav-menu">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                    <a href="../index.html#about" class="nav-link">About</a>
+                    <a href="../index.html#products" class="nav-link">Products</a>
+                    <a href="../index.html#quality" class="nav-link">Quality</a>
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="nav-toggle" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><i data-lucide="chevron-right"></i></li>
+                <li><a href="../index.html#products">Products</a></li>
+                <li><i data-lucide="chevron-right"></i></li>
+                <li>Fox Nut (Makhana)</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Premium Indian Fox Nut (Makhana)</h1>
+                <p class="hero-subtitle">High-protein. Gluten-free. Private-label ready.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary">
+                        <i data-lucide="package"></i>
+                        Request a Sample
+                    </button>
+                    <button class="btn btn-outline">
+                        <i data-lucide="download"></i>
+                        Download Brochure
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Fox Nut -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-grid">
+                <div class="product-image">
+                    <i data-lucide="leaf"></i>
+                </div>
+                <div class="product-info">
+                    <h2>What is Fox Nut?</h2>
+                    <p>Also known as makhana, fox nut is a popped seed from the lotus plant, cultivated in Bihar. Naturally crunchy and full of nutrients, it's a clean-label snack ideal for retail, gifting, and institutional use.</p>
+                    <p>Our fox nuts are carefully selected, processed under strict quality controls, and available in various forms to meet your specific B2B requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Variants -->
+    <section class="product-section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Product Variants</h2>
+                <p>Choose from our range of fox nut products to suit your market needs</p>
+            </div>
+            
+            <div class="variant-grid">
+                <div class="variant-card">
+                    <div class="variant-icon" style="font-size: 3rem; color: var(--saffron-gold); margin-bottom: 1rem;">
+                        <i data-lucide="circle"></i>
+                    </div>
+                    <h3>Raw Fox Nut</h3>
+                    <p>Unseasoned, ready for custom flavoring</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Natural white color</li>
+                        <li>Crispy texture</li>
+                        <li>Perfect for customization</li>
+                    </ul>
+                </div>
+                
+                <div class="variant-card">
+                    <div class="variant-icon" style="font-size: 3rem; color: var(--saffron-gold); margin-bottom: 1rem;">
+                        <i data-lucide="flame"></i>
+                    </div>
+                    <h3>Roasted Fox Nut</h3>
+                    <p>Lightly puffed for texture and long shelf life</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Enhanced crunch</li>
+                        <li>Extended shelf life</li>
+                        <li>Ready-to-eat</li>
+                    </ul>
+                </div>
+                
+                <div class="variant-card">
+                    <div class="variant-icon" style="font-size: 3rem; color: var(--saffron-gold); margin-bottom: 1rem;">
+                        <i data-lucide="chef-hat"></i>
+                    </div>
+                    <h3>Flavored Fox Nut</h3>
+                    <p>Pre-seasoned options like Himalayan Salt, Peri Peri, Herb & Cheese</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Multiple flavor options</li>
+                        <li>Consumer-ready packaging</li>
+                        <li>Custom flavoring available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-header" style="margin-top: 3rem;">
+                <h3>Available Packaging Options</h3>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <div style="text-align: center;">
+                        <strong>Retail Pouches</strong>
+                        <p>100g, 250g, 1kg</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <strong>Bulk Packaging</strong>
+                        <p>5kg, 10kg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="product-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Benefits</h2>
+                <p>Why choose TradeArk's fox nut products</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <div>
+                        <h4>High in Protein</h4>
+                        <p>Low in fat content</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i data-lucide="leaf"></i>
+                    </div>
+                    <div>
+                        <h4>Vegan & Gluten-free</h4>
+                        <p>Natural and clean label</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <div>
+                        <h4>12-Month Shelf Life</h4>
+                        <p>Extended freshness</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <div>
+                        <h4>ISO 22000 & HACCP</h4>
+                        <p>Certified quality standards</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i data-lucide="tag"></i>
+                    </div>
+                    <div>
+                        <h4>Private-Label Ready</h4>
+                        <p>Custom branding options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="product-section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Use Cases</h2>
+                <p>Perfect applications for our fox nut products</p>
+            </div>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div style="font-size: 3rem; color: var(--saffron-gold); margin-bottom: 1rem;">
+                        <i data-lucide="shopping-bag"></i>
+                    </div>
+                    <h3>Private-Label Retail</h3>
+                    <p>Perfect for health food stores and specialty retailers</p>
+                </div>
+                
+                <div class="use-case-card">
+                    <div style="font-size: 3rem; color: var(--saffron-gold); margin-bottom: 1rem;">
+                        <i data-lucide="gift"></i>
+                    </div>
+                    <h3>Wellness Gifting</h3>
+                    <p>Premium packaging for corporate and personal gifts</p>
+                </div>
+                
+                <div class="use-case-card">
+                    <div style="font-size: 3rem; color: var(--saffron-gold); margin-bottom: 1rem;">
+                        <i data-lucide="plane"></i>
+                    </div>
+                    <h3>Airline/Hotel Mini-bar</h3>
+                    <p>Healthy snack option for hospitality industry</p>
+                </div>
+                
+                <div class="use-case-card">
+                    <div style="font-size: 3rem; color: var(--saffron-gold); margin-bottom: 1rem;">
+                        <i data-lucide="building"></i>
+                    </div>
+                    <h3>Institutional Canteens</h3>
+                    <p>Bulk supply for offices and educational institutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packaging Options -->
+    <section class="product-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Packaging Options</h2>
+                <p>Flexible packaging solutions for your business needs</p>
+            </div>
+            
+            <div class="packaging-options">
+                <div class="packaging-card">
+                    <h3>Retail Pouches</h3>
+                    <p>Matte-finish zipper pouches with your branding</p>
+                    <ul>
+                        <li>Custom logo printing</li>
+                        <li>Resealable design</li>
+                        <li>Food-grade materials</li>
+                        <li>Multiple sizes available</li>
+                    </ul>
+                </div>
+                
+                <div class="packaging-card">
+                    <h3>Gift Boxes</h3>
+                    <p>Custom boxes for premium gifting</p>
+                    <ul>
+                        <li>Elegant design options</li>
+                        <li>Custom branding</li>
+                        <li>Various size configurations</li>
+                        <li>Perfect for corporate gifts</li>
+                    </ul>
+                </div>
+                
+                <div class="packaging-card">
+                    <h3>Bulk Packaging</h3>
+                    <p>Bulk sacks for repackaging</p>
+                    <ul>
+                        <li>Food-grade materials</li>
+                        <li>Moisture-proof packaging</li>
+                        <li>Easy handling design</li>
+                        <li>Cost-effective for large orders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta" style="background: var(--deep-earth-brown); color: white; padding: 4rem 0;">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2>Ready to Partner with Us?</h2>
+                <p>Get samples, brochures, and custom quotes for your fox nut requirements</p>
+                <div class="cta-buttons" style="margin-top: 2rem;">
+                    <button class="btn btn-primary">
+                        <i data-lucide="package"></i>
+                        Request a Sample
+                    </button>
+                    <button class="btn btn-outline">
+                        <i data-lucide="download"></i>
+                        Download Brochure
+                    </button>
+                    <button class="btn btn-outline">
+                        <i data-lucide="phone"></i>
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Products -->
+    <section style="padding: 2rem 0; background: var(--gray-50);">
+        <div class="container">
+            <div style="text-align: center;">
+                <a href="../index.html#products" class="btn btn-outline">
+                    <i data-lucide="arrow-left"></i>
+                    Back to All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TradeArk</h3>
+                    <p>Your trusted partner for premium Indian Fox Nut and sustainable cork décor exports.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="makhana.html">Premium Fox Nut</a></li>
+                        <li><a href="horeca.html">Cork Décor</a></li>
+                        <li><a href="../index.html#quality">Quality Standards</a></li>
+                        <li><a href="../index.html#quality">Certifications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="../index.html#testimonials">Testimonials</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest products and export opportunities.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TradeArk. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Initialize navigation
+        initializeNavigation();
+    </script>
+</body>
+</html>

@@ -10,9 +10,11 @@ Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-This is a client-side only static website with no backend components. The architecture consists of:
+This is a client-side static website with multiple pages for product details. The architecture consists of:
 
-- **Frontend**: Single HTML file with embedded CSS
+- **Frontend**: Multi-page HTML structure with shared CSS and JavaScript
+- **Main Page**: index.html serves as the primary landing page
+- **Product Pages**: Dedicated detail pages for Fox Nut and Cork HoReCa products
 - **Deployment**: Static file hosting (can be served from any web server)
 - **No Database**: No data persistence required
 - **No API**: No server-side functionality
@@ -20,10 +22,12 @@ This is a client-side only static website with no backend components. The archit
 ## Key Components
 
 ### HTML Structure
-- Single `index.html` file serves as the entry point
+- `index.html` serves as the main landing page
+- `products/makhana.html` - Detailed Fox Nut product page
+- `products/horeca.html` - Detailed Cork HoReCa décor product page
 - Semantic HTML5 structure with proper meta tags
 - Responsive viewport configuration
-- SEO-friendly with description meta tag
+- SEO-friendly with specific meta descriptions for each page
 
 ### CSS Styling
 - Embedded CSS within the HTML file
@@ -43,12 +47,13 @@ This is a client-side only static website with no backend components. The archit
 
 ## Data Flow
 
-Since this is a static website, there is no complex data flow:
+Since this is a static website, there is minimal data flow:
 
-1. User requests the website
-2. Server returns the HTML file
-3. Browser renders the page with embedded styles
-4. No further interaction or data exchange occurs
+1. User requests the main website or product pages
+2. Server returns the appropriate HTML file
+3. Browser renders the page with shared CSS and JavaScript
+4. Navigation between pages via standard HTML links
+5. Shared resources (CSS/JS) are cached for performance
 
 ## External Dependencies
 
