@@ -1,0 +1,138 @@
+Redesign the two product pages for TradeArk's B2B export portfolio site:
+
+Fox Nut (Makhana)
+
+Cork HoReCa Décor
+
+These pages are currently not well optimized and overuse the yellow in the color palette. The visual hierarchy, spacing, contrast, and content layout also need improvement.
+
+🔎 Key Issues to Fix
+1. Color Palette Misuse
+
+Too much use of flat yellow/saffron makes the page visually loud and hard to scan.
+
+Maintain brand palette (saffron, deep brown, cream) but use yellow as an accent, not background.
+
+Base the primary background on off-white/cream with brown or saffron highlights.
+
+2. Visual Hierarchy & Layout
+
+Overcrowded sections with poor spacing and inconsistent card sizes.
+
+Icons and section headers don't guide the user through content logically.
+
+Hero section lacks impact — consider an image + overlay gradient instead of yellow block.
+
+3. Call-to-Actions (CTAs)
+
+CTAs (like “Download Brochure,” “Request Mockup”) are too repetitive and cluttered.
+
+Use one main CTA per section and de-emphasize secondary ones.
+
+Button hover states and contrast need refinement for readability.
+
+4. Responsiveness & Structure
+
+Margins/paddings are inconsistent — too tight on mobile and too wide in some desktop sections.
+
+Image blocks (icons, product images) are poorly aligned and not informative enough.
+
+Reuse consistent card structure and layout across both product pages for clean UX.
+
+🎨 Design Goals
+✅ Use of Brand Colors
+
+Cream / off-white as primary background
+
+Deep brown for headings, CTA buttons, footer
+
+Saffron / yellow as accent only (icons, buttons, highlights)
+
+Ensure good contrast and consistent font usage (Montserrat + Lora or similar)
+
+✅ Section Flow (for Both Pages)
+
+Hero Section
+
+Image background with dark gradient overlay (not full saffron fill)
+
+Headline: white or cream text
+
+Two CTA buttons: “Request Quote” and “Download Brochure / Catalog”
+
+Intro Section
+
+Clean 2-column: Left = icon/image; Right = short informative intro
+
+Use icons in a subtle saffron tone or brown line style
+
+Product Types
+
+Uniform cards (equal height, white cards on cream background)
+
+Use icons or thumbnails
+
+Include brief 2–3 line descriptions and MOQ if relevant
+
+Key Benefits
+
+Use 3–4 icons in a row with brief copy under each
+
+Example: High Protein, Custom Packaging, Shelf Life, Certified
+
+Use Cases
+
+Grid layout: 2 per row on desktop, 1 per row on mobile
+
+Real use case visuals or icon-based grid (with proper spacing)
+
+Packaging / Customization Options
+
+Clearly structured comparison layout or tabs
+
+Icons or minimal mockup illustrations
+
+Sustainability Notes (for cork)
+
+Small section with green-themed icons, clean 2-row layout
+
+CTA Footer
+
+Dark brown background
+
+Bold title (“Ready to Partner with Us?” / “Ready to Transform Your Space?”)
+
+Only 2 buttons: “Request a Quote” & “Download PDF”
+
+🧩 Additional Suggestions
+Use high-quality lifestyle or mockup images in hero or mid-page
+
+Animate testimonial or certification icons on scroll (if reused in future)
+
+Add breadcrumbs for SEO & navigation clarity
+
+Add anchor links or tabs to jump to packaging, specs, use cases (optional)
+
+📄 Pages to Design
+/products/makhana.html
+
+Hero: Fox nut image + overlay
+
+Sections: About Makhana • Product Types • Benefits • Use Cases • Packaging • CTA
+
+/products/horeca.html
+
+Hero: Restaurant table with cork décor image
+
+Sections: Why Cork • Product Categories • Branding Options • Sustainability Notes • Use Cases • CTA
+
+🔧 Deliverables
+Fully responsive HTML/CSS/JS pages (not ecommerce)
+
+Consistent layout grid
+
+Optimized SEO meta tags
+
+Button/link interactivity + hover states
+
+Clean, minimal yet rich B2B aesthetic
