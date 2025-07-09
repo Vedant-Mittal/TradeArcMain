@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeForms();
     initializeTestimonials();
     initializeAnimations();
+    initializeScrollIndicator();
 });
 
 // Navigation Functions
@@ -61,6 +62,32 @@ function scrollToSection(sectionId) {
             top: offsetTop,
             behavior: 'smooth'
         });
+    }
+}
+
+// Initialize Scroll Indicator
+function initializeScrollIndicator() {
+    const scrollIndicator = document.getElementById('scroll-explore');
+    
+    if (scrollIndicator) {
+        // Add click event listener as backup
+        scrollIndicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToSection('about');
+        });
+        
+        // Add keyboard accessibility
+        scrollIndicator.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                scrollToSection('about');
+            }
+        });
+        
+        // Add focus styles for accessibility
+        scrollIndicator.setAttribute('tabindex', '0');
+        scrollIndicator.setAttribute('role', 'button');
+        scrollIndicator.setAttribute('aria-label', 'Scroll to About section');
     }
 }
 

@@ -361,6 +361,20 @@ body {
     color: var(--saffron-gold);
 }
 
+.scroll-indicator:focus {
+    outline: 2px solid var(--saffron-gold);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.scroll-indicator:visited {
+    color: var(--hero-cream);
+}
+
+.scroll-indicator {
+    text-decoration: none;
+}
+
 .scroll-indicator span {
     font-family: 'Lora', serif;
     font-size: 0.9rem;
