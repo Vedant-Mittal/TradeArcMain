@@ -26,6 +26,8 @@ This is a premium export business website for TradeArk, showcasing Indian Makhan
 - **Contact Section**: Integrated Google Maps with Patna, Bihar location beside the contact form
 - **Content Cleanup**: Removed Newsletter section from footer and cleaned up related CSS styling
 - **Mobile Responsive**: Added proper mobile CSS for dropdown navigation and map container
+- **Scroll Indicator Fixed**: Made "Explore" button properly scroll to About section with smooth animation, added keyboard accessibility and fallback anchor link
+- **Custom Sourcing Section**: Added new section in Products highlighting ability to source products beyond catalog with benefits list and CTA
 
 ## User Preferences
 
