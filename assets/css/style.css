@@ -85,6 +85,54 @@ body {
     gap: 2rem;
 }
 
+/* Dropdown Menu */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--deep-earth-brown);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--gray-50);
+    color: var(--saffron-gold);
+}
+
 .nav-link {
     text-decoration: none;
     color: var(--deep-earth-brown);
@@ -410,6 +458,7 @@ body {
 
 .about-pillars {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
     align-items: start;
 }
@@ -418,7 +467,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    height: 100%;
+    min-height: 120px;
 }
 
 .pillar-icon {
@@ -446,6 +495,7 @@ body {
     font-family: 'Lora', serif;
     color: var(--gray-700);
     line-height: 1.6;
+    margin: 0;
 }
 
 /* Products Section */
@@ -788,10 +838,12 @@ body {
 .testimonial-rating i {
     color: #FFD700;
     font-size: 1.2rem;
+    fill: #FFD700;
 }
 
 .testimonial-rating .star {
     color: #FFD700;
+    font-size: 1.2rem;
 }
 
 .testimonial-content p {
@@ -949,6 +1001,25 @@ body {
     color: var(--saffron-gold);
     font-size: 1.5rem;
     margin-top: 0.25rem;
+}
+
+/* Contact Map */
+.contact-map {
+    margin-top: 2rem;
+}
+
+.contact-map h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--deep-earth-brown);
+    margin-bottom: 1rem;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .contact-item h4 {
@@ -1159,6 +1230,23 @@ body {
     
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Mobile Dropdown */
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        margin-top: 0.5rem;
+        border-radius: 5px;
+    }
+    
+    .nav-dropdown .dropdown-menu a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
     
     .hero {
