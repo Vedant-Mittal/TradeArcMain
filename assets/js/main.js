@@ -490,18 +490,31 @@ style.textContent = `
     }
     
     .animate-fade-in {
-        animation: fadeIn 0.8s ease-in-out forwards;
+        animation: fadeIn 0.6s ease-in-out forwards;
+        opacity: 1 !important;
     }
     
     @keyframes fadeIn {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
         to {
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    
+    /* Initial hidden state for animated elements */
+    .section-header:not(.animate-fade-in),
+    .product-card:not(.animate-fade-in),
+    .why-us-card:not(.animate-fade-in),
+    .pillar:not(.animate-fade-in),
+    .cert-item:not(.animate-fade-in),
+    .quality-stats:not(.animate-fade-in),
+    .testimonial-card:not(.animate-fade-in) {
+        opacity: 0;
+        transform: translateY(30px);
     }
 `;
 document.head.appendChild(style);

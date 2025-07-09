@@ -173,7 +173,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     backdrop-filter: blur(10px);
-    animation: fadeIn 0.8s ease-in-out 0.2s both;
+    animation: fadeIn 0.6s ease-in-out 0.3s both;
 }
 
 .hero-title {
@@ -183,7 +183,7 @@ body {
     color: var(--hero-cream);
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: scaleIn 0.8s ease-out 0.4s both;
+    animation: scaleIn 0.6s ease-out 0.5s both;
 }
 
 .hero-subtitle {
@@ -193,7 +193,7 @@ body {
     color: var(--hero-linen);
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.8s ease-in-out 0.6s both;
+    animation: fadeIn 0.6s ease-in-out 0.7s both;
 }
 
 .hero-values {
@@ -202,7 +202,7 @@ body {
     gap: 1.5rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
-    animation: fadeIn 0.8s ease-in-out 0.8s both;
+    animation: fadeIn 0.6s ease-in-out 0.9s both;
 }
 
 .hero-value {
@@ -241,7 +241,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.8s ease-in-out 1s both;
+    animation: fadeIn 0.6s ease-in-out 1.1s both;
 }
 
 .hero-cta {
@@ -250,7 +250,7 @@ body {
     justify-content: center;
     margin-bottom: 4rem;
     flex-wrap: wrap;
-    animation: fadeIn 0.8s ease-in-out 1.2s both;
+    animation: fadeIn 0.6s ease-in-out 1.3s both;
 }
 
 .scroll-indicator {
@@ -362,6 +362,13 @@ body {
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.section-header.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-title {
@@ -417,6 +424,13 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.pillar.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .pillar-icon {
@@ -465,6 +479,13 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.product-card.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .product-card:hover {
@@ -673,6 +694,13 @@ body {
     background: var(--gray-50);
     border-radius: 20px;
     transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.why-us-card.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .why-us-card:hover {
@@ -738,13 +766,25 @@ body {
 }
 
 .cta-buttons .btn-outline {
-    border-color: var(--saffron-gold);
-    color: var(--saffron-gold);
+    border-color: white;
+    color: white;
     font-weight: 600;
     background: transparent;
 }
 
 .cta-buttons .btn-outline:hover {
+    background: white;
+    color: var(--deep-earth-brown);
+    border-color: white;
+}
+
+.cta-buttons .btn-primary {
+    background: var(--deep-earth-brown);
+    color: white;
+    border: 2px solid var(--deep-earth-brown);
+}
+
+.cta-buttons .btn-primary:hover {
     background: var(--saffron-gold);
     color: var(--deep-earth-brown);
     border-color: var(--saffron-gold);
@@ -769,6 +809,13 @@ body {
     padding: 3rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.testimonial-card.animate-fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .testimonial-card.active {
