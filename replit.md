@@ -4,6 +4,17 @@
 
 This is a premium export business website for TradeArk, showcasing Indian Fox Nut exports and sustainable cork décor products. The project features modern responsive design, parallax effects, smooth scrolling, and interactive elements targeting international HoReCa markets.
 
+## Recent Changes (July 2025)
+
+**Complete Product Pages Redesign:**
+- Redesigned both Fox Nut (Makhana) and Cork HoReCa product pages following B2B design best practices
+- **Color Palette Fixed**: Changed from overwhelming yellow/saffron to cream/off-white primary background with deep brown headings and saffron only as accent
+- **Visual Hierarchy Improved**: Better spacing, consistent card structure, and cleaner layout
+- **Hero Sections**: Replaced flat yellow backgrounds with image overlays and dark gradients
+- **Content Structure**: Organized into logical sections with better flow and readability
+- **CTAs Optimized**: Reduced repetitive CTAs to main and secondary actions per section
+- **Responsive Design**: Consistent mobile-first approach across both pages
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
