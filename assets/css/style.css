@@ -720,7 +720,6 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    min-height: 400px;
 }
 
 .custom-sourcing-text {
@@ -812,14 +811,13 @@ body {
 
 .custom-sourcing-image {
     position: relative;
-    height: 100%;
-    min-height: 400px;
+    width: 100%;
 }
 
 .image-container {
     position: relative;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4/3;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
@@ -1677,7 +1675,6 @@ body {
     }
     
     .custom-sourcing-image {
-        min-height: 250px;
         order: -1;
     }
     
