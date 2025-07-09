@@ -1,8 +1,8 @@
-# Hello World Static Website
+# TradeArk Export Website
 
 ## Overview
 
-This is a simple static website project consisting of a single HTML file that displays a "Hello World" message. The project demonstrates basic web development skills with HTML5, CSS3, and modern styling techniques including gradients, flexbox layout, and responsive design.
+This is a premium export business website for TradeArk, showcasing Indian Fox Nut exports and sustainable cork décor products. The project features modern responsive design, parallax effects, smooth scrolling, and interactive elements targeting international HoReCa markets.
 
 ## User Preferences
 
