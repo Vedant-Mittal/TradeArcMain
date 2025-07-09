@@ -688,7 +688,8 @@ body {
 
 /* Custom Sourcing Section */
 .custom-sourcing-section {
-    padding: 6rem 0;
+    padding: 4rem 0;
+    margin: 4rem 0;
     background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
     position: relative;
     overflow: hidden;
@@ -717,9 +718,9 @@ body {
 .custom-sourcing-content-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4rem;
     align-items: center;
-    min-height: 500px;
+    min-height: 400px;
 }
 
 .custom-sourcing-text {
@@ -812,7 +813,7 @@ body {
 .custom-sourcing-image {
     position: relative;
     height: 100%;
-    min-height: 500px;
+    min-height: 400px;
 }
 
 .image-container {
@@ -1629,7 +1630,8 @@ body {
     }
     
     .custom-sourcing-section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
+        margin: 2.5rem 0;
     }
     
     .custom-sourcing-container {
@@ -1675,7 +1677,7 @@ body {
     }
     
     .custom-sourcing-image {
-        min-height: 300px;
+        min-height: 250px;
         order: -1;
     }
     
