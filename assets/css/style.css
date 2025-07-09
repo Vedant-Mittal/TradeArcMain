@@ -690,9 +690,12 @@ body {
 .custom-sourcing-section {
     padding: 4rem 0;
     margin: 4rem 0;
+    min-height: 70vh;
     background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .custom-sourcing-section::before {
@@ -713,6 +716,9 @@ body {
     padding: 0 2rem;
     position: relative;
     z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .custom-sourcing-content-wrapper {
