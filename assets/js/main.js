@@ -166,7 +166,6 @@ function initializeForms() {
 
 // Handle Contact Form Submission
 function handleContactForm(form) {
-    const formData = new FormData(form);
     const submitButton = form.querySelector('.form-submit');
     const originalText = submitButton.textContent;
     
@@ -174,79 +173,41 @@ function handleContactForm(form) {
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
     
-    // Submit to Web3Forms API
+    // Convert form data to JSON as required by Web3Forms
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    
+    // Submit to Web3Forms API with proper headers
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
     })
-    .then(response => {
-        console.log('Response status:', response.status);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Web3Forms response:', data);
-        if (data.success) {
+    .then(async (response) => {
+        let responseData = await response.json();
+        if (response.status == 200) {
             // Success - reset form and show success message
             form.reset();
             showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
         } else {
-            // Error - show error message with details
-            console.error('Web3Forms error:', data.message || 'Unknown error');
-            if (data.message && data.message.includes('not allowed')) {
-                // Fallback to mailto when Web3Forms is not activated
-                handleMailtoFallback(form);
-            } else {
-                showNotification(`Error: ${data.message || 'Unable to send message. Please try again or contact us directly.'}`, 'error');
-            }
+            // Error - show error message
+            console.log('Web3Forms error:', responseData);
+            showNotification(responseData.message || 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
         }
     })
     .catch(error => {
-        console.error('Form submission error:', error);
-        // Fallback to mailto on network error
-        handleMailtoFallback(form);
+        console.log('Form submission error:', error);
+        showNotification('Network error: Unable to send message. Please check your connection and try again.', 'error');
     })
     .finally(() => {
         // Reset button state
         submitButton.textContent = originalText;
         submitButton.disabled = false;
     });
-}
-
-// Fallback mailto function
-function handleMailtoFallback(form) {
-    const formData = new FormData(form);
-    const name = formData.get('name') || '';
-    const company = formData.get('company') || '';
-    const email = formData.get('email') || '';
-    const phone = formData.get('phone') || '';
-    const productInterest = formData.get('productInterest') || '';
-    const message = formData.get('message') || '';
-    
-    // Create email body
-    const emailBody = `
-Name: ${name}
-Company: ${company}
-Email: ${email}
-Phone: ${phone}
-Product Interest: ${productInterest}
-
-Message:
-${message}
-    `.trim();
-    
-    const mailtoLink = `mailto:ashutoshsinha124@gmail.com?subject=Contact Form Submission from ${name}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open mailto link
-    window.location.href = mailtoLink;
-    
-    // Show info message
-    showNotification('Opening your email client. Please send the message to complete your inquiry.', 'info');
-    
-    // Reset form
-    form.reset();
 }
 
 // Handle Newsletter Form Submission
