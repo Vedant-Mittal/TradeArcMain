@@ -147,22 +147,11 @@ function initializeForms() {
     const contactForm = document.getElementById('contactForm');
     const newsletterForm = document.getElementById('newsletterForm');
     
-    // Contact Form - Handle mailto submission
+    // Contact Form - Handle Web3Forms submission
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            const submitButton = this.querySelector('.form-submit');
-            const originalText = submitButton.textContent;
-            
-            // Show loading state
-            submitButton.textContent = 'Opening Email Client...';
-            submitButton.disabled = true;
-            
-            // Allow form to submit to mailto
-            setTimeout(() => {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-                showNotification('Email client opened. Please send the message from your email application.', 'info');
-            }, 2000);
+            e.preventDefault();
+            handleContactForm(this);
         });
     }
     
@@ -185,31 +174,31 @@ function handleContactForm(form) {
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        // Create form data object
-        const data = {
-            name: formData.get('name'),
-            company: formData.get('company'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            productInterest: formData.get('productInterest'),
-            message: formData.get('message')
-        };
-        
-        // Log form data (in real implementation, send to server)
-        console.log('Contact form submitted:', data);
-        
-        // Show success message
-        showNotification('Thank you for your message! We will get back to you soon.', 'success');
-        
-        // Reset form
-        form.reset();
-        
-        // Reset button
+    // Submit to Web3Forms API
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Success - reset form and show success message
+            form.reset();
+            showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+        } else {
+            // Error - show error message
+            showNotification('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Form submission error:', error);
+        showNotification('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+    })
+    .finally(() => {
+        // Reset button state
         submitButton.textContent = originalText;
         submitButton.disabled = false;
-    }, 1500);
+    });
 }
 
 // Handle Newsletter Form Submission
