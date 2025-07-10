@@ -688,8 +688,8 @@ body {
 
 /* Custom Sourcing Section */
 .custom-sourcing-section {
-    padding: 4rem 0;
-    margin: 4rem 0;
+    padding: 3rem 0;
+    margin: 2rem 0;
     background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
     position: relative;
     overflow: hidden;
@@ -1628,8 +1628,8 @@ body {
     }
     
     .custom-sourcing-section {
-        padding: 2.5rem 0;
-        margin: 2.5rem 0;
+        padding: 2rem 0;
+        margin: 1.5rem 0;
     }
     
     .custom-sourcing-container {
