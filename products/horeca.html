@@ -565,7 +565,7 @@
                         <i data-lucide="phone"></i>
                         Request Quote
                     </a>
-                    <a href="#" class="btn btn-outline">
+                    <a href="#" class="btn btn-outline" id="downloadPdfHero" onclick="downloadCorkCatalogue()">
                         <i data-lucide="download"></i>
                         Download PDF
                     </a>
@@ -801,7 +801,7 @@
                         <i data-lucide="phone"></i>
                         Request a Quote
                     </a>
-                    <a href="#" class="btn btn-outline">
+                    <a href="#" class="btn btn-outline" id="downloadPdfCta" onclick="downloadCorkCatalogue()">
                         <i data-lucide="download"></i>
                         Download PDF
                     </a>
@@ -848,6 +848,73 @@
             navMenu.classList.toggle('active');
             this.classList.toggle('active');
         });
+
+        // Download Cork Catalogue Function
+        function downloadCorkCatalogue() {
+            // Create a link element to trigger download
+            const link = document.createElement('a');
+            link.href = '../Downloadables/The Cork Studio HoReCa Catalogue.pdf';
+            link.download = 'The Cork Studio HoReCa Catalogue.pdf';
+            link.target = '_blank';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Optional: Show feedback to user
+            showDownloadNotification();
+        }
+
+        // Show download notification
+        function showDownloadNotification() {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #22C55E;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7,10 12,15 17,10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Catalogue download started!
+            `;
+            
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+                style.remove();
+            }, 3000);
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
