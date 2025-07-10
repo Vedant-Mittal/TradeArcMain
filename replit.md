@@ -6,6 +6,13 @@ This is a premium export business website for TradeArk, showcasing Indian Makhan
 
 ## Recent Changes (July 2025)
 
+**Contact Form Integration - July 10, 2025:**
+- Integrated Web3Forms API with access key: 531fbca2-3c40-4255-a75e-3f9a1edda778
+- Updated JavaScript to use proper JSON formatting and headers as per Web3Forms documentation
+- Added botcheck field for spam protection
+- Form currently shows "This method is not allowed" error - requires Web3Forms account verification
+- Implementation ready - waiting for Web3Forms account activation
+
 **Complete Product Pages Redesign:**
 - Redesigned both Fox Nut (Makhana) and Cork HoReCa product pages following B2B design best practices
 - **Color Palette Fixed**: Changed from overwhelming yellow/saffron to cream/off-white primary background with deep brown headings and saffron only as accent
