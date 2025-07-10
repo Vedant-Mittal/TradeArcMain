@@ -147,11 +147,22 @@ function initializeForms() {
     const contactForm = document.getElementById('contactForm');
     const newsletterForm = document.getElementById('newsletterForm');
     
-    // Contact Form
+    // Contact Form - Handle mailto submission
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            handleContactForm(this);
+            const submitButton = this.querySelector('.form-submit');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Opening Email Client...';
+            submitButton.disabled = true;
+            
+            // Allow form to submit to mailto
+            setTimeout(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                showNotification('Email client opened. Please send the message from your email application.', 'info');
+            }, 2000);
         });
     }
     
