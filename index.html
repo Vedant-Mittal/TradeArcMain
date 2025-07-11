@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Lora:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -37,12 +37,13 @@
                 <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
+        <div class="nav-backdrop"></div>
     </nav>
 
     <!-- Hero Section -->
@@ -99,14 +100,7 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <a href="#about" class="scroll-indicator" id="scroll-explore" onclick="scrollToSection('about'); return false;">
-            <span>Explore</span>
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-            <i data-lucide="chevron-down"></i>
-        </a>
+
     </section>
 
     <!-- About Section -->
@@ -489,8 +483,13 @@
                                 <option value="">Please select...</option>
                                 <option value="makhana">Makhana</option>
                                 <option value="cork-decor">Cork Décor</option>
-                                <option value="both">Both Products</option>
+                                <option value="custom-sourcing">Custom Sourcing</option>
                             </select>
+                        </div>
+                        
+                        <div class="form-group" id="customSourcingField" style="display: none;">
+                            <label for="customSourcingDetails">Please specify</label>
+                            <textarea id="customSourcingDetails" name="customSourcingDetails" rows="4" placeholder="Tell us what products you're looking for... (e.g., specific spices, grains, organic products, packaging requirements, etc.)"></textarea>
                         </div>
                         
                         <div class="form-group">
@@ -565,6 +564,54 @@
         </div>
     </section>
 
+    <!-- Download Popup Modal -->
+    <div id="downloadModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Download Catalogue</h3>
+                <button type="button" class="modal-close" onclick="closeDownloadModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <p>Please provide your details to download our catalogue:</p>
+                
+                <form id="downloadForm" class="download-form">
+                    <div class="form-group">
+                        <label for="downloadName">Name *</label>
+                        <input type="text" id="downloadName" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadCompany">Company *</label>
+                        <input type="text" id="downloadCompany" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadPhone">Phone Number *</label>
+                        <input type="tel" id="downloadPhone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadEmail">Email *</label>
+                        <input type="email" id="downloadEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadMessage">Message (Optional)</label>
+                        <textarea id="downloadMessage" name="message" rows="3" placeholder="Tell us about your business requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary download-submit">
+                        <i data-lucide="download"></i>
+                        Download Catalogue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -610,10 +657,23 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=1.2"></script>
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Initialize all components when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons first
+            lucide.createIcons();
+            
+            // Initialize all functions
+            initializeNavigation();
+            initializeScrollIndicator();
+            initializeParallax();
+            initializeScrollEffects();
+            initializeForms();
+            initializeTestimonials();
+            initializeAnimations();
+            initializeDownloadForm();
+        });
     </script>
 </body>
 </html>

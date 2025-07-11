@@ -22,20 +22,40 @@ function initializeNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    // Mobile menu toggle
+    // Clear any existing event listeners by cloning the element
     if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
+        const newNavToggle = navToggle.cloneNode(true);
+        navToggle.parentNode.replaceChild(newNavToggle, navToggle);
+        
+        // Add single event listener to the new toggle
+        newNavToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            handleMenuToggle();
         });
     }
     
     // Close mobile menu on link click
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+            closeMobileMenu();
         });
+    });
+    
+    // Close menu when clicking backdrop
+    const navBackdrop = document.querySelector('.nav-backdrop');
+    if (navBackdrop) {
+        navBackdrop.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close menu with escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu && navMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        }
     });
     
     // Navbar scroll effect
@@ -51,6 +71,50 @@ function initializeNavigation() {
             }
         }
     });
+}
+
+// Mobile menu helper functions
+function handleMenuToggle() {
+    const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.querySelector('.nav-toggle');
+    
+    if (navMenu && navToggle) {
+        if (navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+}
+
+function toggleMobileMenu() {
+    handleMenuToggle();
+}
+
+function openMobileMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navBackdrop = document.querySelector('.nav-backdrop');
+    
+    if (navMenu) navMenu.classList.add('active');
+    if (navToggle) navToggle.classList.add('active');
+    if (navBackdrop) navBackdrop.classList.add('active');
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navBackdrop = document.querySelector('.nav-backdrop');
+    
+    if (navMenu) navMenu.classList.remove('active');
+    if (navToggle) navToggle.classList.remove('active');
+    if (navBackdrop) navBackdrop.classList.remove('active');
+    
+    // Restore body scroll
+    document.body.style.overflow = '';
 }
 
 // Smooth Scrolling Function
@@ -120,13 +184,17 @@ function initializeParallax() {
 function initializeScrollEffects() {
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -20px 0px'
     };
     
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('animate-fade-in')) {
-                entry.target.classList.add('animate-fade-in');
+                // Reduced delay for contact section
+                const delay = entry.target.closest('.contact') ? 50 : 200;
+                setTimeout(() => {
+                    entry.target.classList.add('animate-fade-in');
+                }, delay);
                 observer.unobserve(entry.target); // Stop observing after animation
             }
         });
@@ -146,6 +214,8 @@ function initializeScrollEffects() {
 function initializeForms() {
     const contactForm = document.getElementById('contactForm');
     const newsletterForm = document.getElementById('newsletterForm');
+    const productInterestSelect = document.getElementById('productInterest');
+    const customSourcingField = document.getElementById('customSourcingField');
     
     // Contact Form - Handle Web3Forms submission
     if (contactForm) {
@@ -162,6 +232,50 @@ function initializeForms() {
             handleNewsletterForm(this);
         });
     }
+    
+    // Product Interest Dropdown - Show/Hide Custom Sourcing Field
+    if (productInterestSelect && customSourcingField) {
+        productInterestSelect.addEventListener('change', function() {
+            const selectedValue = this.value;
+            const customSourcingInput = document.getElementById('customSourcingDetails');
+            
+            if (selectedValue === 'custom-sourcing') {
+                // Show the custom sourcing field with smooth animation
+                customSourcingField.style.display = 'block';
+                customSourcingField.style.opacity = '0';
+                customSourcingField.style.transform = 'translateY(-10px)';
+                
+                // Animate in
+                setTimeout(() => {
+                    customSourcingField.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                    customSourcingField.style.opacity = '1';
+                    customSourcingField.style.transform = 'translateY(0)';
+                }, 10);
+                
+                // Focus on the input field
+                setTimeout(() => {
+                    if (customSourcingInput) {
+                        customSourcingInput.focus();
+                    }
+                }, 300);
+            } else {
+                // Hide the custom sourcing field with smooth animation
+                customSourcingField.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                customSourcingField.style.opacity = '0';
+                customSourcingField.style.transform = 'translateY(-10px)';
+                
+                // Clear the input value
+                if (customSourcingInput) {
+                    customSourcingInput.value = '';
+                }
+                
+                // Hide completely after animation
+                setTimeout(() => {
+                    customSourcingField.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
 }
 
 // Handle Contact Form Submission
@@ -169,29 +283,39 @@ function handleContactForm(form) {
     const submitButton = form.querySelector('.form-submit');
     const originalText = submitButton.textContent;
     
-    // Show loading state
-    submitButton.textContent = 'Sending...';
+    // Show loading state with spinner
+    submitButton.innerHTML = '<span class="btn-spinner"></span> Sending...';
     submitButton.disabled = true;
+    submitButton.classList.add('btn-loading');
     
     // Convert form data to JSON as required by Web3Forms
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
     
-    // Submit to Web3Forms API with proper headers
+    // Submit to Web3Forms API with proper headers and timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: json
+        body: json,
+        signal: controller.signal
     })
     .then(async (response) => {
         let responseData = await response.json();
         if (response.status == 200) {
             // Success - reset form and show success message
             form.reset();
+            // Also hide the custom sourcing field after form reset
+            const customSourcingField = document.getElementById('customSourcingField');
+            if (customSourcingField) {
+                customSourcingField.style.display = 'none';
+            }
             showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
         } else {
             // Error - show error message
@@ -200,13 +324,20 @@ function handleContactForm(form) {
         }
     })
     .catch(error => {
+        clearTimeout(timeoutId);
         console.log('Form submission error:', error);
-        showNotification('Network error: Unable to send message. Please check your connection and try again.', 'error');
+        if (error.name === 'AbortError') {
+            showNotification('Request timed out. Please check your connection and try again.', 'error');
+        } else {
+            showNotification('Network error: Unable to send message. Please check your connection and try again.', 'error');
+        }
     })
     .finally(() => {
+        clearTimeout(timeoutId);
         // Reset button state
-        submitButton.textContent = originalText;
+        submitButton.innerHTML = originalText;
         submitButton.disabled = false;
+        submitButton.classList.remove('btn-loading');
     });
 }
 
@@ -614,8 +745,132 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Download Modal Functions
+function showDownloadModal() {
+    const modal = document.getElementById('downloadModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.classList.add('active');
+        }, 10);
+    }
+}
+
+function closeDownloadModal() {
+    const modal = document.getElementById('downloadModal');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            // Reset form
+            const form = document.getElementById('downloadForm');
+            if (form) {
+                form.reset();
+            }
+        }, 300);
+    }
+}
+
+// Initialize Download Form
+function initializeDownloadForm() {
+    const downloadForm = document.getElementById('downloadForm');
+    const modal = document.getElementById('downloadModal');
+    
+    if (downloadForm) {
+        downloadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleDownloadForm(this);
+        });
+    }
+    
+    // Close modal when clicking outside
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeDownloadModal();
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeDownloadModal();
+        }
+    });
+}
+
+// Handle Download Form Submission
+function handleDownloadForm(form) {
+    const submitButton = form.querySelector('.download-submit');
+    const originalText = submitButton.innerHTML;
+    
+    // Show loading state
+    submitButton.innerHTML = '<i data-lucide="loader-2"></i> Processing...';
+    submitButton.disabled = true;
+    
+    // Get form data
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        company: formData.get('company'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        message: formData.get('message') || '',
+        action: 'download_catalogue'
+    };
+    
+    // Simulate form processing (you can integrate with your backend here)
+    setTimeout(() => {
+        // Show success notification
+        showNotification('Thank you! Your download will start shortly.', 'success');
+        
+        // Close modal
+        closeDownloadModal();
+        
+        // Start the actual download
+        triggerCatalogueDownload();
+        
+        // Reset button
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+        
+        // Reset form
+        form.reset();
+    }, 1500);
+}
+
+// Global function to trigger catalogue download (used by product pages)
+function triggerCatalogueDownload(catalogueType = 'horeca') {
+    let fileName;
+    let filePath;
+    
+    if (catalogueType === 'horeca') {
+        fileName = 'The Cork Studio HoReCa Catalogue.pdf';
+        filePath = './Downloadables/The Cork Studio HoReCa Catalogue.pdf';
+    } else {
+        fileName = 'TradeArk Makhana Brochure.pdf';
+        filePath = './Downloadables/TradeArk Makhana Brochure.pdf';
+    }
+    
+    // Create a link element to trigger download
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = fileName;
+    link.target = '_blank';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 // Export functions for global use
 window.scrollToSection = scrollToSection;
 window.changeTestimonial = changeTestimonial;
 window.goToTestimonial = goToTestimonial;
 window.closeNotification = closeNotification;
+window.showDownloadModal = showDownloadModal;
+window.closeDownloadModal = closeDownloadModal;
+window.triggerCatalogueDownload = triggerCatalogueDownload;
+window.initializeDownloadForm = initializeDownloadForm;

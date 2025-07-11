@@ -565,7 +565,7 @@
                         <i data-lucide="phone"></i>
                         Request Quote
                     </a>
-                    <a href="#" class="btn btn-outline" id="downloadPdfHero" onclick="downloadCorkCatalogue()">
+                    <a href="javascript:void(0)" class="btn btn-outline" id="downloadPdfHero" onclick="showDownloadModal()">
                         <i data-lucide="download"></i>
                         Download PDF
                     </a>
@@ -801,7 +801,7 @@
                         <i data-lucide="phone"></i>
                         Request a Quote
                     </a>
-                    <a href="#" class="btn btn-outline" id="downloadPdfCta" onclick="downloadCorkCatalogue()">
+                    <a href="javascript:void(0)" class="btn btn-outline" id="downloadPdfCta" onclick="showDownloadModal()">
                         <i data-lucide="download"></i>
                         Download PDF
                     </a>
@@ -809,6 +809,54 @@
             </div>
         </div>
     </section>
+
+    <!-- Download Popup Modal -->
+    <div id="downloadModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Download Catalogue</h3>
+                <button type="button" class="modal-close" onclick="closeDownloadModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <p>Please provide your details to download our catalogue:</p>
+                
+                <form id="downloadForm" class="download-form">
+                    <div class="form-group">
+                        <label for="downloadName">Name *</label>
+                        <input type="text" id="downloadName" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadCompany">Company *</label>
+                        <input type="text" id="downloadCompany" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadPhone">Phone Number *</label>
+                        <input type="tel" id="downloadPhone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadEmail">Email *</label>
+                        <input type="email" id="downloadEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="downloadMessage">Message (Optional)</label>
+                        <textarea id="downloadMessage" name="message" rows="3" placeholder="Tell us about your business requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary download-submit">
+                        <i data-lucide="download"></i>
+                        Download Catalogue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -836,11 +884,92 @@
         </div>
     </footer>
 
+    <script src="../assets/js/main.js"></script>
     <script>
         // Initialize Lucide icons
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
+        
+        // Initialize download form when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initializeDownloadForm === 'function') {
+                initializeDownloadForm();
+            } else {
+                // Fallback initialization
+                initDownloadModalFallback();
+            }
+        });
+        
+        // Fallback functions in case main.js doesn't load properly
+        function showDownloadModal() {
+            const modal = document.getElementById('downloadModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.classList.add('active');
+                }, 10);
+            }
+        }
+        
+        function closeDownloadModal() {
+            const modal = document.getElementById('downloadModal');
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    const form = document.getElementById('downloadForm');
+                    if (form) form.reset();
+                }, 300);
+            }
+        }
+        
+        function initDownloadModalFallback() {
+            const downloadForm = document.getElementById('downloadForm');
+            const modal = document.getElementById('downloadModal');
+            
+            if (downloadForm) {
+                downloadForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const submitButton = this.querySelector('.download-submit');
+                    const originalText = submitButton.innerHTML;
+                    
+                    submitButton.innerHTML = '<i data-lucide="loader-2"></i> Processing...';
+                    submitButton.disabled = true;
+                    
+                    setTimeout(() => {
+                        alert('Thank you! Your download will start shortly.');
+                        closeDownloadModal();
+                        
+                        // Start download
+                        const link = document.createElement('a');
+                        link.href = '../Downloadables/The Cork Studio HoReCa Catalogue.pdf';
+                        link.download = 'The Cork Studio HoReCa Catalogue.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                        this.reset();
+                    }, 1500);
+                });
+            }
+            
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) closeDownloadModal();
+                });
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeDownloadModal();
+            });
+        }
+        
+        // Make functions globally available
+        window.showDownloadModal = showDownloadModal;
+        window.closeDownloadModal = closeDownloadModal;
 
         // Mobile navigation toggle
         document.querySelector('.nav-toggle').addEventListener('click', function() {
