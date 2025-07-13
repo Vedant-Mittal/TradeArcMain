@@ -14,6 +14,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
+    <!-- Translations -->
+    <script src="../assets/js/translations.js"></script>
+    
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         :root {
@@ -34,15 +37,38 @@
 
         /* Hero Section */
         .product-hero {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(91, 58, 41, 0.8)), url('../assets/images/TradeArk Images/Makhana in a Bowl.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(91, 58, 41, 0.6)), url('../assets/images/TradeArk Images/Makhana in a Bowl.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            min-height: 80vh;
+            background-attachment: scroll;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 80px 0 40px;
+        }
+
+        /* Mobile-first responsive product hero */
+        @media (min-width: 480px) {
+            .product-hero {
+                min-height: 70vh;
+                padding: 80px 0 50px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .product-hero {
+                min-height: 80vh;
+                background-attachment: fixed;
+                padding: 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .product-hero {
+                min-height: 80vh;
+            }
         }
 
         .product-hero::before {
@@ -168,7 +194,7 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
             color: var(--deep-brown);
             margin-bottom: 1rem;
             font-weight: 700;
@@ -189,7 +215,7 @@
         }
 
         .content-block h2 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: var(--deep-brown);
             margin-bottom: 1.5rem;
             font-weight: 600;
@@ -420,7 +446,7 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .benefits-grid {
@@ -445,22 +471,113 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="../index.html" style="color: var(--deep-brown); text-decoration: none; font-weight: 700; font-size: 1.5rem;">TradeArk</a>
+                    <a href="../index.html">
+                        <img src="../assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="nav-logo-img">
+                    </a>
                 </div>
                 
-                <div class="nav-menu">
-                    <a href="../index.html#home" class="nav-link">Home</a>
-                    <a href="../index.html#about" class="nav-link">About</a>
-                    <a href="../index.html#products" class="nav-link">Products</a>
-                    <a href="../index.html#quality" class="nav-link">Quality</a>
-                    <a href="../index.html#contact" class="nav-link">Contact</a>
-                </div>
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu-desktop">
+                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="../index.html#products" class="nav-link dropdown-toggle" data-i18n="nav.products">Products <i data-lucide="chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="makhana.html" data-i18n="nav.makhana">Premium Makhana</a></li>
+                        <li><a href="horeca.html" data-i18n="nav.horeca">Cork HoReCa Décor</a></li>
+                    </ul>
+                </li>
+                <li><a href="../index.html#quality" class="nav-link" data-i18n="nav.quality">Quality</a></li>
+                <li><a href="../index.html#why-us" class="nav-link" data-i18n="nav.why-us">Why Us</a></li>
+                <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li class="nav-language">
+                    <div class="language-toggle">
+                        <button class="current-language" id="currentLang" aria-label="Select language">
+                            <span class="flag-icon flag-en"></span>
+                            <span class="lang-code">EN</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <button class="lang-option" data-lang="en" data-country="us">
+                                <span class="flag-icon flag-en"></span>
+                                <span>English</span>
+                            </button>
+                            <button class="lang-option" data-lang="hi" data-country="in">
+                                <span class="flag-icon flag-hi"></span>
+                                <span>हिन्दी</span>
+                            </button>
+                            <button class="lang-option" data-lang="es" data-country="es">
+                                <span class="flag-icon flag-es"></span>
+                                <span>Español</span>
+                            </button>
+                            <button class="lang-option" data-lang="fr" data-country="fr">
+                                <span class="flag-icon flag-fr"></span>
+                                <span>Français</span>
+                            </button>
+                            <button class="lang-option" data-lang="de" data-country="de">
+                                <span class="flag-icon flag-de"></span>
+                                <span>Deutsch</span>
+                            </button>
+                            <button class="lang-option" data-lang="ar" data-country="ae">
+                                <span class="flag-icon flag-ar"></span>
+                                <span>العربية</span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
                 
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <!-- Mobile Hamburger Button -->
+                <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Slide-in Panel -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <div class="mobile-menu-panel" id="mobileMenuPanel">
+                <div class="mobile-menu-header">
+                    <img src="../assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="mobile-menu-logo">
+                    <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
+                        <i data-lucide="x"></i>
+                    </button>
                 </div>
+                <nav class="mobile-menu-nav">
+                    <ul class="mobile-menu-list">
+                        <li class="mobile-menu-item">
+                            <a href="../index.html#home" class="mobile-menu-link" data-i18n="nav.home">Home</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="../index.html#about" class="mobile-menu-link" data-i18n="nav.about">About</a>
+                        </li>
+                        <li class="mobile-menu-item mobile-menu-expandable">
+                            <button class="mobile-menu-link mobile-menu-toggle-btn" aria-expanded="false">
+                                <span>Products</span>
+                                <span class="mobile-menu-chevron">▶</span>
+                            </button>
+                            <ul class="mobile-menu-submenu">
+                                <li class="mobile-menu-subitem">
+                                    <a href="makhana.html" class="mobile-menu-sublink" data-i18n="nav.makhana">Premium Makhana</a>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <a href="horeca.html" class="mobile-menu-sublink" data-i18n="nav.horeca">Cork HoReCa Décor</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="../index.html#quality" class="mobile-menu-link" data-i18n="nav.quality">Quality</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="../index.html#why-us" class="mobile-menu-link" data-i18n="nav.why-us">Why Us</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="../index.html#contact" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </nav>
@@ -473,7 +590,7 @@
                 <li><i data-lucide="chevron-right"></i></li>
                 <li><a href="../index.html#products">Products</a></li>
                 <li><i data-lucide="chevron-right"></i></li>
-                <li>Makhana (Fox Nut)</li>
+                <li data-i18n="products.makhana.title">Makhana (Fox Nut)</li>
             </ol>
         </div>
     </section>
@@ -482,16 +599,16 @@
     <section class="product-hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Premium Indian Makhana</h1>
-                <p class="hero-subtitle">High-protein, gluten-free superfood ready for your market</p>
+                <h1 class="hero-title" data-i18n="products.makhana.hero.title">Premium Indian Makhana</h1>
+                <p class="hero-subtitle" data-i18n="products.makhana.hero.subtitle">High-protein, gluten-free superfood ready for your market</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">
                         <i data-lucide="phone"></i>
-                        Request Quote
+                        <span data-i18n="products.makhana.hero.cta.quote">Request Quote</span>
                     </a>
                     <a href="javascript:void(0)" class="btn btn-outline" onclick="showDownloadModal()">
                         <i data-lucide="download"></i>
-                        Download Brochure
+                        <span data-i18n="products.makhana.hero.cta.download">Download Brochure</span>
                     </a>
                 </div>
             </div>
@@ -506,20 +623,22 @@
                     <img src="../assets/images/TradeArk Images/Makhana Hand Image.png" alt="Hands holding premium Makhana showing the quality and care in selection" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" />
                 </div>
                 <div class="content-block">
-                    <h2>About Makhana</h2>
-                    <p>Makhana, also known as fox nuts, are popped seeds from the lotus plant. Naturally grown in Bihar's wetlands, these nutritious seeds are processed into crunchy, protein-rich snacks perfect for health-conscious consumers worldwide.</p>
-                    <p>Our premium makhana is carefully harvested, processed under strict quality controls, and available in various forms to meet your specific market requirements.</p>
+                    <h2 data-i18n="products.makhana.about.title">About Makhana</h2>
+                    <p data-i18n="products.makhana.about.description1">Makhana, also known as fox nuts, are popped seeds from the lotus plant. Naturally grown in Bihar's wetlands, these nutritious seeds are processed into crunchy, protein-rich snacks perfect for health-conscious consumers worldwide.</p>
+                    <p data-i18n="products.makhana.about.description2">Our premium makhana is carefully harvested, processed under strict quality controls, and available in various forms to meet your specific market requirements.</p>
                 </div>
             </div>
         </div>
     </section>
 
+
+
     <!-- Product Types -->
     <section class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Product Types</h2>
-                <p class="section-subtitle">Choose from our comprehensive range of makhana products</p>
+                <h2 class="section-title" data-i18n="products.makhana.types.title">Product Types</h2>
+                <p class="section-subtitle" data-i18n="products.makhana.types.subtitle">Choose from our comprehensive range of makhana products</p>
             </div>
             
             <div class="card-grid">
@@ -527,13 +646,13 @@
                     <div class="card-icon">
                         <i data-lucide="circle"></i>
                     </div>
-                    <h3>Raw Makhana</h3>
-                    <p>Natural, unprocessed makhana perfect for custom flavoring and branding.</p>
+                    <h3 data-i18n="products.makhana.types.raw.title">Raw Makhana</h3>
+                    <p data-i18n="products.makhana.types.raw.description">Natural, unprocessed makhana perfect for custom flavoring and branding.</p>
                     <ul>
-                        <li>Pure white color</li>
-                        <li>Crispy texture</li>
-                        <li>MOQ: 1000 kg</li>
-                        <li>Shelf life: 12 months</li>
+                        <li data-i18n="products.makhana.types.raw.feature1">Pure white color</li>
+                        <li data-i18n="products.makhana.types.raw.feature2">Crispy texture</li>
+                        <li data-i18n="products.makhana.types.raw.feature3">MOQ: 1000 kg</li>
+                        <li data-i18n="products.makhana.types.raw.feature4">Shelf life: 12 months</li>
                     </ul>
                 </div>
                 
@@ -541,13 +660,13 @@
                     <div class="card-icon">
                         <i data-lucide="flame"></i>
                     </div>
-                    <h3>Roasted Makhana</h3>
-                    <p>Lightly roasted with enhanced flavor and extended shelf life.</p>
+                    <h3 data-i18n="products.makhana.types.roasted.title">Roasted Makhana</h3>
+                    <p data-i18n="products.makhana.types.roasted.description">Lightly roasted with enhanced flavor and extended shelf life.</p>
                     <ul>
-                        <li>Golden brown color</li>
-                        <li>Enhanced crunchiness</li>
-                        <li>MOQ: 500 kg</li>
-                        <li>Shelf life: 18 months</li>
+                        <li data-i18n="products.makhana.types.roasted.feature1">Golden brown color</li>
+                        <li data-i18n="products.makhana.types.roasted.feature2">Enhanced crunchiness</li>
+                        <li data-i18n="products.makhana.types.roasted.feature3">MOQ: 500 kg</li>
+                        <li data-i18n="products.makhana.types.roasted.feature4">Shelf life: 18 months</li>
                     </ul>
                 </div>
                 
@@ -555,14 +674,96 @@
                     <div class="card-icon">
                         <i data-lucide="sparkles"></i>
                     </div>
-                    <h3>Flavored Varieties</h3>
-                    <p>Premium seasoned options including masala, chocolate, and caramel.</p>
+                    <h3 data-i18n="products.makhana.types.flavored.title">Flavored Varieties</h3>
+                    <p data-i18n="products.makhana.types.flavored.description">Premium seasoned options including masala, chocolate, and caramel.</p>
                     <ul>
-                        <li>Multiple flavor options</li>
-                        <li>Custom seasoning available</li>
-                        <li>MOQ: 200 kg per flavor</li>
-                        <li>Private label ready</li>
+                        <li data-i18n="products.makhana.types.flavored.feature1">Multiple flavor options</li>
+                        <li data-i18n="products.makhana.types.flavored.feature2">Custom seasoning available</li>
+                        <li data-i18n="products.makhana.types.flavored.feature3">MOQ: 200 kg per flavor</li>
+                        <li data-i18n="products.makhana.types.flavored.feature4">Private label ready</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Makhana Gallery -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="products.makhana.gallery.title">Makhana Gallery</h2>
+                <p class="section-subtitle" data-i18n="products.makhana.gallery.subtitle">Explore our premium Makhana products and quality</p>
+            </div>
+            
+            <div class="gallery-slideshow">
+                <div class="slideshow-container">
+                    <div class="slide active" data-category="makhana">
+                        <div class="slide-image">
+                            <img src="../assets/images/TradeArk Images/Makhana Bowl Image.png" alt="Premium Makhana (Fox Nut) in a bowl showcasing superior quality and texture" loading="lazy" />
+                        </div>
+                        <div class="slide-content">
+                            <div class="slide-info">
+                                <h3 data-i18n="products.makhana.gallery.slide1.title">Premium Makhana</h3>
+                                <p data-i18n="products.makhana.gallery.slide1.description">Grade A+ quality fox nuts hand-selected from Bihar farms with superior texture and taste</p>
+                                <span class="slide-category" data-i18n="products.makhana.gallery.slide1.category">Makhana</span>
+                            </div>
+                            <button class="slide-view-btn" onclick="openLightbox('../assets/images/TradeArk Images/Makhana Bowl Image.png', 'Premium Makhana', 'Grade A+ quality fox nuts hand-selected from Bihar farms')">
+                                <i data-lucide="eye"></i>
+                                <span data-i18n="products.makhana.gallery.viewFullSize">View Full Size</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide" data-category="makhana">
+                        <div class="slide-image">
+                            <img src="../assets/images/TradeArk Images/Makhana in a Bowl.jpg" alt="Fresh Makhana displayed in traditional bowl highlighting natural texture" loading="lazy" />
+                        </div>
+                        <div class="slide-content">
+                            <div class="slide-info">
+                                <h3 data-i18n="products.makhana.gallery.slide2.title">Fresh Makhana</h3>
+                                <p data-i18n="products.makhana.gallery.slide2.description">Naturally harvested and processed from the finest lotus seeds, maintaining nutritional value</p>
+                                <span class="slide-category" data-i18n="products.makhana.gallery.slide2.category">Makhana</span>
+                            </div>
+                            <button class="slide-view-btn" onclick="openLightbox('../assets/images/TradeArk Images/Makhana in a Bowl.jpg', 'Fresh Makhana', 'Naturally harvested and processed from the finest lotus seeds')">
+                                <i data-lucide="eye"></i>
+                                <span data-i18n="products.makhana.gallery.viewFullSize">View Full Size</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide" data-category="makhana">
+                        <div class="slide-image">
+                            <img src="../assets/images/TradeArk Images/Makhana Hand Image.png" alt="Makhana being hand-selected showcasing quality control process" loading="lazy" />
+                        </div>
+                        <div class="slide-content">
+                            <div class="slide-info">
+                                <h3 data-i18n="products.makhana.gallery.slide3.title">Hand-Selected Quality</h3>
+                                <p data-i18n="products.makhana.gallery.slide3.description">Our rigorous quality control process ensures only the finest makhana reaches our customers</p>
+                                <span class="slide-category" data-i18n="products.makhana.gallery.slide3.category">Makhana</span>
+                            </div>
+                            <button class="slide-view-btn" onclick="openLightbox('../assets/images/TradeArk Images/Makhana Hand Image.png', 'Hand-Selected Quality', 'Our rigorous quality control process ensures only the finest makhana reaches our customers')">
+                                <i data-lucide="eye"></i>
+                                <span data-i18n="products.makhana.gallery.viewFullSize">View Full Size</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slideshow Navigation -->
+                <div class="slideshow-nav">
+                    <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Slideshow Dots -->
+                <div class="slideshow-dots">
+                    <button class="dot active" onclick="goToSlide(0)"></button>
+                    <button class="dot" onclick="goToSlide(1)"></button>
+                    <button class="dot" onclick="goToSlide(2)"></button>
                 </div>
             </div>
         </div>
@@ -572,8 +773,8 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Key Benefits</h2>
-                <p class="section-subtitle">Why makhana is perfect for your market</p>
+                <h2 class="section-title" data-i18n="products.makhana.benefits.title">Key Benefits</h2>
+                <p class="section-subtitle" data-i18n="products.makhana.benefits.subtitle">Why makhana is perfect for your market</p>
             </div>
             
             <div class="benefits-grid">
@@ -582,8 +783,8 @@
                         <i data-lucide="zap"></i>
                     </div>
                     <div class="benefit-content">
-                        <h4>High Protein</h4>
-                        <p>Contains 9.7g protein per 100g, ideal for health-conscious consumers</p>
+                        <h4 data-i18n="products.makhana.benefits.protein.title">High Protein</h4>
+                        <p data-i18n="products.makhana.benefits.protein.description">Contains 9.7g protein per 100g, ideal for health-conscious consumers</p>
                     </div>
                 </div>
                 
@@ -592,8 +793,8 @@
                         <i data-lucide="package"></i>
                     </div>
                     <div class="benefit-content">
-                        <h4>Custom Packaging</h4>
-                        <p>Flexible packaging options from 50g to 5kg with your branding</p>
+                        <h4 data-i18n="products.makhana.benefits.packaging.title">Custom Packaging</h4>
+                        <p data-i18n="products.makhana.benefits.packaging.description">Flexible packaging options from 50g to 5kg with your branding</p>
                     </div>
                 </div>
                 
@@ -602,8 +803,8 @@
                         <i data-lucide="clock"></i>
                     </div>
                     <div class="benefit-content">
-                        <h4>Long Shelf Life</h4>
-                        <p>Up to 18 months shelf life with proper storage conditions</p>
+                        <h4 data-i18n="products.makhana.benefits.shelf.title">Long Shelf Life</h4>
+                        <p data-i18n="products.makhana.benefits.shelf.description">Up to 18 months shelf life with proper storage conditions</p>
                     </div>
                 </div>
                 
@@ -612,8 +813,8 @@
                         <i data-lucide="shield-check"></i>
                     </div>
                     <div class="benefit-content">
-                        <h4>Certified Quality</h4>
-                        <p>HACCP, ISO 22000, and organic certifications available</p>
+                        <h4 data-i18n="products.makhana.benefits.certified.title">Certified Quality</h4>
+                        <p data-i18n="products.makhana.benefits.certified.description">HACCP, ISO 22000, and organic certifications available</p>
                     </div>
                 </div>
             </div>
@@ -624,8 +825,8 @@
     <section class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Use Cases</h2>
-                <p class="section-subtitle">Perfect for various market segments</p>
+                <h2 class="section-title" data-i18n="products.makhana.usecases.title">Use Cases</h2>
+                <p class="section-subtitle" data-i18n="products.makhana.usecases.subtitle">Perfect for various market segments</p>
             </div>
             
             <div class="card-grid">
@@ -633,24 +834,24 @@
                     <div class="card-icon">
                         <i data-lucide="store"></i>
                     </div>
-                    <h3>Retail Stores</h3>
-                    <p>Ready-to-sell packages for health food stores, supermarkets, and specialty retailers.</p>
+                    <h3 data-i18n="products.makhana.usecases.retail.title">Retail Stores</h3>
+                    <p data-i18n="products.makhana.usecases.retail.description">Ready-to-sell packages for health food stores, supermarkets, and specialty retailers.</p>
                 </div>
                 
                 <div class="card">
                     <div class="card-icon">
                         <i data-lucide="gift"></i>
                     </div>
-                    <h3>Gift & Hampers</h3>
-                    <p>Premium packaging options perfect for corporate gifts and festive hampers.</p>
+                    <h3 data-i18n="products.makhana.usecases.gift.title">Gift & Hampers</h3>
+                    <p data-i18n="products.makhana.usecases.gift.description">Premium packaging options perfect for corporate gifts and festive hampers.</p>
                 </div>
                 
                 <div class="card">
                     <div class="card-icon">
                         <i data-lucide="building"></i>
                     </div>
-                    <h3>Institutional Use</h3>
-                    <p>Bulk supply for hotels, restaurants, and catering services.</p>
+                    <h3 data-i18n="products.makhana.usecases.institutional.title">Institutional Use</h3>
+                    <p data-i18n="products.makhana.usecases.institutional.description">Bulk supply for hotels, restaurants, and catering services.</p>
                 </div>
             </div>
         </div>
@@ -660,38 +861,38 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Packaging Options</h2>
-                <p class="section-subtitle">Flexible packaging solutions for every market need</p>
+                <h2 class="section-title" data-i18n="products.makhana.packaging.title">Packaging Options</h2>
+                <p class="section-subtitle" data-i18n="products.makhana.packaging.subtitle">Flexible packaging solutions for every market need</p>
             </div>
             
             <div class="card-grid">
                 <div class="card">
-                    <h3>Consumer Packs</h3>
+                    <h3 data-i18n="products.makhana.packaging.consumer.title">Consumer Packs</h3>
                     <ul>
-                        <li>50g - 500g pouches</li>
-                        <li>Resealable packaging</li>
-                        <li>Custom branding</li>
-                        <li>Attractive shelf appeal</li>
+                        <li data-i18n="products.makhana.packaging.consumer.feature1">50g - 500g pouches</li>
+                        <li data-i18n="products.makhana.packaging.consumer.feature2">Resealable packaging</li>
+                        <li data-i18n="products.makhana.packaging.consumer.feature3">Custom branding</li>
+                        <li data-i18n="products.makhana.packaging.consumer.feature4">Attractive shelf appeal</li>
                     </ul>
                 </div>
                 
                 <div class="card">
-                    <h3>Bulk Packaging</h3>
+                    <h3 data-i18n="products.makhana.packaging.bulk.title">Bulk Packaging</h3>
                     <ul>
-                        <li>1kg - 5kg bags</li>
-                        <li>Food-grade materials</li>
-                        <li>Nitrogen flushing</li>
-                        <li>Extended shelf life</li>
+                        <li data-i18n="products.makhana.packaging.bulk.feature1">1kg - 5kg bags</li>
+                        <li data-i18n="products.makhana.packaging.bulk.feature2">Food-grade materials</li>
+                        <li data-i18n="products.makhana.packaging.bulk.feature3">Nitrogen flushing</li>
+                        <li data-i18n="products.makhana.packaging.bulk.feature4">Extended shelf life</li>
                     </ul>
                 </div>
                 
                 <div class="card">
-                    <h3>Industrial Supply</h3>
+                    <h3 data-i18n="products.makhana.packaging.industrial.title">Industrial Supply</h3>
                     <ul>
-                        <li>25kg - 50kg sacks</li>
-                        <li>Jute or PP bags</li>
-                        <li>Moisture protection</li>
-                        <li>Bulk pricing available</li>
+                        <li data-i18n="products.makhana.packaging.industrial.feature1">25kg - 50kg sacks</li>
+                        <li data-i18n="products.makhana.packaging.industrial.feature2">Jute or PP bags</li>
+                        <li data-i18n="products.makhana.packaging.industrial.feature3">Moisture protection</li>
+                        <li data-i18n="products.makhana.packaging.industrial.feature4">Bulk pricing available</li>
                     </ul>
                 </div>
             </div>
@@ -702,16 +903,16 @@
     <section class="section cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Partner with Us?</h2>
-                <p>Join leading brands worldwide who trust TradeArk for premium fox nut supplies</p>
+                <h2 data-i18n="products.makhana.cta.title">Ready to Partner with Us?</h2>
+                <p data-i18n="products.makhana.cta.description">Join leading brands worldwide who trust TradeArk for premium fox nut supplies</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-secondary">
                         <i data-lucide="phone"></i>
-                        Request a Quote
+                        <span data-i18n="products.makhana.cta.quote">Request a Quote</span>
                     </a>
                     <a href="javascript:void(0)" class="btn btn-outline" onclick="showDownloadModal()">
                         <i data-lucide="download"></i>
-                        Download PDF
+                        <span data-i18n="products.makhana.cta.download">Download PDF</span>
                     </a>
                 </div>
             </div>
@@ -734,22 +935,22 @@
                 <form id="downloadForm" class="download-form">
                     <div class="form-group">
                         <label for="downloadName">Name *</label>
-                        <input type="text" id="downloadName" name="name" required>
+                        <input type="text" id="downloadName" name="name" autocomplete="name" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="downloadCompany">Company *</label>
-                        <input type="text" id="downloadCompany" name="company" required>
+                        <input type="text" id="downloadCompany" name="company" autocomplete="organization" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="downloadPhone">Phone Number *</label>
-                        <input type="tel" id="downloadPhone" name="phone" required>
+                        <input type="tel" id="downloadPhone" name="phone" autocomplete="tel" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="downloadEmail">Email *</label>
-                        <input type="email" id="downloadEmail" name="email" required>
+                        <input type="email" id="downloadEmail" name="email" autocomplete="email" required>
                     </div>
                     
                     <div class="form-group">
@@ -770,27 +971,59 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>TradeArk</h3>
-                    <p>Premium Indian agricultural exports with a commitment to quality and sustainability.</p>
+                <div class="footer-section footer-brand">
+                    <img src="../assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="footer-logo">
+                    <p>Your trusted partner for premium Indian Makhana and sustainable cork décor exports.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="https://www.instagram.com/tradeark.in/" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
+                    </div>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Products</h4>
                     <ul>
-                        <li><a href="../index.html#home">Home</a></li>
-                        <li><a href="../index.html#about">About</a></li>
-                        <li><a href="../index.html#products">Products</a></li>
+                        <li><a href="makhana.html">Premium Makhana</a></li>
+                        <li><a href="horeca.html">Cork Décor</a></li>
+                        <li><a href="../index.html#quality">Quality Standards</a></li>
+                        <li><a href="../index.html#quality">Certifications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../index.html#why-us">Why Choose Us</a></li>
+                        <li><a href="../index.html#testimonials">Testimonials</a></li>
                         <li><a href="../index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>Email: info@tradeark.com</p>
-                    <p>Phone: +91 9876543210</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 TradeArk. All rights reserved.</p>
+                </div>
+                <div class="footer-credit">
+                    <p>Made by Vedant Mittal</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8797102793?text=Hello!" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener"
+       aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.484 3.488"/>
+        </svg>
+    </a>
 
     <script src="../assets/js/main.js"></script>
     <script>
@@ -806,6 +1039,11 @@
             } else {
                 // Fallback initialization
                 initDownloadModalFallback();
+            }
+            
+            // Initialize gallery slideshow
+            if (typeof initializeGallery === 'function') {
+                initializeGallery();
             }
         });
         
@@ -879,12 +1117,16 @@
         window.showDownloadModal = showDownloadModal;
         window.closeDownloadModal = closeDownloadModal;
 
-        // Mobile navigation toggle
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-            this.classList.toggle('active');
-        });
+        // Initialize all navigation functions
+        if (typeof initializeNavigation === 'function') {
+            initializeNavigation();
+        }
+        if (typeof initializeMobileMenu === 'function') {
+            initializeMobileMenu();
+        }
+        if (typeof initializeLanguageManager === 'function') {
+            initializeLanguageManager();
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -911,6 +1153,12 @@
                 nav.style.boxShadow = 'none';
             }
         });
+        
+        // Initialize language manager
+        if (typeof LanguageManager !== 'undefined') {
+            window.languageManager = new LanguageManager();
+        }
     </script>
+
 </body>
 </html>

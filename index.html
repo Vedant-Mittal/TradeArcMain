@@ -10,114 +10,239 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Lora:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Translations -->
+    <script src="assets/js/translations.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-brand">
-                <span class="nav-logo">TradeArk</span>
+                <img src="assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="nav-logo-img">
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu-desktop">
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
                 <li class="nav-dropdown">
-                    <a href="#products" class="nav-link">Products <i data-lucide="chevron-down"></i></a>
+                    <a href="#products" class="nav-link dropdown-toggle" data-i18n="nav.products">Products <i data-lucide="chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="products/makhana.html">Premium Makhana</a></li>
-                        <li><a href="products/horeca.html">Cork HoReCa Décor</a></li>
+                        <li><a href="products/makhana.html" data-i18n="nav.makhana">Premium Makhana</a></li>
+                        <li><a href="products/horeca.html" data-i18n="nav.horeca">Cork HoReCa Décor</a></li>
                     </ul>
                 </li>
-                <li><a href="#quality" class="nav-link">Quality</a></li>
-                <li><a href="#why-us" class="nav-link">Why Us</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#quality" class="nav-link" data-i18n="nav.quality">Quality</a></li>
+                <li><a href="#why-us" class="nav-link" data-i18n="nav.why-us">Why Us</a></li>
+                <li><a href="#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+                <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li class="nav-language">
+                    <div class="language-toggle">
+                        <button class="current-language" id="currentLang" aria-label="Select language">
+                            <span class="flag-icon flag-en"></span>
+                            <span class="lang-code">EN</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <button class="lang-option" data-lang="en" data-country="us">
+                                <span class="flag-icon flag-en"></span>
+                                <span>English</span>
+                            </button>
+                            <button class="lang-option" data-lang="hi" data-country="in">
+                                <span class="flag-icon flag-hi"></span>
+                                <span>हिन्दी</span>
+                            </button>
+                            <button class="lang-option" data-lang="es" data-country="es">
+                                <span class="flag-icon flag-es"></span>
+                                <span>Español</span>
+                            </button>
+                            <button class="lang-option" data-lang="fr" data-country="fr">
+                                <span class="flag-icon flag-fr"></span>
+                                <span>Français</span>
+                            </button>
+                            <button class="lang-option" data-lang="de" data-country="de">
+                                <span class="flag-icon flag-de"></span>
+                                <span>Deutsch</span>
+                            </button>
+                            <button class="lang-option" data-lang="ar" data-country="ae">
+                                <span class="flag-icon flag-ar"></span>
+                                <span>العربية</span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
             </ul>
-            <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+            
+            <!-- Mobile Hamburger Button -->
+            <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
         </div>
-        <div class="nav-backdrop"></div>
+        
+        <!-- Mobile Slide-in Panel -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <div class="mobile-menu-panel" id="mobileMenuPanel">
+                <div class="mobile-menu-header">
+                    <img src="assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="mobile-menu-logo">
+                    <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <nav class="mobile-menu-nav">
+                    <ul class="mobile-menu-list">
+                        <li class="mobile-menu-item">
+                            <a href="#home" class="mobile-menu-link" data-i18n="nav.home">Home</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="#about" class="mobile-menu-link" data-i18n="nav.about">About</a>
+                        </li>
+                        <li class="mobile-menu-item mobile-menu-expandable">
+                            <button class="mobile-menu-link mobile-menu-toggle-btn" aria-expanded="false">
+                                <span>Products</span>
+                                <span class="mobile-menu-chevron">▶</span>
+                            </button>
+                            <ul class="mobile-menu-submenu">
+                                <li class="mobile-menu-subitem">
+                                    <a href="products/makhana.html" class="mobile-menu-sublink" data-i18n="nav.makhana">Premium Makhana</a>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <a href="products/horeca.html" class="mobile-menu-sublink" data-i18n="nav.horeca">Cork HoReCa Décor</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="#quality" class="mobile-menu-link" data-i18n="nav.quality">Quality</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="#why-us" class="mobile-menu-link" data-i18n="nav.why-us">Why Us</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="#gallery" class="mobile-menu-link" data-i18n="nav.gallery">Gallery</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="#testimonials" class="mobile-menu-link" data-i18n="nav.testimonials">Testimonials</a>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a href="#contact" class="mobile-menu-link" data-i18n="nav.contact">Contact</a>
+                        </li>
+                        <li class="mobile-menu-item mobile-menu-expandable">
+                            <button class="mobile-menu-link mobile-menu-toggle-btn" aria-expanded="false">
+                                <span>Language</span>
+                                <span class="mobile-menu-chevron">▶</span>
+                            </button>
+                            <ul class="mobile-menu-submenu">
+                                <li class="mobile-menu-subitem">
+                                    <button class="mobile-menu-sublink lang-option" data-lang="en" data-country="us">
+                                        <span class="flag-icon flag-en"></span>
+                                        <span>English</span>
+                                    </button>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <button class="mobile-menu-sublink lang-option" data-lang="hi" data-country="in">
+                                        <span class="flag-icon flag-hi"></span>
+                                        <span>हिन्दी</span>
+                                    </button>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <button class="mobile-menu-sublink lang-option" data-lang="es" data-country="es">
+                                        <span class="flag-icon flag-es"></span>
+                                        <span>Español</span>
+                                    </button>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <button class="mobile-menu-sublink lang-option" data-lang="fr" data-country="fr">
+                                        <span class="flag-icon flag-fr"></span>
+                                        <span>Français</span>
+                                    </button>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <button class="mobile-menu-sublink lang-option" data-lang="de" data-country="de">
+                                        <span class="flag-icon flag-de"></span>
+                                        <span>Deutsch</span>
+                                    </button>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <button class="mobile-menu-sublink lang-option" data-lang="ar" data-country="ae">
+                                        <span class="flag-icon flag-ar"></span>
+                                        <span>العربية</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Background Image with Adaptive Overlay -->
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
+        
+        <!-- Hero Content -->
         <div class="hero-content">
             <div class="container">
                 <div class="hero-inner">
-                    <!-- Brand Badge -->
-                    <div class="hero-badge">
-                        <i data-lucide="star"></i>
-                        <span>Premium Indian Exporter</span>
-                        <i data-lucide="star"></i>
-                    </div>
-
-                    <!-- Main Title -->
-                    <h1 class="hero-title">TradeArk</h1>
+                    <!-- Main Heading -->
+                    <h1 class="hero-title" data-i18n="hero.title">TradeArk</h1>
                     
-                    <!-- Subtitle -->
-                    <h2 class="hero-subtitle">Premium Indian Makhana & Sustainable Cork Décor</h2>
+                    <!-- Subheading -->
+                    <h2 class="hero-subtitle" data-i18n="hero.subtitle">Premium Indian Makhana & Sustainable Cork Décor</h2>
                     
-                    <!-- Key Values -->
-                    <div class="hero-values">
-                        <div class="hero-value">
-                            <div class="hero-value-icon">🌱</div>
-                            <span>Sustainable</span>
-                        </div>
-                        <div class="hero-value">
-                            <div class="hero-value-icon">✓</div>
-                            <span>Certified</span>
-                        </div>
-                        <div class="hero-value">
-                            <div class="hero-value-icon">🌍</div>
-                            <span>Global Export</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Description -->
-                    <p class="hero-description">
+                    <!-- Body Text -->
+                    <p class="hero-description" data-i18n="hero.description">
                         From the fields of Bihar to tables worldwide—we deliver premium Makhana and sustainable cork décor that transforms HoReCa experiences. Trusted by 15+ countries for quality, sustainability, and reliability.
                     </p>
                     
-                    <!-- CTA Buttons -->
+                    <!-- CTAs -->
                     <div class="hero-cta">
-                        <button class="btn btn-primary" onclick="scrollToSection('products')">
-                            🌾 Explore Products
+                        <button class="btn btn-primary" onclick="scrollToSection('products')" aria-label="Explore our premium products">
+                            <i data-lucide="package"></i>
+                            <span data-i18n="hero.cta.products">Explore Products</span>
                         </button>
-                        <button class="btn btn-secondary" onclick="scrollToSection('contact')">
-                            📨 Get in Touch
+                        <button class="btn btn-secondary" onclick="scrollToSection('contact')" aria-label="Contact us for more information">
+                            <i data-lucide="message-circle"></i>
+                            <span data-i18n="hero.cta.contact">Get In Touch</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" onclick="scrollToSection('about')" aria-label="Scroll to learn more about us">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <i data-lucide="chevron-down"></i>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About TradeArk</h2>
-                <p class="section-subtitle">Built on trust, driven by quality, powered by sustainability</p>
+                <h2 class="section-title" data-i18n="about.title">About TradeArk</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Built on trust, driven by quality, powered by sustainability</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Our Story</h3>
-                    <p>TradeArk began with a vision to bridge the gap between India's agricultural heritage and global markets. Founded by passionate exporters who understood the potential of premium Indian produce, we've grown into a trusted partner for businesses worldwide.</p>
+                    <h3 data-i18n="about.story.title">Our Story</h3>
+                    <p data-i18n="about.story.description">TradeArk began with a vision to bridge the gap between India's agricultural heritage and global markets. Founded by passionate exporters who understood the potential of premium Indian produce, we've grown into a trusted partner for businesses worldwide.</p>
                     
-                    <h3>Our Mission</h3>
-                    <p>To deliver exceptional Makhana and sustainable cork décor solutions that exceed expectations while supporting local communities and environmental sustainability.</p>
+                    <h3 data-i18n="about.mission.title">Our Mission</h3>
+                    <p data-i18n="about.mission.description">To deliver exceptional Makhana and sustainable cork décor solutions that exceed expectations while supporting local communities and environmental sustainability.</p>
                 </div>
                 
                 <div class="about-pillars">
@@ -126,8 +251,8 @@
                             <i data-lucide="award"></i>
                         </div>
                         <div class="pillar-content">
-                            <h4>Quality First</h4>
-                            <p>Every product meets international standards with rigorous quality control.</p>
+                            <h4 data-i18n="about.pillars.quality.title">Quality First</h4>
+                            <p data-i18n="about.pillars.quality.description">Every product meets international standards with rigorous quality control.</p>
                         </div>
                     </div>
                     
@@ -136,8 +261,8 @@
                             <i data-lucide="leaf"></i>
                         </div>
                         <div class="pillar-content">
-                            <h4>Sustainable</h4>
-                            <p>Eco-friendly processes that protect our planet for future generations.</p>
+                            <h4 data-i18n="about.pillars.sustainable.title">Sustainable</h4>
+                            <p data-i18n="about.pillars.sustainable.description">Eco-friendly processes that protect our planet for future generations.</p>
                         </div>
                     </div>
                     
@@ -146,8 +271,8 @@
                             <i data-lucide="globe"></i>
                         </div>
                         <div class="pillar-content">
-                            <h4>Global Reach</h4>
-                            <p>Serving customers across 15+ countries with reliable delivery.</p>
+                            <h4 data-i18n="about.pillars.global.title">Global Reach</h4>
+                            <p data-i18n="about.pillars.global.description">Serving customers across 15+ countries with reliable delivery.</p>
                         </div>
                     </div>
                 </div>
@@ -159,26 +284,26 @@
     <section id="products" class="products">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Premium Products</h2>
-                <p class="section-subtitle">Discover our range of high-quality exports</p>
+                <h2 class="section-title" data-i18n="products.title">Our Premium Products</h2>
+                <p class="section-subtitle" data-i18n="products.subtitle">Discover our range of high-quality exports</p>
             </div>
             
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image foxnut-bg">
-                        <div class="product-badge">Premium</div>
+                        <div class="product-badge" data-i18n="products.badges.premium">Premium</div>
                         <img src="assets/images/TradeArk Images/Makhana Bowl Image.png" alt="Premium Makhana (Fox Nut) in a bowl showing the quality and texture of the product" />
                     </div>
                     <div class="product-content">
-                        <h3>Premium Makhana (Fox Nut)</h3>
-                        <p>Hand-selected from the finest farms in Bihar, our Makhana are renowned for their superior quality, size, and nutritional value.</p>
+                        <h3 data-i18n="products.makhana.title">Premium Makhana (Fox Nut)</h3>
+                        <p data-i18n="products.makhana.description">Hand-selected from the finest farms in Bihar, our Makhana are renowned for their superior quality, size, and nutritional value.</p>
                         <ul class="product-features">
-                            <li>Grade A+ quality</li>
-                            <li>Organic certified</li>
-                            <li>Bulk & retail packaging</li>
-                            <li>Global shipping</li>
+                            <li data-i18n="products.makhana.features.0">Grade A+ quality</li>
+                            <li data-i18n="products.makhana.features.1">Organic certified</li>
+                            <li data-i18n="products.makhana.features.2">Bulk & retail packaging</li>
+                            <li data-i18n="products.makhana.features.3">Global shipping</li>
                         </ul>
-                        <a href="products/makhana.html" class="btn btn-outline">
+                        <a href="products/makhana.html" class="btn btn-outline" data-i18n="products.makhana.cta">
                             Learn More
                         </a>
                     </div>
@@ -186,19 +311,19 @@
                 
                 <div class="product-card">
                     <div class="product-image cork-bg">
-                        <div class="product-badge">Sustainable</div>
+                        <div class="product-badge" data-i18n="products.badges.sustainable">Sustainable</div>
                         <img src="assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg" alt="Sustainable cork décor showing plants growing in a cork pot, highlighting eco-friendly design" />
                     </div>
                     <div class="product-content">
-                        <h3>Sustainable Cork HoReCa Décor</h3>
-                        <p>Elegant and eco-friendly cork tabletop décor designed specifically for hotels, restaurants, and cafes worldwide.</p>
+                        <h3 data-i18n="products.cork.title">Sustainable Cork HoReCa Décor</h3>
+                        <p data-i18n="products.cork.description">Elegant and eco-friendly cork tabletop décor designed specifically for hotels, restaurants, and cafes worldwide.</p>
                         <ul class="product-features">
-                            <li>100% sustainable cork</li>
-                            <li>Custom designs available</li>
-                            <li>Durable & lightweight</li>
-                            <li>HoReCa certified</li>
+                            <li data-i18n="products.cork.features.0">100% sustainable cork</li>
+                            <li data-i18n="products.cork.features.1">Custom designs available</li>
+                            <li data-i18n="products.cork.features.2">Durable & lightweight</li>
+                            <li data-i18n="products.cork.features.3">HoReCa certified</li>
                         </ul>
-                        <a href="products/horeca.html" class="btn btn-outline">
+                        <a href="products/horeca.html" class="btn btn-outline" data-i18n="products.cork.cta">
                             Learn More
                         </a>
                     </div>
@@ -215,20 +340,20 @@
                     <div class="custom-sourcing-icon">
                         <i data-lucide="search"></i>
                     </div>
-                    <h2>Custom Sourcing on Demand</h2>
-                    <p class="custom-sourcing-tagline">Can't find what you're looking for? We source beyond our catalog to meet your unique requirements.</p>
+                    <h2 data-i18n="products.custom.title">Custom Sourcing on Demand</h2>
+                    <p class="custom-sourcing-tagline" data-i18n="products.custom.subtitle">Can't find what you're looking for? We source beyond our catalog to meet your unique requirements.</p>
                     
                     <div class="custom-sourcing-description">
-                        <p>Our extensive network of trusted suppliers across India allows us to source premium agricultural products, spices, and sustainable materials tailored to your specific business needs.</p>
+                        <p data-i18n="products.custom.description">Our extensive network of trusted suppliers across India allows us to source premium agricultural products, spices, and sustainable materials tailored to your specific business needs.</p>
                     </div>
                     
                     <ul class="custom-sourcing-benefits">
-                        <li>Access to exclusive suppliers across India</li>
-                        <li>End-to-end quality control & certification</li>
-                        <li>Competitive pricing through direct sourcing</li>
+                        <li data-i18n="products.custom.benefits.0">Access to exclusive suppliers across India</li>
+                        <li data-i18n="products.custom.benefits.1">End-to-end quality control & certification</li>
+                        <li data-i18n="products.custom.benefits.2">Competitive pricing through direct sourcing</li>
                     </ul>
                     
-                    <a href="#contact" class="btn btn-primary" onclick="scrollToSection('contact')">
+                    <a href="#contact" class="btn btn-primary" onclick="scrollToSection('contact')" data-i18n="products.custom.cta">
                         Get a Custom Quote
                     </a>
                 </div>
@@ -239,7 +364,7 @@
                         <div class="image-overlay">
                             <div class="overlay-content">
                                 <i data-lucide="globe"></i>
-                                <span>Global Sourcing Network</span>
+                                <span data-i18n="products.custom.overlay">Global Sourcing Network</span>
                             </div>
                         </div>
                     </div>
@@ -252,49 +377,49 @@
     <section id="quality" class="quality">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Quality & Certifications</h2>
-                <p class="section-subtitle">Meeting international standards with every shipment</p>
+                <h2 class="section-title" data-i18n="quality.title">Quality & Certifications</h2>
+                <p class="section-subtitle" data-i18n="quality.subtitle">Meeting international standards with every shipment</p>
             </div>
             
             <div class="quality-content">
                 <div class="quality-text">
-                    <h3>Our Quality Promise</h3>
-                    <p>We maintain the highest standards throughout our supply chain, from farm to your table. Our quality control processes ensure consistency and excellence in every product.</p>
+                    <h3 data-i18n="quality.promise.title">Our Quality Promise</h3>
+                    <p data-i18n="quality.promise.description">We maintain the highest standards throughout our supply chain, from farm to your table. Our quality control processes ensure consistency and excellence in every product.</p>
                     
                     <div class="quality-stats">
                         <div class="stat">
                             <div class="stat-number">99.8%</div>
-                            <div class="stat-label">Quality Pass Rate</div>
+                            <div class="stat-label" data-i18n="quality.stats.quality">Quality Pass Rate</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">15+</div>
-                            <div class="stat-label">Countries Served</div>
+                            <div class="stat-label" data-i18n="quality.stats.countries">Countries Served</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">200+</div>
-                            <div class="stat-label">Happy Customers</div>
+                            <div class="stat-label" data-i18n="quality.stats.customers">Happy Customers</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="certifications">
-                    <h3>Certifications</h3>
+                    <h3 data-i18n="quality.certifications.title">Certifications</h3>
                     <div class="cert-grid">
                         <div class="cert-item">
                             <i data-lucide="shield-check"></i>
-                            <span>ISO 9001:2015</span>
+                            <span data-i18n="quality.certifications.iso">ISO 9001:2015</span>
                         </div>
                         <div class="cert-item">
                             <i data-lucide="leaf"></i>
-                            <span>Organic Certified</span>
+                            <span data-i18n="quality.certifications.organic">Organic Certified</span>
                         </div>
                         <div class="cert-item">
                             <i data-lucide="award"></i>
-                            <span>HACCP Certified</span>
+                            <span data-i18n="quality.certifications.haccp">HACCP Certified</span>
                         </div>
                         <div class="cert-item">
                             <i data-lucide="globe"></i>
-                            <span>Export License</span>
+                            <span data-i18n="quality.certifications.export">Export License</span>
                         </div>
                     </div>
                 </div>
@@ -306,8 +431,8 @@
     <section id="why-us" class="why-us">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose TradeArk?</h2>
-                <p class="section-subtitle">Your trusted partner for premium agricultural exports</p>
+                <h2 class="section-title" data-i18n="whyUs.title">Why Choose TradeArk?</h2>
+                <p class="section-subtitle" data-i18n="whyUs.subtitle">Your trusted partner for premium agricultural exports</p>
             </div>
             
             <div class="why-us-grid">
@@ -315,43 +440,43 @@
                     <div class="why-us-icon">
                         <i data-lucide="truck"></i>
                     </div>
-                    <h3>Reliable Delivery</h3>
-                    <p>On-time delivery with proper packaging and temperature control throughout the supply chain.</p>
+                    <h3 data-i18n="whyUs.reasons.0.title">Reliable Delivery</h3>
+                    <p data-i18n="whyUs.reasons.0.description">On-time delivery with proper packaging and temperature control throughout the supply chain.</p>
                 </div>
                 
                 <div class="why-us-card">
                     <div class="why-us-icon">
                         <i data-lucide="shield-check"></i>
                     </div>
-                    <h3>Quality Assurance</h3>
-                    <p>Rigorous testing and quality control at every stage to ensure product excellence.</p>
+                    <h3 data-i18n="whyUs.reasons.1.title">Quality Assurance</h3>
+                    <p data-i18n="whyUs.reasons.1.description">Rigorous testing and quality control at every stage to ensure product excellence.</p>
                 </div>
                 
                 <div class="why-us-card">
                     <div class="why-us-icon">
                         <i data-lucide="headphones"></i>
                     </div>
-                    <h3>24/7 Support</h3>
-                    <p>Dedicated customer service team available round the clock for your queries and support.</p>
+                    <h3 data-i18n="whyUs.reasons.2.title">24/7 Support</h3>
+                    <p data-i18n="whyUs.reasons.2.description">Dedicated customer service team available round the clock for your queries and support.</p>
                 </div>
                 
                 <div class="why-us-card">
                     <div class="why-us-icon">
                         <i data-lucide="dollar-sign"></i>
                     </div>
-                    <h3>Competitive Pricing</h3>
-                    <p>Best market rates with transparent pricing and no hidden costs.</p>
+                    <h3 data-i18n="whyUs.reasons.3.title">Competitive Pricing</h3>
+                    <p data-i18n="whyUs.reasons.3.description">Best market rates with transparent pricing and no hidden costs.</p>
                 </div>
             </div>
             
             <div class="why-us-cta">
-                <h3>Ready to Start Your Journey?</h3>
-                <p>Join successful partners who've transformed their business with our premium export solutions.</p>
+                <h3 data-i18n="whyUs.cta.title">Ready to Start Your Journey?</h3>
+                <p data-i18n="whyUs.cta.description">Join successful partners who've transformed their business with our premium export solutions.</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')" data-i18n="whyUs.cta.start">
                         Start Your Journey
                     </button>
-                    <button class="btn btn-outline" onclick="scrollToSection('products')">
+                    <button class="btn btn-outline" onclick="scrollToSection('products')" data-i18n="whyUs.cta.products">
                         View Products
                     </button>
                 </div>
@@ -359,12 +484,171 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="gallery.title">Our Gallery</h2>
+                <p class="section-subtitle" data-i18n="gallery.subtitle">Showcasing our premium products and global partnerships</p>
+            </div>
+            
+            <div class="gallery-slideshow">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="assets/images/TradeArk Images/Makhana Bowl Image.png" alt="Premium Makhana (Fox Nut) in a bowl showcasing superior quality and texture" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.makhana1.title">Premium Makhana</h4>
+                                <p data-i18n="gallery.items.makhana1.description">Superior quality fox nuts</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Makhana Bowl Image.png', 'Premium Makhana', 'Superior quality fox nuts in a bowl showcasing natural texture and premium grade')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Makhana in a Bowl.jpg" alt="Fresh Makhana displayed in traditional bowl highlighting natural texture" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.makhana2.title">Fresh Makhana</h4>
+                                <p data-i18n="gallery.items.makhana2.description">Natural texture and quality</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Makhana in a Bowl.jpg', 'Fresh Makhana', 'Fresh Makhana displayed in traditional bowl highlighting natural texture and premium quality')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Makhana Hand Image.png" alt="Makhana being hand-selected showcasing quality control process" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.makhana3.title">Quality Control</h4>
+                                <p data-i18n="gallery.items.makhana3.description">Hand-selected premium grade</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Makhana Hand Image.png', 'Quality Control', 'Makhana being hand-selected showcasing our rigorous quality control process')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg" alt="Sustainable cork décor with plants growing in eco-friendly cork pot" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.cork1.title">Cork Décor</h4>
+                                <p data-i18n="gallery.items.cork1.description">Sustainable eco-friendly products</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg', 'Cork Décor', 'Sustainable cork décor with plants growing in eco-friendly cork pot for HoReCa applications')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Brown Corks Wine Glass.jpg" alt="Premium cork wine accessories for hospitality industry" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.cork2.title">Wine Accessories</h4>
+                                <p data-i18n="gallery.items.cork2.description">Premium hospitality décor</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Brown Corks Wine Glass.jpg', 'Wine Accessories', 'Premium cork wine accessories for hospitality industry and restaurant applications')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Cargo Container Lot.jpg" alt="International shipping containers representing global export operations" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.business1.title">Global Export</h4>
+                                <p data-i18n="gallery.items.business1.description">International shipping operations</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Cargo Container Lot.jpg', 'Global Export', 'International shipping containers representing our global export operations and logistics')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Restaurant Image.jpg" alt="Premium restaurant showcasing TradeArk's HoReCa product applications" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.business2.title">HoReCa Applications</h4>
+                                <p data-i18n="gallery.items.business2.description">Premium restaurant solutions</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Restaurant Image.jpg', 'HoReCa Applications', 'Premium restaurant showcasing TradeArk HoReCa product applications and hospitality solutions')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/TradeArk-Gallery-8.jpg" alt="TradeArk gallery showcase featuring premium products and business operations" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.gallery.title">TradeArk Gallery</h4>
+                                <p data-i18n="gallery.items.gallery.description">Premium products showcase</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/TradeArk-Gallery-8.jpg', 'TradeArk Gallery', 'TradeArk gallery showcase featuring premium products and business operations')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slideshow Navigation -->
+                <div class="slideshow-nav">
+                    <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Slideshow Dots -->
+                <div class="slideshow-dots">
+                    <button class="dot active" onclick="goToSlide(0)"></button>
+                    <button class="dot" onclick="goToSlide(1)"></button>
+                    <button class="dot" onclick="goToSlide(2)"></button>
+                    <button class="dot" onclick="goToSlide(3)"></button>
+                    <button class="dot" onclick="goToSlide(4)"></button>
+                    <button class="dot" onclick="goToSlide(5)"></button>
+                    <button class="dot" onclick="goToSlide(6)"></button>
+                    <button class="dot" onclick="goToSlide(7)"></button>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Lightbox Modal -->
+    <div id="galleryLightbox" class="gallery-lightbox" style="display: none;">
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <img id="lightboxImage" src="" alt="" />
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What Our Customers Say</h2>
-                <p class="section-subtitle">Trusted by businesses worldwide</p>
+                <h2 class="section-title" data-i18n="testimonials.title">What Our Customers Say</h2>
+                <p class="section-subtitle" data-i18n="testimonials.subtitle">Trusted by businesses worldwide</p>
             </div>
             
             <div class="testimonials-carousel">
@@ -377,11 +661,11 @@
                             <span class="star">★</span>
                             <span class="star">★</span>
                         </div>
-                        <p>"TradeArk has been our trusted partner for premium Makhana supply. Their quality is unmatched and delivery is always on time."</p>
+                        <p class="testimonial-text">"TradeArk has been our trusted partner for premium Makhana supply. Their quality is unmatched and delivery is always on time."</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <span>CEO, Premium Foods Ltd</span>
+                                <h4 class="testimonial-author">Sarah Johnson</h4>
+                                <span class="testimonial-company">CEO, Premium Foods Ltd</span>
                             </div>
                         </div>
                     </div>
@@ -396,11 +680,11 @@
                             <span class="star">★</span>
                             <span class="star">★</span>
                         </div>
-                        <p>"The cork décor products from TradeArk have transformed our restaurant's ambiance. Customers love the sustainable touch!"</p>
+                        <p class="testimonial-text">"The cork décor products from TradeArk have transformed our restaurant's ambiance. Customers love the sustainable touch!"</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <h4>Marco Rodriguez</h4>
-                                <span>Restaurant Owner, Bella Vista</span>
+                                <h4 class="testimonial-author">Marco Rodriguez</h4>
+                                <span class="testimonial-company">Restaurant Owner, Bella Vista</span>
                             </div>
                         </div>
                     </div>
@@ -415,11 +699,11 @@
                             <span class="star">★</span>
                             <span class="star">★</span>
                         </div>
-                        <p>"Excellent service and product quality. TradeArk has helped us expand our health food range successfully."</p>
+                        <p class="testimonial-text">"Excellent service and product quality. TradeArk has helped us expand our health food range successfully."</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <h4>David Chen</h4>
-                                <span>Import Manager, HealthMart</span>
+                                <h4 class="testimonial-author">David Chen</h4>
+                                <span class="testimonial-company">Import Manager, Global Foods</span>
                             </div>
                         </div>
                     </div>
@@ -442,12 +726,14 @@
         </div>
     </section>
 
+
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="section-subtitle">Ready to start your premium export journey?</p>
+                <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Ready to start your premium export journey?</p>
             </div>
             
             <div class="contact-content">
@@ -458,46 +744,46 @@
                         <input type="hidden" name="from_name" value="TradeArk Contact Form">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="name" data-i18n="contact.form.name">Name *</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="company">Company *</label>
-                            <input type="text" id="company" name="company" required>
+                            <label for="company" data-i18n="contact.form.company">Company *</label>
+                            <input type="text" id="company" name="company" autocomplete="organization" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email" data-i18n="contact.form.email">Email *</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
+                            <label for="phone" data-i18n="contact.form.phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel">
                         </div>
                         
                         <div class="form-group">
-                            <label for="productInterest">Product Interest</label>
+                            <label for="productInterest" data-i18n="contact.form.interest">Product Interest</label>
                             <select id="productInterest" name="productInterest">
-                                <option value="">Please select...</option>
-                                <option value="makhana">Makhana</option>
-                                <option value="cork-decor">Cork Décor</option>
-                                <option value="custom-sourcing">Custom Sourcing</option>
+                                <option value="" data-i18n="contact.form.select">Please select...</option>
+                                <option value="makhana" data-i18n="contact.form.makhana">Makhana</option>
+                                <option value="cork-decor" data-i18n="contact.form.cork">Cork Décor</option>
+                                <option value="custom-sourcing" data-i18n="contact.form.custom">Custom Sourcing</option>
                             </select>
                         </div>
                         
                         <div class="form-group" id="customSourcingField" style="display: none;">
-                            <label for="customSourcingDetails">Please specify</label>
-                            <textarea id="customSourcingDetails" name="customSourcingDetails" rows="4" placeholder="Tell us what products you're looking for... (e.g., specific spices, grains, organic products, packaging requirements, etc.)"></textarea>
+                            <label for="customSourcingDetails" data-i18n="contact.form.specify">Please specify</label>
+                            <textarea id="customSourcingDetails" name="customSourcingDetails" rows="4" data-i18n="contact.form.placeholder" placeholder="Tell us what products you're looking for... (e.g., specific spices, grains, organic products, packaging requirements, etc.)"></textarea>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirements..."></textarea>
+                            <label for="message" data-i18n="contact.form.message">Message</label>
+                            <textarea id="message" name="message" rows="5" data-i18n="contact.form.requirements" placeholder="Tell us about your requirements..."></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary form-submit">
+                        <button type="submit" class="btn btn-primary form-submit" data-i18n="contact.form.submit">
                             Send Message
                         </button>
                     </form>
@@ -507,30 +793,30 @@
                     <div class="contact-item">
                         <i data-lucide="mail"></i>
                         <div>
-                            <h4>Email</h4>
-                            <p>ashutoshsinha124@gmail.com</p>
+                            <h4 data-i18n="contact.info.email">Email</h4>
+                            <p><a href="mailto:ashutoshsinha124@gmail.com?subject=Inquiry%20from%20TradeArk%20Website" class="contact-link">ashutoshsinha124@gmail.com</a></p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
                         <i data-lucide="phone"></i>
                         <div>
-                            <h4>Phone</h4>
-                            <p>+91 87971 02793</p>
+                            <h4 data-i18n="contact.info.phone">Phone</h4>
+                            <p><a href="tel:+918797102793" class="contact-link">+91 87971 02793</a></p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
                         <i data-lucide="map-pin"></i>
                         <div>
-                            <h4>Address</h4>
+                            <h4 data-i18n="contact.info.address">Address</h4>
                             <p>Export House, Patna, Bihar, India</p>
                         </div>
                     </div>
                     
                     <!-- Google Maps -->
                     <div class="contact-map">
-                        <h4>Find Us</h4>
+                        <h4 data-i18n="contact.info.find">Find Us</h4>
                         <div class="map-container">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115665.53080281334!2d85.06170221398144!3d25.614744397915436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059131a131c4e84!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
@@ -548,14 +834,14 @@
             </div>
             
             <div class="contact-cta">
-                <h3>Ready to Partner with Us?</h3>
-                <p>Join 200+ satisfied customers across 15+ countries who trust TradeArk for premium agricultural exports.</p>
+                <h3 data-i18n="contact.cta.title">Ready to Partner with Us?</h3>
+                <p data-i18n="contact.cta.description">Join 200+ satisfied customers across 15+ countries who trust TradeArk for premium agricultural exports.</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" data-i18n="contact.cta.quote">
                         <i data-lucide="globe"></i>
                         Request Quote
                     </button>
-                    <button class="btn btn-outline">
+                    <button class="btn btn-outline" data-i18n="contact.cta.call">
                         <i data-lucide="message-square"></i>
                         Schedule Call
                     </button>
@@ -580,22 +866,22 @@
                 <form id="downloadForm" class="download-form">
                     <div class="form-group">
                         <label for="downloadName">Name *</label>
-                        <input type="text" id="downloadName" name="name" required>
+                        <input type="text" id="downloadName" name="name" autocomplete="name" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="downloadCompany">Company *</label>
-                        <input type="text" id="downloadCompany" name="company" required>
+                        <input type="text" id="downloadCompany" name="company" autocomplete="organization" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="downloadPhone">Phone Number *</label>
-                        <input type="tel" id="downloadPhone" name="phone" required>
+                        <input type="tel" id="downloadPhone" name="phone" autocomplete="tel" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="downloadEmail">Email *</label>
-                        <input type="email" id="downloadEmail" name="email" required>
+                        <input type="email" id="downloadEmail" name="email" autocomplete="email" required>
                     </div>
                     
                     <div class="form-group">
@@ -616,14 +902,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>TradeArk</h3>
+                <div class="footer-section footer-brand">
+                    <img src="assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="footer-logo">
                     <p>Your trusted partner for premium Indian Makhana and sustainable cork décor exports.</p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="facebook"></i></a>
                         <a href="#"><i data-lucide="twitter"></i></a>
                         <a href="#"><i data-lucide="linkedin"></i></a>
-                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="https://www.instagram.com/tradeark.in/" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
                     </div>
                 </div>
                 
@@ -646,18 +932,32 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
-
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 TradeArk. All rights reserved.</p>
+                <div class="footer-copyright">
+                    <p data-i18n="footer.copyright">&copy; 2025 TradeArk. All rights reserved.</p>
+                </div>
+                <div class="footer-credit">
+                    <p>Made by Vedant Mittal</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8797102793?text=Hello!" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener"
+       aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.484 3.488"/>
+        </svg>
+    </a>
+
     <!-- Scripts -->
-    <script src="assets/js/main.js?v=1.2"></script>
+    <script src="assets/js/main.js"></script>
     <script>
         // Initialize all components when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
@@ -666,6 +966,7 @@
             
             // Initialize all functions
             initializeNavigation();
+            initializeMobileMenu();
             initializeScrollIndicator();
             initializeParallax();
             initializeScrollEffects();
@@ -673,6 +974,7 @@
             initializeTestimonials();
             initializeAnimations();
             initializeDownloadForm();
+            initializeGallery();
         });
     </script>
 </body>
