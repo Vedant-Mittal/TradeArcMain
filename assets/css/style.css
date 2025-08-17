@@ -662,7 +662,7 @@ iframe {
     }
 }
 
-/* Mobile-First Hero Section */
+/* Modern Clean Hero Section - Full Screen */
 .hero {
     position: relative;
     width: 100%;
@@ -674,35 +674,7 @@ iframe {
     isolation: isolate;
 }
 
-/* Mobile-first responsive breakpoints for hero */
-@media (max-width: 479px) {
-    .hero {
-        min-height: 70vh;
-        padding: 80px 0 40px;
-    }
-}
-
-@media (min-width: 480px) {
-    .hero {
-        min-height: 80vh;
-        padding: 80px 0 50px;
-    }
-}
-
-@media (min-width: 768px) {
-    .hero {
-        min-height: 90vh;
-        padding: 0;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero {
-        min-height: 100vh;
-    }
-}
-
-/* Full-Width Background Image */
+/* Background Image - Shipping Containers with Subtle Blur */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -714,127 +686,97 @@ iframe {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
+    filter: blur(1.5px);
     z-index: 0;
 }
 
-/* Full Image Overlay - Dark Solid Background */
+/* Radial Gradient Overlay - Dark center to Light edges */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: radial-gradient(ellipse at center, rgba(101, 67, 33, 0.75) 0%, rgba(101, 67, 33, 0.65) 40%, rgba(245, 222, 179, 0.35) 100%);
     z-index: 1;
 }
 
-/* Desktop: Fixed background attachment for parallax effect */
-@media (min-width: 768px) {
-    .hero-bg {
-        background-attachment: fixed;
-    }
-    
-    .hero-overlay {
-        background: rgba(0, 0, 0, 0.7);
-    }
-}
-
-/* Large screens: Maintain consistent dark overlay */
-@media (min-width: 1200px) {
-    .hero-overlay {
-        background: rgba(0, 0, 0, 0.7);
-    }
-}
-
+/* Hero Content - Centered Container */
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    color: white;
     width: 100%;
-}
-
-.hero-inner {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 16px;
-}
-
-/* Mobile-first responsive hero inner */
-@media (min-width: 480px) {
-    .hero-inner {
-        padding: 2.5rem 20px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-inner {
-        padding: 3.5rem 40px;
-        max-width: 900px;
-    }
-}
-
-@media (min-width: 1400px) {
-    .hero-inner {
-        padding: 4rem 50px;
-        max-width: 1000px;
-    }
-}
-
-.hero-badge {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(244, 163, 0, 0.15);
-    border: 2px solid rgba(244, 163, 0, 0.8);
-    border-radius: 50px;
-    padding: 0.6rem 1.2rem;
-    margin-bottom: 2rem;
-    color: var(--saffron-gold);
+    justify-content: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+/* Hero Typography - Clean Content Stack */
+
+/* Small Subtitle - "TradeArk" with Responsive Sizing */
+.hero-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 0.8rem;
-    backdrop-filter: blur(15px);
-    opacity: 1;
-    box-shadow: 0 4px 15px rgba(244, 163, 0, 0.2);
-    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    position: relative;
-    z-index: 10;
-    width: fit-content;
-    max-width: 90vw;
+    margin-bottom: 8px;
+    font-size: 0.875rem; /* Base mobile size */
+}
+
+/* Main Headline - Clean Sans-serif with Text Shadow */
+.hero-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    max-width: 20ch;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: balance;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Supporting Paragraph - Matching Website Style */
+.hero-paragraph {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Hide hero badge on mobile and tablet for cleaner layout */
-@media (max-width: 1023px) {
-    .hero-badge {
-        display: none;
-    }
+/* Button Row Container */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-/* Mobile-first responsive breakpoints for hero badge */
-@media (min-width: 480px) {
-    .hero-badge {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.9rem;
+/* Mobile Behavior - Stack Buttons Vertically */
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
     }
-}
-
-@media (min-width: 768px) {
-    .hero-badge {
-        padding: 0.75rem 1.8rem;
-        font-size: 0.95rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-badge {
-        display: inline-flex;
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
     }
 }
 
@@ -845,17 +787,45 @@ iframe {
     background: rgba(244, 163, 0, 0.25);
 }
 
-/* Mobile-First Hero Typography */
-.hero-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.6rem;
-    font-weight: 700;
-    color: var(--hero-cream);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    margin-bottom: 2rem;
-    text-align: center;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+/* Responsive Typography - Modern Dynamic Sizes */
+
+/* Mobile ≤768px - 2xl equivalent (36px) */
+.hero-headline {
+    font-size: 2.25rem;
+}
+
+.hero-paragraph {
+    font-size: 1rem;
+}
+
+/* Tablets 769–1024px - 3xl equivalent (48px) */
+@media (min-width: 769px) {
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-headline {
+        font-size: 3rem;
+    }
+    
+    .hero-paragraph {
+        font-size: 1.125rem;
+    }
+}
+
+/* Desktop ≥1025px - 4xl equivalent (56px) */
+@media (min-width: 1025px) {
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero-headline {
+        font-size: 3.5rem;
+    }
+    
+    .hero-paragraph {
+        font-size: 1.25rem;
+    }
 }
 
 /* Title animations */
@@ -892,241 +862,68 @@ iframe {
 
 /* Responsive Typography and Layout Breakpoints */
 
-/* Small phones (480px+) */
+/* Extra small phones - padding adjustments only */
+@media (max-width: 380px) {
+    .hero-title {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-description {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Small phones (480px+) - layout adjustments only */
 @media (min-width: 480px) {
     .hero-title {
-        font-size: 4.2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.7rem;
-        max-width: 85%;
+        padding: 0 1.5rem;
     }
     
     .hero-description {
-        font-size: 1rem;
-        max-width: 85%;
-        margin-bottom: 2.8rem;
+        padding: 0 1rem;
     }
 }
 
-/* Tablets (768px+): Side-by-side CTAs */
-@media (min-width: 768px) {
-    .hero-inner {
-        padding: 3rem 32px;
-    }
-    
-    .hero-title {
-        font-size: 5.5rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.9rem;
-        margin-bottom: 3rem;
-        max-width: 80%;
-    }
-    
-    .hero-description {
-        font-size: 1.1rem;
-        margin-bottom: 2.8rem;
-        max-width: 80%;
-    }
-    
-    /* CTAs side by side on tablets and up */
-    .hero-cta {
-        flex-direction: row !important;
-        justify-content: center;
-        margin-bottom: 3rem;
-        gap: 1.5rem;
-        flex-wrap: nowrap;
-    }
-    
-    .btn {
-        width: auto;
-        min-width: 180px;
-        max-width: 220px;
-        flex: 0 0 auto;
-    }
-}
 
-/* Desktops (1024px+) */
-@media (min-width: 1024px) {
-    .hero-title {
-        font-size: 5rem;
-        margin-bottom: 3rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 2.1rem;
-        margin-bottom: 3.5rem;
-        max-width: 70%;
-    }
-    
-    .hero-description {
-        font-size: 1.3rem;
-        margin-bottom: 3.2rem;
-        max-width: 70%;
-        line-height: 1.5;
-    }
-    
-    .hero-cta {
-        gap: 2rem;
-    }
-    
-    .btn {
-        min-width: 200px;
-        padding: 1.2rem 2.5rem;
-        font-size: 1.1rem;
-    }
-}
 
-/* Large screens (1400px+) */
-@media (min-width: 1400px) {
-    .hero-title {
-        font-size: 5.5rem;
-        margin-bottom: 3.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 2.3rem;
-        margin-bottom: 4rem;
-        max-width: 60%;
-    }
-    
-    .hero-description {
-        font-size: 1.4rem;
-        margin-bottom: 3.8rem;
-        max-width: 60%;
-        line-height: 1.5;
-    }
-}
 
-.hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--hero-linen);
-    margin-bottom: 2.5rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    line-height: 1.4;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.hero-description {
-    font-family: 'Lora', serif;
-    font-size: 0.9rem;
-    color: var(--hero-beige);
-    margin-bottom: 2.8rem;
-    line-height: 1.6;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 400;
-}
 
-/* Desktop media queries override */
-@media (min-width: 1024px) {
-    .hero-description {
-        max-width: 70% !important;
-        font-size: 1rem !important;
-    }
-}
 
-@media (min-width: 1400px) {
-    .hero-description {
-        max-width: 65% !important;
-        font-size: 1.1rem !important;
-    }
-}
 
-/* Clean Scroll Indicator */
+
+/* Subtle Scroll Indicator Arrow */
 .scroll-indicator {
     position: absolute;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--hero-cream);
     cursor: pointer;
-    transition: all 0.3s ease;
     z-index: 10;
-    opacity: 0.7;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    animation: scrollBounce 2s infinite;
 }
 
 .scroll-indicator:hover {
-    color: var(--saffron-gold);
-    transform: translateX(-50%) translateY(-2px);
-    opacity: 1;
+    color: #f4a300;
+    transform: translateX(-50%) translateY(-3px);
 }
 
-
-
-.scroll-mouse {
-    width: 22px;
-    height: 36px;
-    border: 2px solid currentColor;
-    border-radius: 11px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.4rem;
-    transition: all 0.3s ease;
-    opacity: 0.7;
-}
-
-.scroll-wheel {
-    width: 3px;
-    height: 10px;
-    background: currentColor;
-    border-radius: 2px;
-    margin-top: 6px;
-    animation: scrollWheel 3s ease-in-out infinite;
-}
-
-.scroll-indicator i {
-    font-size: 1rem;
-    opacity: 0.6;
-}
-
-/* Subtle Scroll Animations */
-@keyframes scrollWheel {
-    0% { 
-        opacity: 0.7; 
-        transform: translateY(0); 
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
     }
-    50% { 
-        opacity: 0.3; 
-        transform: translateY(6px); 
-    }
-    100% { 
-        opacity: 0; 
-        transform: translateY(10px); 
+    50% {
+        transform: translateX(-50%) translateY(8px);
     }
 }
 
-/* Mobile Responsive Scroll Indicator */
 @media (max-width: 480px) {
     .scroll-indicator {
-        bottom: 1rem;
-        padding: 0.3rem;
-    }
-    
-    
-    .scroll-mouse {
-        width: 20px;
-        height: 32px;
-    }
-    
-    .scroll-wheel {
-        width: 3px;
-        height: 10px;
+        bottom: 1.5rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -1225,14 +1022,15 @@ iframe {
 
 
 
-/* Mobile-First CTAs: Stack on narrow screens */
+/* Mobile-First CTAs: Stack on narrow screens - optimized */
 .hero-cta {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
     width: 100%;
+    padding: 0 1rem;
 }
 
 /* Trust Indicators */
@@ -1331,7 +1129,7 @@ iframe {
 
 
 /* Buttons */
-/* Accessible Mobile-First Buttons */
+/* Base (0-480px) - Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -1341,7 +1139,7 @@ iframe {
     border-radius: 50px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -1366,6 +1164,11 @@ iframe {
     position: relative;
 }
 
+.btn span:first-child {
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+}
+
 .btn i {
     margin-right: 0.5rem;
     z-index: 2;
@@ -1373,34 +1176,33 @@ iframe {
     font-size: 1.1em;
 }
 
-/* Mobile-first responsive buttons */
+/* Mobile-first responsive buttons - padding adjustments only */
 @media (min-width: 480px) {
     .btn {
         padding: 0.8rem 1.8rem;
-        font-size: 0.95rem;
     }
 }
 
 @media (min-width: 768px) {
     .btn {
         padding: 0.75rem 2rem;
-        font-size: 1rem;
     }
 }
 
+/* Base hover effect - will be overridden by specific button types */
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Base hover styles handled by specific button classes */
 }
 
 .btn-primary {
-    background: var(--saffron-gold);
+    background: linear-gradient(135deg, #f4a300 0%, #e69500 100%);
     color: var(--deep-earth-brown);
 }
 
 .btn-primary:hover {
-    background: #e69500;
-    box-shadow: 0 10px 20px rgba(244, 163, 0, 0.3);
+    background: linear-gradient(135deg, #e69500 0%, #d48900 100%);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(244, 163, 0, 0.4);
 }
 
 .btn-secondary {
@@ -1411,9 +1213,11 @@ iframe {
 }
 
 .btn-secondary:hover {
-    background: var(--deep-earth-brown);
-    border-color: var(--deep-earth-brown);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
     color: white;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
 }
 
 .btn-outline {

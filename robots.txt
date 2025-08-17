@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tradeark-website.repl.co/sitemap.xml
+
+# Optimize crawling for key pages
+Allow: /products/
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Block unnecessary files
+Disallow: /assets/images/temp/
+Disallow: /.cache/
+Disallow: /.local/
+Disallow: /Downloadables/temp/
+
+# Crawl-delay for politeness
+Crawl-delay: 1
