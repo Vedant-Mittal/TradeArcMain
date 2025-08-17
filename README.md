@@ -16,15 +16,18 @@ This is a complete HTML/CSS/JavaScript version of the TradeArk website, converte
 ```
 tradeark-html/
 ├── index.html                    # Main HTML file
+├── products/                     # Product pages
+│   ├── makhana.html             # Makhana product page
+│   └── horeca.html              # HoReCa cork product page
 ├── assets/
 │   ├── css/
 │   │   └── style.css            # Main stylesheet
 │   ├── js/
 │   │   └── main.js              # JavaScript functionality
-│   └── images/
-│       └── placeholder-generator.html  # For generating placeholder images
-├── README.md                    # This file
-└── (additional assets as needed)
+│   └── images/                  # Product images and assets
+├── Downloadables/               # PDF brochures and catalogs
+├── favicon.png                  # Website favicon
+└── README.md                    # This file
 ```
 
 ## Sections
@@ -90,9 +93,9 @@ tradeark-html/
 
 ## Form Handling
 
-The contact form and newsletter subscription currently log data to the console. To integrate with a backend:
+The contact form and newsletter subscription are integrated with Web3Forms for real form submissions. The forms include:
 
-1. **Contact Form**: Update the `handleContactForm` function in `main.js`
+1. **Contact Form**: Main contact form with Web3Forms integration
 2. **Newsletter**: Update the `handleNewsletterForm` function in `main.js`
 3. **API Integration**: Replace the setTimeout simulation with actual API calls
 

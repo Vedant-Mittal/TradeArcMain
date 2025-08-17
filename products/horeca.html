@@ -6,6 +6,11 @@
     <title>Cork HoReCa Décor – Sustainable Tableware Solutions | TradeArk</title>
     <meta name="description" content="Premium cork décor for hotels & restaurants - placemats, coasters, menu boards, and custom tabletop accessories. Sustainable, brandable, and elegant.">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="../assets/images/TradeArk Images/Fevicon Icon.webp">
+    <link rel="shortcut icon" type="image/webp" href="../assets/images/TradeArk Images/Fevicon Icon.webp">
+    <link rel="apple-touch-icon" href="../assets/images/TradeArk Images/Fevicon Icon.webp">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,27 +44,31 @@
 
         /* Hero Section - Adjusted overlay opacity */
         .product-hero {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(139, 69, 19, 0.6)), url('../assets/images/TradeArk Images/Restaurant Image.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(139, 69, 19, 0.6)), url('../assets/images/TradeArk Images/Restaurant Image.webp');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
+            background-repeat: no-repeat;
             min-height: 60vh;
+            width: 100%;
             display: flex;
             align-items: center;
             padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
         }
 
         /* Mobile-first responsive product hero */
         @media (min-width: 480px) {
             .product-hero {
-                min-height: 70vh;
+                min-height: 75vh;
                 padding: 80px 0 50px;
             }
         }
 
         @media (min-width: 768px) {
             .product-hero {
-                min-height: 80vh;
+                min-height: 85vh;
                 background-attachment: fixed;
                 padding: 0;
             }
@@ -67,10 +76,9 @@
 
         @media (min-width: 1024px) {
             .product-hero {
-                min-height: 80vh;
+                min-height: 90vh;
+                padding: 0;
             }
-            position: relative;
-            overflow: hidden;
         }
 
         .product-hero::before {
@@ -187,6 +195,11 @@
             background: var(--light-cream);
         }
 
+        /* Specific background color for Why Cork section */
+        .why-cork-section {
+            background: rgb(254, 248, 237) !important;
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
@@ -241,6 +254,11 @@
             color: var(--soft-brown);
             position: relative;
             overflow: hidden;
+        }
+
+        .image-placeholder.has-image {
+            background: transparent;
+            border: none;
         }
 
         .image-placeholder::before {
@@ -319,11 +337,19 @@
             padding: 0;
         }
 
-        .card ul li {
+        .section .card ul li {
             padding: 0.5rem 0;
             position: relative;
             padding-left: 1.5rem;
             border-bottom: 1px solid var(--border-light);
+            color: #4c5566 !important;
+            font-weight: 600;
+        }
+        
+        /* More specific targeting for product categories */
+        .card-grid .card ul li {
+            color: #4c5566 !important;
+            font-weight: 600;
         }
 
         .card ul li:last-child {
@@ -554,23 +580,23 @@
             <div class="nav-container">
                 <div class="logo">
                     <a href="../index.html">
-                        <img src="../assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="nav-logo-img">
+                        <img src="../assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="nav-logo-img">
                     </a>
                 </div>
                 
             <!-- Desktop Navigation -->
             <ul class="nav-menu-desktop">
-                <li><a href="../index.html#home" class="nav-link" data-i18n="nav.home">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link" data-i18n="nav.about">About</a></li>
                 <li class="nav-dropdown">
                     <a href="../index.html#products" class="nav-link dropdown-toggle" data-i18n="nav.products">Products <i data-lucide="chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="makhana.html" data-i18n="nav.makhana">Premium Makhana</a></li>
                         <li><a href="horeca.html" data-i18n="nav.horeca">Cork HoReCa Décor</a></li>
+                        <li><a href="../index.html#custom-sourcing" data-i18n="nav.customSourcing">Custom Sourcing</a></li>
                     </ul>
                 </li>
                 <li><a href="../index.html#quality" class="nav-link" data-i18n="nav.quality">Quality</a></li>
-                <li><a href="../index.html#why-us" class="nav-link" data-i18n="nav.quality">Why Us</a></li>
+                <li><a href="../index.html#why-us" class="nav-link" data-i18n="nav.why-us">Why Us</a></li>
                 <li><a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                 <li class="nav-language">
                     <div class="language-toggle">
@@ -622,16 +648,13 @@
         <div class="mobile-menu-overlay" id="mobileMenuOverlay">
             <div class="mobile-menu-panel" id="mobileMenuPanel">
                 <div class="mobile-menu-header">
-                    <img src="../assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="mobile-menu-logo">
+                    <img src="../assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="mobile-menu-logo">
                     <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
                         <i data-lucide="x"></i>
                     </button>
                 </div>
                 <nav class="mobile-menu-nav">
                     <ul class="mobile-menu-list">
-                        <li class="mobile-menu-item">
-                            <a href="../index.html#home" class="mobile-menu-link" data-i18n="nav.home">Home</a>
-                        </li>
                         <li class="mobile-menu-item">
                             <a href="../index.html#about" class="mobile-menu-link" data-i18n="nav.about">About</a>
                         </li>
@@ -646,6 +669,9 @@
                                 </li>
                                 <li class="mobile-menu-subitem">
                                     <a href="horeca.html" class="mobile-menu-sublink" data-i18n="nav.horeca">Cork HoReCa Décor</a>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <a href="../index.html#custom-sourcing" class="mobile-menu-sublink" data-i18n="nav.customSourcing">Custom Sourcing</a>
                                 </li>
                             </ul>
                         </li>
@@ -684,8 +710,8 @@
                 <h1 class="hero-title" data-i18n="products.horeca.hero.title">Cork HoReCa Décor</h1>
                 <p class="hero-subtitle" data-i18n="products.horeca.hero.subtitle">Sustainable, elegant tableware for modern hospitality</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">
-                        <i data-lucide="phone"></i>
+                    <a href="../index.html#contact" class="btn btn-primary">
+                        <i data-lucide="file-text"></i>
                         <span data-i18n="products.horeca.hero.cta.quote">Request Quote</span>
                     </a>
                     <a href="javascript:void(0)" class="btn btn-outline" id="downloadPdfHero" onclick="showDownloadModal()">
@@ -698,11 +724,11 @@
     </section>
 
     <!-- Why Cork -->
-    <section class="section">
+    <section class="section section-alt why-cork-section">
         <div class="container">
             <div class="two-column">
-                <div class="image-placeholder">
-                    <img src="../assets/images/TradeArk Images/Brown Corks Wine Glass.jpg" alt="Brown cork coasters with wine glass showcasing sustainable cork décor for restaurants and hotels" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" />
+                <div class="image-placeholder has-image">
+                    <img src="../assets/images/TradeArk Images/Brown Corks Wine Glass.webp" alt="Brown cork coasters with wine glass showcasing sustainable cork décor for restaurants and hotels" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" />
                 </div>
                 <div class="content-block">
                     <h2 data-i18n="products.horeca.sections.whyCork.title">Why Cork?</h2>
@@ -713,14 +739,12 @@
         </div>
     </section>
 
-
-
     <!-- Product Categories -->
     <section class="section section-alt">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="products.horeca.sections.productCategories.title">Product Categories</h2>
-                <p class="section-subtitle" data-i18n="products.horeca.sections.productCategories.subtitle">Comprehensive cork solutions for hospitality professionals</p>
+                <p class="section-subtitle" data-i18n="products.horeca.sections.productCategories.subtitle">Cork décor solutions for every HoReCa need</p>
             </div>
             
             <div class="card-grid">
@@ -728,13 +752,13 @@
                     <div class="card-icon">
                         <i data-lucide="square"></i>
                     </div>
-                    <h3 data-i18n="products.horeca.sections.productCategories.placemats.title">Placemats & Runners</h3>
-                    <p data-i18n="products.horeca.sections.productCategories.placemats.description">Premium table protection with elegant branding options</p>
-                    <ul class="spec-list">
-                        <li><span>Size Range:</span> <span>30x40cm to 45x60cm</span></li>
-                        <li><span>Thickness:</span> <span>4mm - 6mm</span></li>
-                        <li><span>Custom Printing:</span> <span>Laser engraving available</span></li>
-                        <li><span>MOQ:</span> <span>100 pieces</span></li>
+                    <h3 data-i18n="products.horeca.sections.productCategories.drinkBar.title">Drink & Bar Accessories</h3>
+                    <p data-i18n="products.horeca.sections.productCategories.drinkBar.description">Essential cork gear for every bar</p>
+                    <ul>
+                        <li>Showcase logos on coasters, chillers & caddies</li>
+                        <li>Slip-resistant cork protects tabletops</li>
+                        <li>Stackable, lightweight designs</li>
+                        <li>Custom shapes & imprints</li>
                     </ul>
                 </div>
                 
@@ -742,27 +766,27 @@
                     <div class="card-icon">
                         <i data-lucide="circle"></i>
                     </div>
-                    <h3 data-i18n="products.horeca.sections.productCategories.coasters.title">Coasters & Drink Mats</h3>
-                    <p data-i18n="products.horeca.sections.productCategories.coasters.description">Stylish drink protection for bars and restaurants</p>
-                    <ul class="spec-list">
-                        <li><span>Standard Size:</span> <span>10cm diameter</span></li>
-                        <li><span>Thickness:</span> <span>3mm - 5mm</span></li>
-                        <li><span>Shapes:</span> <span>Round, square, custom</span></li>
-                        <li><span>MOQ:</span> <span>200 pieces</span></li>
+                    <h3 data-i18n="products.horeca.sections.productCategories.tableware.title">Tableware & Serving</h3>
+                    <p data-i18n="products.horeca.sections.productCategories.tableware.description">Elevate every dining experience</p>
+                    <ul>
+                        <li>Coordinated trivets, trays, mats & rings</li>
+                        <li>Warm cork adds natural charm</li>
+                        <li>Mix-and-match for menus & events</li>
+                        <li>Quick turn on custom finishes</li>
                     </ul>
                 </div>
                 
                 <div class="card">
                     <div class="card-icon">
-                        <i data-lucide="clipboard"></i>
+                        <i data-lucide="square"></i>
                     </div>
-                    <h3 data-i18n="products.horeca.sections.productCategories.menuBoards.title">Menu Boards & Displays</h3>
-                    <p data-i18n="products.horeca.sections.productCategories.menuBoards.description">Elegant menu presentation solutions</p>
-                    <ul class="spec-list">
-                        <li><span>Size Range:</span> <span>A4 to A3 formats</span></li>
-                        <li><span>Thickness:</span> <span>6mm - 10mm</span></li>
-                        <li><span>Finish:</span> <span>Natural or treated</span></li>
-                        <li><span>MOQ:</span> <span>50 pieces</span></li>
+                    <h3 data-i18n="products.horeca.sections.productCategories.tissue.title">Tissue & Napkin Holders</h3>
+                    <p data-i18n="products.horeca.sections.productCategories.tissue.description">Organized elegance for every table</p>
+                    <ul>
+                        <li>Seamless tissue boxes & holders</li>
+                        <li>Durable cork in soft, neutral tones</li>
+                        <li>Minimalist designs fit any décor</li>
+                        <li>Subtle laser-etched branding</li>
                     </ul>
                 </div>
                 
@@ -770,96 +794,14 @@
                     <div class="card-icon">
                         <i data-lucide="utensils"></i>
                     </div>
-                    <h3 data-i18n="products.horeca.sections.productCategories.servingTrays.title">Serving Trays</h3>
-                    <p data-i18n="products.horeca.sections.productCategories.servingTrays.description">Sophisticated serving solutions for fine dining</p>
-                    <ul class="spec-list">
-                        <li><span>Size Range:</span> <span>25x35cm to 40x60cm</span></li>
-                        <li><span>Thickness:</span> <span>8mm - 12mm</span></li>
-                        <li><span>Handles:</span> <span>Integrated or rope</span></li>
-                        <li><span>MOQ:</span> <span>25 pieces</span></li>
+                    <h3 data-i18n="products.horeca.sections.productCategories.decor.title">Décor & Furnishings</h3>
+                    <p data-i18n="products.horeca.sections.productCategories.decor.description">Distinctive cork accents for your space</p>
+                    <ul>
+                        <li>Lights, planters, stools & more</li>
+                        <li>Eco-friendly cork adds texture</li>
+                        <li>Layered displays for impact</li>
+                        <li>Custom shapes, colors & finishes</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cork HoReCa Gallery -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="products.horeca.sections.gallery.title">Cork HoReCa Gallery</h2>
-                <p class="section-subtitle" data-i18n="products.horeca.sections.gallery.subtitle">Discover our sustainable cork décor solutions for hospitality</p>
-            </div>
-            
-            <div class="gallery-slideshow">
-                <div class="slideshow-container">
-                    <div class="slide active" data-category="cork">
-                        <div class="slide-image">
-                            <img src="../assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg" alt="Sustainable cork décor with plants growing in eco-friendly cork pot" loading="lazy" />
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-info">
-                                <h3 data-i18n="products.horeca.sections.gallery.slides.slide1.title">Sustainable Cork Décor</h3>
-                                <p data-i18n="products.horeca.sections.gallery.slides.slide1.description">Eco-friendly HoReCa tabletop décor made from 100% sustainable cork, perfect for modern hospitality</p>
-                                <span class="slide-category" data-i18n="products.horeca.sections.gallery.slides.slide1.category">Cork Décor</span>
-                            </div>
-                            <button class="slide-view-btn" onclick="openLightbox('../assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg', 'Sustainable Cork Décor', 'Eco-friendly HoReCa tabletop décor made from 100% sustainable cork')">
-                                <i data-lucide="eye"></i>
-                                <span data-i18n="products.horeca.sections.gallery.viewFullSize">View Full Size</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="slide" data-category="cork">
-                        <div class="slide-image">
-                            <img src="../assets/images/TradeArk Images/Brown Corks Wine Glass.jpg" alt="Premium cork wine accessories for hospitality industry" loading="lazy" />
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-info">
-                                <h3 data-i18n="products.horeca.sections.gallery.slides.slide2.title">Cork Wine Accessories</h3>
-                                <p data-i18n="products.horeca.sections.gallery.slides.slide2.description">Premium hospitality décor and wine accessories for restaurants and cafes with elegant design</p>
-                                <span class="slide-category" data-i18n="products.horeca.sections.gallery.slides.slide2.category">Cork Décor</span>
-                            </div>
-                            <button class="slide-view-btn" onclick="openLightbox('../assets/images/TradeArk Images/Brown Corks Wine Glass.jpg', 'Cork Wine Accessories', 'Premium hospitality décor and wine accessories for restaurants and cafes')">
-                                <i data-lucide="eye"></i>
-                                <span data-i18n="products.horeca.sections.gallery.viewFullSize">View Full Size</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="slide" data-category="business">
-                        <div class="slide-image">
-                            <img src="../assets/images/TradeArk Images/Restaurant Image.jpg" alt="Premium restaurant showcasing TradeArk's HoReCa product applications" loading="lazy" />
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-info">
-                                <h3 data-i18n="products.horeca.sections.gallery.slides.slide3.title">HoReCa Applications</h3>
-                                <p data-i18n="products.horeca.sections.gallery.slides.slide3.description">Premium restaurant and hospitality solutions showcasing our cork décor products in real environments</p>
-                                <span class="slide-category" data-i18n="products.horeca.sections.gallery.slides.slide3.category">Business</span>
-                            </div>
-                            <button class="slide-view-btn" onclick="openLightbox('../assets/images/TradeArk Images/Restaurant Image.jpg', 'HoReCa Applications', 'Premium restaurant and hospitality solutions showcasing our cork décor products')">
-                                <i data-lucide="eye"></i>
-                                <span data-i18n="products.horeca.sections.gallery.viewFullSize">View Full Size</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slideshow Navigation -->
-                <div class="slideshow-nav">
-                    <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
-                        <i data-lucide="chevron-left"></i>
-                    </button>
-                    <button class="nav-btn next-btn" onclick="changeSlide(1)">
-                        <i data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-                
-                <!-- Slideshow Dots -->
-                <div class="slideshow-dots">
-                    <button class="dot active" onclick="goToSlide(0)"></button>
-                    <button class="dot" onclick="goToSlide(1)"></button>
-                    <button class="dot" onclick="goToSlide(2)"></button>
                 </div>
             </div>
         </div>
@@ -1004,8 +946,8 @@
                 <h2 data-i18n="products.horeca.sections.cta.title">Ready to Transform Your Space?</h2>
                 <p data-i18n="products.horeca.sections.cta.subtitle">Join forward-thinking hospitality brands creating memorable experiences with sustainable cork décor</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-secondary">
-                        <i data-lucide="phone"></i>
+                    <a href="../index.html#contact" class="btn btn-secondary">
+                        <i data-lucide="file-text"></i>
                         <span data-i18n="products.horeca.sections.cta.requestQuote">Request a Quote</span>
                     </a>
                     <a href="javascript:void(0)" class="btn btn-outline" id="downloadPdfCta" onclick="showDownloadModal()">
@@ -1070,12 +1012,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-brand">
-                    <img src="../assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="footer-logo">
-                    <p>Your trusted partner for premium Indian Makhana and sustainable cork décor exports.</p>
+                    <img src="../assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="footer-logo">
+                    <p>Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
                     <div class="social-links">
-                        <a href="#"><i data-lucide="facebook"></i></a>
-                        <a href="#"><i data-lucide="twitter"></i></a>
-                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61578574832708" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
+                        <a href="https://wa.me/918797102793?text=Hello!" target="_blank" rel="noopener" title="WhatsApp: +91 8797102793">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/tradeark/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
                         <a href="https://www.instagram.com/tradeark.in/" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
                     </div>
                 </div>
@@ -1106,14 +1052,14 @@
                     <p>&copy; 2025 TradeArk. All rights reserved.</p>
                 </div>
                 <div class="footer-credit">
-                    <p>Made by Vedant Mittal</p>
+                    <p>Made by <a href="https://www.instagram.com/vedantmittal21/" target="_blank" rel="noopener" style="color: var(--saffron-accent); text-decoration: none;">Vedant Mittal</a></p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/8797102793?text=Hello!" 
+    <a href="https://wa.me/918797102793?text=Hello!" 
        class="whatsapp-float" 
        target="_blank" 
        rel="noopener"

@@ -4,9 +4,9 @@
 
 ### Option 1: Python Server (Recommended)
 ```bash
-python serve.py
+python -m http.server 5000
 ```
-This will start a local server on http://localhost:8000 and automatically open your browser.
+This will start a local server on http://localhost:5000.
 
 ### Option 2: Direct Browser Opening
 Simply double-click on `index.html` to open it in your browser.
@@ -37,10 +37,14 @@ python -m http.server 8000
 ```
 tradeark-html/
 ├── index.html           # Main website file
+├── products/            # Product pages
+│   ├── makhana.html    # Makhana product page
+│   └── horeca.html     # HoReCa cork product page
 ├── assets/
 │   ├── css/style.css   # All styling
-│   └── js/main.js      # All functionality
-├── serve.py            # Python server script
+│   ├── js/main.js      # All functionality
+│   └── images/         # Product images
+├── Downloadables/       # PDF brochures
 └── README.md           # Detailed documentation
 ```
 
@@ -49,7 +53,7 @@ tradeark-html/
 - **No Build Process**: Direct HTML/CSS/JS files
 - **Vanilla JavaScript**: No React dependencies
 - **Static Files**: Easy to deploy anywhere
-- **Form Handling**: Currently logs to console (ready for backend integration)
+- **Form Handling**: Integrated with Web3Forms for real form submissions
 - **Testimonials**: Manual carousel instead of React component
 
 ## Next Steps

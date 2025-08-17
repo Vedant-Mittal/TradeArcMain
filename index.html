@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TradeArk - Premium Indian Makhana & Sustainable Cork Décor</title>
+    <title>TradeArk - Premium Indian Exports, Delivered Worldwide</title>
     <meta name="description" content="Premium Indian Makhana exports and sustainable cork HoReCa tabletop décor. Trusted by 15+ countries for quality, sustainability, and reliability.">
+    
+    <!-- Cache Control Meta Tags -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/images/TradeArk Images/Fevicon Icon.webp">
+    <link rel="shortcut icon" type="image/webp" href="assets/images/TradeArk Images/Fevicon Icon.webp">
+    <link rel="apple-touch-icon" href="assets/images/TradeArk Images/Fevicon Icon.webp">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Lora:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=2025-07-27-tiny">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -23,18 +33,20 @@
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="nav-logo-img">
+                <a href="#home">
+                    <img src="assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="nav-logo-img">
+                </a>
             </div>
             
             <!-- Desktop Navigation -->
             <ul class="nav-menu-desktop">
-                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
                 <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
                 <li class="nav-dropdown">
                     <a href="#products" class="nav-link dropdown-toggle" data-i18n="nav.products">Products <i data-lucide="chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="products/makhana.html" data-i18n="nav.makhana">Premium Makhana</a></li>
                         <li><a href="products/horeca.html" data-i18n="nav.horeca">Cork HoReCa Décor</a></li>
+                        <li><a href="#custom-sourcing" data-i18n="nav.customSourcing">Custom Sourcing</a></li>
                     </ul>
                 </li>
                 <li><a href="#quality" class="nav-link" data-i18n="nav.quality">Quality</a></li>
@@ -91,7 +103,7 @@
         <div class="mobile-menu-overlay" id="mobileMenuOverlay">
             <div class="mobile-menu-panel" id="mobileMenuPanel">
                 <div class="mobile-menu-header">
-                    <img src="assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="mobile-menu-logo">
+                    <img src="assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="mobile-menu-logo">
                     <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
                         <i data-lucide="x"></i>
                     </button>
@@ -99,14 +111,11 @@
                 <nav class="mobile-menu-nav">
                     <ul class="mobile-menu-list">
                         <li class="mobile-menu-item">
-                            <a href="#home" class="mobile-menu-link" data-i18n="nav.home">Home</a>
-                        </li>
-                        <li class="mobile-menu-item">
                             <a href="#about" class="mobile-menu-link" data-i18n="nav.about">About</a>
                         </li>
                         <li class="mobile-menu-item mobile-menu-expandable">
                             <button class="mobile-menu-link mobile-menu-toggle-btn" aria-expanded="false">
-                                <span>Products</span>
+                                <span data-i18n="nav.products">Products</span>
                                 <span class="mobile-menu-chevron">▶</span>
                             </button>
                             <ul class="mobile-menu-submenu">
@@ -115,6 +124,9 @@
                                 </li>
                                 <li class="mobile-menu-subitem">
                                     <a href="products/horeca.html" class="mobile-menu-sublink" data-i18n="nav.horeca">Cork HoReCa Décor</a>
+                                </li>
+                                <li class="mobile-menu-subitem">
+                                    <a href="#custom-sourcing" class="mobile-menu-sublink" data-i18n="nav.customSourcing">Custom Sourcing</a>
                                 </li>
                             </ul>
                         </li>
@@ -135,7 +147,7 @@
                         </li>
                         <li class="mobile-menu-item mobile-menu-expandable">
                             <button class="mobile-menu-link mobile-menu-toggle-btn" aria-expanded="false">
-                                <span>Language</span>
+                                <span data-i18n="nav.language">Language</span>
                                 <span class="mobile-menu-chevron">▶</span>
                             </button>
                             <ul class="mobile-menu-submenu">
@@ -197,11 +209,11 @@
                     <h1 class="hero-title" data-i18n="hero.title">TradeArk</h1>
                     
                     <!-- Subheading -->
-                    <h2 class="hero-subtitle" data-i18n="hero.subtitle">Premium Indian Makhana & Sustainable Cork Décor</h2>
+                    <h2 class="hero-subtitle" data-i18n="hero.subtitle">Premium Indian Exports, Delivered Worldwide</h2>
                     
                     <!-- Body Text -->
                     <p class="hero-description" data-i18n="hero.description">
-                        From the fields of Bihar to tables worldwide—we deliver premium Makhana and sustainable cork décor that transforms HoReCa experiences. Trusted by 15+ countries for quality, sustainability, and reliability.
+                        Serving partners in 15+ countries, we offer a diverse range of sustainably sourced, high‑quality products—backed by innovative solutions and seamless logistics tailored to your industry needs.
                     </p>
                     
                     <!-- CTAs -->
@@ -239,10 +251,10 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3 data-i18n="about.story.title">Our Story</h3>
-                    <p data-i18n="about.story.description">TradeArk began with a vision to bridge the gap between India's agricultural heritage and global markets. Founded by passionate exporters who understood the potential of premium Indian produce, we've grown into a trusted partner for businesses worldwide.</p>
+                    <p data-i18n="about.story.description">TradeArk was born from a vision to connect India's finest producers with markets around the globe. What began as a small team of dedicated exporters has grown into a trusted partner for businesses in over 15 countries—bringing consistency, reliability, and innovation to every shipment.</p>
                     
                     <h3 data-i18n="about.mission.title">Our Mission</h3>
-                    <p data-i18n="about.mission.description">To deliver exceptional Makhana and sustainable cork décor solutions that exceed expectations while supporting local communities and environmental sustainability.</p>
+                    <p data-i18n="about.mission.description">To deliver premium, sustainably sourced products that exceed expectations—backed by rigorous quality controls, seamless logistics, and a commitment to empower communities and protect our planet.</p>
                 </div>
                 
                 <div class="about-pillars">
@@ -292,14 +304,14 @@
                 <div class="product-card">
                     <div class="product-image foxnut-bg">
                         <div class="product-badge" data-i18n="products.badges.premium">Premium</div>
-                        <img src="assets/images/TradeArk Images/Makhana Bowl Image.png" alt="Premium Makhana (Fox Nut) in a bowl showing the quality and texture of the product" />
+                        <img src="assets/images/TradeArk Images/Makhana Bowl Image.webp" alt="Premium Makhana (Fox Nut) in a bowl showing the quality and texture of the product" />
                     </div>
                     <div class="product-content">
                         <h3 data-i18n="products.makhana.title">Premium Makhana (Fox Nut)</h3>
                         <p data-i18n="products.makhana.description">Hand-selected from the finest farms in Bihar, our Makhana are renowned for their superior quality, size, and nutritional value.</p>
                         <ul class="product-features">
-                            <li data-i18n="products.makhana.features.0">Grade A+ quality</li>
-                            <li data-i18n="products.makhana.features.1">Organic certified</li>
+                            <li data-i18n="products.makhana.features.0">Rich in protein & fiber</li>
+                            <li data-i18n="products.makhana.features.1">Naturally low in fat</li>
                             <li data-i18n="products.makhana.features.2">Bulk & retail packaging</li>
                             <li data-i18n="products.makhana.features.3">Global shipping</li>
                         </ul>
@@ -312,16 +324,16 @@
                 <div class="product-card">
                     <div class="product-image cork-bg">
                         <div class="product-badge" data-i18n="products.badges.sustainable">Sustainable</div>
-                        <img src="assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg" alt="Sustainable cork décor showing plants growing in a cork pot, highlighting eco-friendly design" />
+                        <img src="assets/images/TradeArk Images/Leaves Growing on Cork Pot.webp" alt="Sustainable cork décor showing plants growing in a cork pot, highlighting eco-friendly design" />
                     </div>
                     <div class="product-content">
                         <h3 data-i18n="products.cork.title">Sustainable Cork HoReCa Décor</h3>
                         <p data-i18n="products.cork.description">Elegant and eco-friendly cork tabletop décor designed specifically for hotels, restaurants, and cafes worldwide.</p>
                         <ul class="product-features">
                             <li data-i18n="products.cork.features.0">100% sustainable cork</li>
-                            <li data-i18n="products.cork.features.1">Custom designs available</li>
+                            <li data-i18n="products.cork.features.1">Custom branding available</li>
                             <li data-i18n="products.cork.features.2">Durable & lightweight</li>
-                            <li data-i18n="products.cork.features.3">HoReCa certified</li>
+                            <li data-i18n="products.cork.features.3">Easy to clean & maintain</li>
                         </ul>
                         <a href="products/horeca.html" class="btn btn-outline" data-i18n="products.cork.cta">
                             Learn More
@@ -333,7 +345,7 @@
     </section>
 
     <!-- Custom Sourcing Section -->
-    <section class="custom-sourcing-section">
+    <section id="custom-sourcing" class="custom-sourcing-section">
         <div class="custom-sourcing-container">
             <div class="custom-sourcing-content-wrapper">
                 <div class="custom-sourcing-text">
@@ -344,7 +356,7 @@
                     <p class="custom-sourcing-tagline" data-i18n="products.custom.subtitle">Can't find what you're looking for? We source beyond our catalog to meet your unique requirements.</p>
                     
                     <div class="custom-sourcing-description">
-                        <p data-i18n="products.custom.description">Our extensive network of trusted suppliers across India allows us to source premium agricultural products, spices, and sustainable materials tailored to your specific business needs.</p>
+                        <p data-i18n="products.custom.description">Our extensive network of vetted partners across India enables us to deliver everything from specialty ingredients and décor materials to bespoke components—tailored to your specifications and backed by our quality guarantee.</p>
                     </div>
                     
                     <ul class="custom-sourcing-benefits">
@@ -360,7 +372,7 @@
                 
                 <div class="custom-sourcing-image">
                     <div class="image-container">
-                        <img src="assets/images/TradeArk Images/Cargo Container Lot.jpg" alt="Global shipping containers representing TradeArk's custom sourcing and international export capabilities" />
+                        <img src="assets/images/TradeArk Images/Cargo Container Lot.webp" alt="Global shipping containers representing TradeArk's custom sourcing and international export capabilities" />
                         <div class="image-overlay">
                             <div class="overlay-content">
                                 <i data-lucide="globe"></i>
@@ -495,108 +507,136 @@
             <div class="gallery-slideshow">
                 <div class="slideshow-container">
                     <div class="slide active">
-                        <img src="assets/images/TradeArk Images/Makhana Bowl Image.png" alt="Premium Makhana (Fox Nut) in a bowl showcasing superior quality and texture" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/Makhana in a Bowl.webp" alt="Premium Makhana (Fox Nut) in a bowl showcasing superior quality and texture" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
                                 <h4 data-i18n="gallery.items.makhana1.title">Premium Makhana</h4>
                                 <p data-i18n="gallery.items.makhana1.description">Superior quality fox nuts</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Makhana Bowl Image.png', 'Premium Makhana', 'Superior quality fox nuts in a bowl showcasing natural texture and premium grade')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/Makhana in a Bowl.webp', 'Premium Makhana', 'Superior quality fox nuts in a bowl showcasing natural texture and premium grade')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/Makhana in a Bowl.jpg" alt="Fresh Makhana displayed in traditional bowl highlighting natural texture" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.11.webp" alt="TradeArk premium products showcase featuring high-quality exports" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.makhana2.title">Fresh Makhana</h4>
-                                <p data-i18n="gallery.items.makhana2.description">Natural texture and quality</p>
+                                <h4 data-i18n="gallery.items.makhana2.title">Entrance at World Environment Expo 2025</h4>
+                                <p data-i18n="gallery.items.makhana2.description">Stepping into India's premier gathering of environmental innovators, policy makers, and thought leaders in Greater Noida</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Makhana in a Bowl.jpg', 'Fresh Makhana', 'Fresh Makhana displayed in traditional bowl highlighting natural texture and premium quality')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.11.webp', 'Entrance at World Environment Expo 2025', 'Stepping into India\'s premier gathering of environmental innovators, policy makers, and thought leaders in Greater Noida')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/Makhana Hand Image.png" alt="Makhana being hand-selected showcasing quality control process" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.11 (1).webp" alt="TradeArk business operations and export excellence in action" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.makhana3.title">Quality Control</h4>
-                                <p data-i18n="gallery.items.makhana3.description">Hand-selected premium grade</p>
+                                <h4 data-i18n="gallery.items.makhana3.title">Networking on the Expo Floor</h4>
+                                <p data-i18n="gallery.items.makhana3.description">Building strategic partnerships with entrepreneurs, researchers, and industry leaders committed to a cleaner, low‑carbon future</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Makhana Hand Image.png', 'Quality Control', 'Makhana being hand-selected showcasing our rigorous quality control process')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.11 (1).webp', 'Networking on the Expo Floor', 'Building strategic partnerships with entrepreneurs, researchers, and industry leaders committed to a cleaner, low‑carbon future')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg" alt="Sustainable cork décor with plants growing in eco-friendly cork pot" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.12.webp" alt="TradeArk sustainable products and innovative export solutions" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.cork1.title">Cork Décor</h4>
-                                <p data-i18n="gallery.items.cork1.description">Sustainable eco-friendly products</p>
+                                <h4 data-i18n="gallery.items.cork1.title">Exploring Biofuel Innovations</h4>
+                                <p data-i18n="gallery.items.cork1.description">A portal to cutting‑edge green technologies, waste‑reduction strategies, and living solutions that shape tomorrow's eco‑landscape</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Leaves Growing on Cork Pot.jpg', 'Cork Décor', 'Sustainable cork décor with plants growing in eco-friendly cork pot for HoReCa applications')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.12.webp', 'Exploring Biofuel Innovations', 'A portal to cutting‑edge green technologies, waste‑reduction strategies, and living solutions that shape tomorrow\'s eco‑landscape')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/Brown Corks Wine Glass.jpg" alt="Premium cork wine accessories for hospitality industry" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.12 (1).webp" alt="TradeArk premium export operations and international business excellence" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.cork2.title">Wine Accessories</h4>
-                                <p data-i18n="gallery.items.cork2.description">Premium hospitality décor</p>
+                                <h4 data-i18n="gallery.items.cork2.title">Exploring Biofuel Innovations</h4>
+                                <p data-i18n="gallery.items.cork2.description">Hands‑on engagement with the latest pellet presses, efficient straw feeding systems, and high‑performance grinders powering the biofuel revolution</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Brown Corks Wine Glass.jpg', 'Wine Accessories', 'Premium cork wine accessories for hospitality industry and restaurant applications')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.12 (1).webp', 'Exploring Biofuel Innovations', 'Hands‑on engagement with the latest pellet presses, efficient straw feeding systems, and high‑performance grinders powering the biofuel revolution')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/Cargo Container Lot.jpg" alt="International shipping containers representing global export operations" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/6+ HP Makhana.webp" alt="6+ Suta HP Makhana premium quality extra-large kernels" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.business1.title">Global Export</h4>
-                                <p data-i18n="gallery.items.business1.description">International shipping operations</p>
+                                <h4 data-i18n="gallery.items.makhana4.title">6+ Suta HP Makhana (19 mm – 25 mm)</h4>
+                                <p data-i18n="gallery.items.makhana4.description">Extra‑large, high‑popped kernels delivering superior texture and gourmet taste.</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Cargo Container Lot.jpg', 'Global Export', 'International shipping containers representing our global export operations and logistics')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/6+ HP Makhana.webp', '6+ Suta HP Makhana (19 mm – 25 mm)', 'Extra‑large, high‑popped kernels delivering superior texture and gourmet taste.')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/Restaurant Image.jpg" alt="Premium restaurant showcasing TradeArk's HoReCa product applications" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/5 Suta Makhana.webp" alt="5 Suta Makhana premium-grade lotus seeds" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.business2.title">HoReCa Applications</h4>
-                                <p data-i18n="gallery.items.business2.description">Premium restaurant solutions</p>
+                                <h4 data-i18n="gallery.items.makhana5.title">5 Suta Makhana (15.8 mm – 18.5 mm)</h4>
+                                <p data-i18n="gallery.items.makhana5.description">Premium-grade lotus seeds, light & crunchy—ideal for a healthy, guilt‑free snack.</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Restaurant Image.jpg', 'HoReCa Applications', 'Premium restaurant showcasing TradeArk HoReCa product applications and hospitality solutions')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/5 Suta Makhana.webp', '5 Suta Makhana (15.8 mm – 18.5 mm)', 'Premium-grade lotus seeds, light & crunchy—ideal for a healthy, guilt‑free snack.')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/TradeArk-Gallery-8.jpg" alt="TradeArk gallery showcase featuring premium products and business operations" loading="lazy" />
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/Cork Tissue Holder.webp" alt="Cork Cutlery & Napkin Organizer for functional table organization" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.gallery.title">TradeArk Gallery</h4>
-                                <p data-i18n="gallery.items.gallery.description">Premium products showcase</p>
+                                <h4 data-i18n="gallery.items.cork3.title">Cork Cutlery & Napkin Organizer</h4>
+                                <p data-i18n="gallery.items.cork3.description">Neatly stow forks, spoons and napkins in a single, antimicrobial cork caddy—functional design for every table.</p>
                             </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/TradeArk-Gallery-8.jpg', 'TradeArk Gallery', 'TradeArk gallery showcase featuring premium products and business operations')" data-i18n="gallery.viewDetails">
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/Cork Tissue Holder.webp', 'Cork Cutlery & Napkin Organizer', 'Neatly stow forks, spoons and napkins in a single, antimicrobial cork caddy—functional design for every table.')" data-i18n="gallery.viewDetails">
                                 View Details
                             </button>
                         </div>
                     </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/Cork HoReCa Catalogue.webp?bust=1722452745123" alt="Sustainable Cork HoReCa Collection for eco-friendly dining" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.cork4.title">Sustainable Cork HoReCa Collection</h4>
+                                <p data-i18n="gallery.items.cork4.description">Elevate your dining and décor with our eco-friendly cork accessories—where natural texture meets modern hospitality.</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/Cork HoReCa Catalogue.webp?bust=1722452745123', 'Sustainable Cork HoReCa Collection', 'Elevate your dining and décor with our eco-friendly cork accessories—where natural texture meets modern hospitality.')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="assets/images/TradeArk Images/Home page Slider Images/Cork Coaster.webp" alt="Round Cork Coaster Set for surface protection" loading="lazy" />
+                        <div class="slide-overlay">
+                            <div class="slide-caption">
+                                <h4 data-i18n="gallery.items.cork5.title">Round Cork Coaster Set</h4>
+                                <p data-i18n="gallery.items.cork5.description">Protect your surfaces in style with minimalist cork coasters—heat-resistant, moisture-proof, and endlessly reusable.</p>
+                            </div>
+                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/Cork Coaster.webp', 'Round Cork Coaster Set', 'Protect your surfaces in style with minimalist cork coasters—heat-resistant, moisture-proof, and endlessly reusable.')" data-i18n="gallery.viewDetails">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+
                 </div>
                 
                 <!-- Slideshow Navigation -->
@@ -619,6 +659,8 @@
                     <button class="dot" onclick="goToSlide(5)"></button>
                     <button class="dot" onclick="goToSlide(6)"></button>
                     <button class="dot" onclick="goToSlide(7)"></button>
+                    <button class="dot" onclick="goToSlide(8)"></button>
+                    <button class="dot" onclick="goToSlide(9)"></button>
                 </div>
                 
 
@@ -738,8 +780,8 @@
             
             <div class="contact-content">
                 <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="531fbca2-3c40-4255-a75e-3f9a1edda778">
+                    <form id="contactForm" class="contact-form" onsubmit="return false;">
+                        <input type="hidden" name="access_key" value="74f025aa-6671-48aa-9181-7922d4e71f7c">
                         <input type="hidden" name="subject" value="New Contact Form Submission from TradeArk Website">
                         <input type="hidden" name="from_name" value="TradeArk Contact Form">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -794,7 +836,7 @@
                         <i data-lucide="mail"></i>
                         <div>
                             <h4 data-i18n="contact.info.email">Email</h4>
-                            <p><a href="mailto:ashutoshsinha124@gmail.com?subject=Inquiry%20from%20TradeArk%20Website" class="contact-link">ashutoshsinha124@gmail.com</a></p>
+                            <p><a href="mailto:info@tradeark.in?subject=Inquiry%20from%20TradeArk%20Website" class="contact-link">info@tradeark.in</a></p>
                         </div>
                     </div>
                     
@@ -802,7 +844,8 @@
                         <i data-lucide="phone"></i>
                         <div>
                             <h4 data-i18n="contact.info.phone">Phone</h4>
-                            <p><a href="tel:+918797102793" class="contact-link">+91 87971 02793</a></p>
+                            <p><a href="tel:+918797102793" class="contact-link">+91 8797102793</a></p>
+                            <p><a href="tel:+919001600569" class="contact-link">+91 9001600569</a></p>
                         </div>
                     </div>
                     
@@ -810,7 +853,7 @@
                         <i data-lucide="map-pin"></i>
                         <div>
                             <h4 data-i18n="contact.info.address">Address</h4>
-                            <p>Export House, Patna, Bihar, India</p>
+                            <p>Jagatpura, Jaipur, Rajasthan, India</p>
                         </div>
                     </div>
                     
@@ -819,14 +862,14 @@
                         <h4 data-i18n="contact.info.find">Find Us</h4>
                         <div class="map-container">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115665.53080281334!2d85.06170221398144!3d25.614744397915436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059131a131c4e84!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d449436.6428150609!2d75.6190847!3d26.9258866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db2daa1c3f5f9%3A0x1b9d7dd5b1b7a3d2!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                                 width="100%" 
                                 height="250" 
                                 style="border:0; border-radius: 10px;" 
                                 allowfullscreen="" 
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade"
-                                title="TradeArk Location in Patna, Bihar, India">
+                                title="TradeArk Location in Jaipur, Rajasthan, India">
                             </iframe>
                         </div>
                     </div>
@@ -837,14 +880,10 @@
                 <h3 data-i18n="contact.cta.title">Ready to Partner with Us?</h3>
                 <p data-i18n="contact.cta.description">Join 200+ satisfied customers across 15+ countries who trust TradeArk for premium agricultural exports.</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary" data-i18n="contact.cta.quote">
-                        <i data-lucide="globe"></i>
-                        Request Quote
-                    </button>
-                    <button class="btn btn-outline" data-i18n="contact.cta.call">
+                    <a href="https://wa.me/918797102793?text=Hello!" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="contact.cta.call">
                         <i data-lucide="message-square"></i>
                         Schedule Call
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -854,44 +893,44 @@
     <div id="downloadModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Download Catalogue</h3>
+                <h3 data-i18n="download.title">Download Catalogue</h3>
                 <button type="button" class="modal-close" onclick="closeDownloadModal()">
                     <i data-lucide="x"></i>
                 </button>
             </div>
             
             <div class="modal-body">
-                <p>Please provide your details to download our catalogue:</p>
+                <p data-i18n="download.description">Please provide your details to download our catalogue:</p>
                 
                 <form id="downloadForm" class="download-form">
                     <div class="form-group">
-                        <label for="downloadName">Name *</label>
+                        <label for="downloadName" data-i18n="download.form.name">Name *</label>
                         <input type="text" id="downloadName" name="name" autocomplete="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="downloadCompany">Company *</label>
+                        <label for="downloadCompany" data-i18n="download.form.company">Company *</label>
                         <input type="text" id="downloadCompany" name="company" autocomplete="organization" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="downloadPhone">Phone Number *</label>
+                        <label for="downloadPhone" data-i18n="download.form.phone">Phone Number *</label>
                         <input type="tel" id="downloadPhone" name="phone" autocomplete="tel" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="downloadEmail">Email *</label>
+                        <label for="downloadEmail" data-i18n="download.form.email">Email *</label>
                         <input type="email" id="downloadEmail" name="email" autocomplete="email" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="downloadMessage">Message (Optional)</label>
+                        <label for="downloadMessage" data-i18n="download.form.message">Message (Optional)</label>
                         <textarea id="downloadMessage" name="message" rows="3" placeholder="Tell us about your business requirements..."></textarea>
                     </div>
                     
                     <button type="submit" class="btn btn-primary download-submit">
                         <i data-lucide="download"></i>
-                        Download Catalogue
+                        <span data-i18n="download.button">Download Catalogue</span>
                     </button>
                 </form>
             </div>
@@ -903,33 +942,37 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-brand">
-                    <img src="assets/images/TradeArk Images/tradeark-logo.png" alt="TradeArk Logo" class="footer-logo">
-                    <p>Your trusted partner for premium Indian Makhana and sustainable cork décor exports.</p>
+                    <img src="assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="footer-logo">
+                    <p data-i18n="footer.description">Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
                     <div class="social-links">
-                        <a href="#"><i data-lucide="facebook"></i></a>
-                        <a href="#"><i data-lucide="twitter"></i></a>
-                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61578574832708" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
+                        <a href="https://wa.me/918797102793?text=Hello!" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/tradeark/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
                         <a href="https://www.instagram.com/tradeark.in/" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Products</h4>
+                    <h4 data-i18n="footer.products.title">Products</h4>
                     <ul>
-                        <li><a href="products/makhana.html">Premium Makhana</a></li>
-                        <li><a href="products/horeca.html">Cork Décor</a></li>
-                        <li><a href="#quality">Quality Standards</a></li>
-                        <li><a href="#quality">Certifications</a></li>
+                        <li><a href="products/makhana.html" data-i18n="footer.products.makhana">Premium Makhana</a></li>
+                        <li><a href="products/horeca.html" data-i18n="footer.products.cork">Cork Décor</a></li>
+                        <li><a href="#quality" data-i18n="footer.products.quality">Quality Standards</a></li>
+                        <li><a href="#quality" data-i18n="footer.products.certifications">Certifications</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer.company.title">Company</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#why-us">Why Choose Us</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about" data-i18n="footer.company.about">About Us</a></li>
+                        <li><a href="#why-us" data-i18n="footer.company.whyUs">Why Choose Us</a></li>
+                        <li><a href="#testimonials" data-i18n="footer.company.testimonials">Testimonials</a></li>
+                        <li><a href="#contact" data-i18n="footer.company.contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -939,14 +982,14 @@
                     <p data-i18n="footer.copyright">&copy; 2025 TradeArk. All rights reserved.</p>
                 </div>
                 <div class="footer-credit">
-                    <p>Made by Vedant Mittal</p>
+                    <p data-i18n="footer.credit">Made by <a href="https://www.instagram.com/vedantmittal21/" target="_blank" rel="noopener" style="color: var(--saffron-accent); text-decoration: none;">Vedant Mittal</a></p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/8797102793?text=Hello!" 
+    <a href="https://wa.me/918797102793?text=Hello!" 
        class="whatsapp-float" 
        target="_blank" 
        rel="noopener"

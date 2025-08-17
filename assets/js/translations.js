@@ -10,18 +10,21 @@ const translations = {
             products: "Products",
             makhana: "Premium Makhana",
             horeca: "Cork HoReCa Décor",
+            customSourcing: "Custom Sourcing",
             quality: "Quality",
             "why-us": "Why Us",
             gallery: "Gallery",
             testimonials: "Testimonials",
-            contact: "Contact"
+            contact: "Contact",
+            language: "Language"
         },
         
         // Hero Section
         hero: {
+            badge: "Premium Indian Exporter",
             title: "TradeArk",
-            subtitle: "Premium Indian Makhana & Sustainable Cork Décor",
-            description: "From the fields of Bihar to tables worldwide—we deliver premium Makhana and sustainable cork décor that transforms HoReCa experiences. Trusted by 15+ countries for quality, sustainability, and reliability.",
+            subtitle: "Premium Indian Exports, Delivered Worldwide",
+            description: "Serving partners in 15+ countries, we offer a diverse range of sustainably sourced, high‑quality products—backed by innovative solutions and seamless logistics tailored to your industry needs.",
             cta: {
                 products: "Explore Products",
                 contact: "Get In Touch"
@@ -34,11 +37,11 @@ const translations = {
             subtitle: "Built on trust, driven by quality, powered by sustainability",
             story: {
                 title: "Our Story",
-                description: "TradeArk began with a vision to bridge the gap between India's agricultural heritage and global markets. Founded by passionate exporters who understood the potential of premium Indian produce, we've grown into a trusted partner for businesses worldwide."
+                description: "TradeArk was born from a vision to connect India's finest producers with markets around the globe. What began as a small team of dedicated exporters has grown into a trusted partner for businesses in over 15 countries—bringing consistency, reliability, and innovation to every shipment."
             },
             mission: {
                 title: "Our Mission",
-                description: "To deliver exceptional Makhana and sustainable cork décor solutions that exceed expectations while supporting local communities and environmental sustainability."
+                description: "To deliver premium, sustainably sourced products that exceed expectations—backed by rigorous quality controls, seamless logistics, and a commitment to empower communities and protect our planet."
             },
             pillars: {
                 quality: {
@@ -68,8 +71,8 @@ const translations = {
                 title: "Premium Makhana (Fox Nut)",
                 description: "Hand-selected from the finest farms in Bihar, our Makhana are renowned for their superior quality, size, and nutritional value.",
                 features: [
-                    "Grade A+ quality",
-                    "Organic certified",
+                    "Rich in protein & fiber",
+                    "Naturally low in fat",
                     "Bulk & retail packaging",
                     "Global shipping"
                 ],
@@ -80,16 +83,16 @@ const translations = {
                 description: "Elegant and eco-friendly cork tabletop décor designed specifically for hotels, restaurants, and cafes worldwide.",
                 features: [
                     "100% sustainable cork",
-                    "Custom designs available",
+                    "Custom branding available",
                     "Durable & lightweight",
-                    "HoReCa certified"
+                    "Easy to clean & maintain"
                 ],
                 cta: "Learn More"
             },
             custom: {
                 title: "Custom Sourcing on Demand",
                 subtitle: "Can't find what you're looking for? We source beyond our catalog to meet your unique requirements.",
-                description: "Our extensive network of trusted suppliers across India allows us to source premium agricultural products, spices, and sustainable materials tailored to your specific business needs.",
+                description: "Our extensive network of vetted partners across India enables us to deliver everything from specialty ingredients and décor materials to bespoke components—tailored to your specifications and backed by our quality guarantee.",
                 benefits: [
                     "Access to exclusive suppliers across India",
                     "End-to-end quality control & certification",
@@ -121,7 +124,7 @@ const translations = {
                         description: "Natural, unprocessed makhana perfect for custom flavoring and branding.",
                         feature1: "Pure white color",
                         feature2: "Crispy texture",
-                        feature3: "MOQ: 1000 kg",
+                        feature3: "MOQ: 500 kg",
                         feature4: "Shelf life: 12 months"
                     },
                     roasted: {
@@ -146,7 +149,7 @@ const translations = {
                     subtitle: "Explore our premium Makhana products and quality",
                     slide1: {
                         title: "Premium Makhana",
-                        description: "Grade A+ quality fox nuts hand-selected from Bihar farms with superior texture and taste",
+                        description: "Rich in protein & fiber fox nuts hand-selected from Bihar farms with superior texture and taste",
                         category: "Makhana"
                     },
                     slide2: {
@@ -170,11 +173,11 @@ const translations = {
                     },
                     packaging: {
                         title: "Custom Packaging",
-                        description: "Flexible packaging options from 50g to 5kg with your branding"
+                        description: "Flexible packaging options from 200g with your branding"
                     },
                     shelf: {
-                        title: "Long Shelf Life",
-                        description: "Up to 18 months shelf life with proper storage conditions"
+                        title: "Low‑Calorie Snack",
+                        description: "Just 100 cal per 30 g serving—perfect for mindful snacking and weight‑management plans."
                     },
                     certified: {
                         title: "Certified Quality",
@@ -197,31 +200,7 @@ const translations = {
                         description: "Bulk supply for hotels, restaurants, and catering services."
                     }
                 },
-                packaging: {
-                    title: "Packaging Options",
-                    subtitle: "Flexible packaging solutions for every market need",
-                    consumer: {
-                        title: "Consumer Packs",
-                        feature1: "50g - 500g pouches",
-                        feature2: "Resealable packaging",
-                        feature3: "Custom branding",
-                        feature4: "Attractive shelf appeal"
-                    },
-                    bulk: {
-                        title: "Bulk Packaging",
-                        feature1: "1kg - 5kg bags",
-                        feature2: "Food-grade materials",
-                        feature3: "Nitrogen flushing",
-                        feature4: "Extended shelf life"
-                    },
-                    industrial: {
-                        title: "Industrial Supply",
-                        feature1: "25kg - 50kg sacks",
-                        feature2: "Jute or PP bags",
-                        feature3: "Moisture protection",
-                        feature4: "Bulk pricing available"
-                    }
-                },
+
                 cta: {
                     title: "Ready to Partner with Us?",
                     description: "Join leading brands worldwide who trust TradeArk for premium fox nut supplies",
@@ -267,8 +246,8 @@ const translations = {
                     description: "Rigorous testing and quality control at every stage to ensure product excellence."
                 },
                 {
-                    title: "24/7 Support",
-                    description: "Dedicated customer service team available round the clock for your queries and support."
+                    title: "Flexible Custom Sourcing",
+                    description: "Tailored procurement solutions—if it's not in our catalog, we'll find it for you."
                 },
                 {
                     title: "Competitive Pricing",
@@ -300,32 +279,40 @@ const translations = {
                     description: "Superior quality fox nuts"
                 },
                 makhana2: {
-                    title: "Fresh Makhana",
-                    description: "Natural texture and quality"
+                    title: "Entrance at World Environment Expo 2025",
+                    description: "Stepping into India's premier gathering of environmental innovators, policy makers, and thought leaders in Greater Noida"
                 },
                 makhana3: {
-                    title: "Quality Control",
-                    description: "Hand-selected premium grade"
+                    title: "Networking on the Expo Floor",
+                    description: "Building strategic partnerships with entrepreneurs, researchers, and industry leaders committed to a cleaner, low‑carbon future"
                 },
                 cork1: {
-                    title: "Cork Décor",
-                    description: "Sustainable eco-friendly products"
+                    title: "Exploring Biofuel Innovations",
+                    description: "A portal to cutting‑edge green technologies, waste‑reduction strategies, and living solutions that shape tomorrow's eco‑landscape"
                 },
                 cork2: {
-                    title: "Wine Accessories",
-                    description: "Premium hospitality décor"
+                    title: "Exploring Biofuel Innovations",
+                    description: "Hands‑on engagement with the latest pellet presses, efficient straw feeding systems, and high‑performance grinders powering the biofuel revolution"
                 },
-                business1: {
-                    title: "Global Export",
-                    description: "International shipping operations"
+                makhana4: {
+                    title: "6+ Suta HP Makhana (19 mm – 25 mm)",
+                    description: "Extra‑large, high‑popped kernels delivering superior texture and gourmet taste."
                 },
-                business2: {
-                    title: "HoReCa Applications",
-                    description: "Premium restaurant solutions"
+                makhana5: {
+                    title: "5 Suta Makhana (15.8 mm – 18.5 mm)",
+                    description: "Premium-grade lotus seeds, light & crunchy—ideal for a healthy, guilt‑free snack."
                 },
-                gallery: {
-                    title: "TradeArk Gallery",
-                    description: "Premium products showcase"
+                cork3: {
+                    title: "Cork Cutlery & Napkin Organizer",
+                    description: "Neatly stow forks, spoons and napkins in a single, antimicrobial cork caddy—functional design for every table."
+                },
+                cork4: {
+                    title: "Sustainable Cork HoReCa Collection",
+                    description: "Elevate your dining and décor with our eco-friendly cork accessories—where natural texture meets modern hospitality."
+                },
+                cork5: {
+                    title: "Round Cork Coaster Set",
+                    description: "Protect your surfaces in style with minimalist cork coasters—heat-resistant, moisture-proof, and endlessly reusable."
                 }
             }
         },
@@ -406,7 +393,7 @@ const translations = {
         
         // Footer
         footer: {
-            description: "Your trusted partner for premium Indian Makhana and sustainable cork décor exports.",
+            description: "Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.",
             products: {
                 title: "Products",
                 makhana: "Premium Makhana",
@@ -421,7 +408,22 @@ const translations = {
                 testimonials: "Testimonials",
                 contact: "Contact"
             },
-            copyright: "© 2025 TradeArk. All rights reserved."
+            copyright: "© 2025 TradeArk. All rights reserved.",
+            credit: "Made by <a href='https://www.instagram.com/vedantmittal21/' target='_blank' rel='noopener' style='color: var(--saffron-accent); text-decoration: none;'>Vedant Mittal</a>"
+        },
+        
+        // Download Modal 
+        download: {
+            title: "Download Catalogue",
+            description: "Please provide your details to download our catalogue:",
+            form: {
+                name: "Name *",
+                company: "Company *",
+                phone: "Phone Number *",
+                email: "Email *",
+                message: "Message (Optional)"
+            },
+            button: "Download Catalogue"
         },
         
         // Product Pages
@@ -455,22 +457,46 @@ const translations = {
                     },
                     productCategories: {
                         title: "Product Categories",
-                        subtitle: "Comprehensive cork solutions for hospitality professionals",
-                        placemats: {
-                            title: "Placemats & Runners",
-                            description: "Premium table protection with elegant branding options"
+                        subtitle: "Cork décor solutions for every HoReCa need",
+                        drinkBar: {
+                            title: "Drink & Bar Accessories",
+                            description: "Essential cork gear for every bar",
+                            features: [
+                                "Showcase logos on coasters, chillers & caddies",
+                                "Slip-resistant cork protects tabletops",
+                                "Stackable, lightweight designs",
+                                "Custom shapes & imprints"
+                            ]
                         },
-                        coasters: {
-                            title: "Coasters & Drink Mats",
-                            description: "Stylish drink protection for bars and restaurants"
+                        tableware: {
+                            title: "Tableware & Serving",
+                            description: "Elevate every dining experience",
+                            features: [
+                                "Coordinated trivets, trays, mats & rings",
+                                "Warm cork adds natural charm",
+                                "Mix-and-match for menus & events",
+                                "Quick turn on custom finishes"
+                            ]
                         },
-                        menuBoards: {
-                            title: "Menu Boards & Displays",
-                            description: "Elegant menu presentation solutions"
+                        tissue: {
+                            title: "Tissue & Napkin Holders",
+                            description: "Organized elegance for every table",
+                            features: [
+                                "Seamless tissue boxes & holders",
+                                "Durable cork in soft, neutral tones",
+                                "Minimalist designs fit any décor",
+                                "Subtle laser-etched branding"
+                            ]
                         },
-                        servingTrays: {
-                            title: "Serving Trays",
-                            description: "Sophisticated serving solutions for fine dining"
+                        decor: {
+                            title: "Décor & Furnishings",
+                            description: "Distinctive cork accents for your space",
+                            features: [
+                                "Lights, planters, stools & more",
+                                "Eco-friendly cork adds texture",
+                                "Layered displays for impact",
+                                "Custom shapes, colors & finishes"
+                            ]
                         }
                     },
                     sustainability: {
@@ -586,17 +612,20 @@ const translations = {
             products: "उत्पाद",
             makhana: "प्रीमियम मखाना",
             horeca: "कॉर्क होरेका डेकोर",
+            customSourcing: "कस्टम सोर्सिंग",
             quality: "गुणवत्ता",
             "why-us": "हमें क्यों चुनें",
             gallery: "गैलरी",
             testimonials: "प्रशंसापत्र",
-            contact: "संपर्क"
+            contact: "संपर्क",
+            language: "भाषा"
         },
         
         // Hero Section
         hero: {
-            subtitle: "प्रीमियम भारतीय मखाना और टिकाऊ कॉर्क डेकोर",
-            description: "बिहार के खेतों से दुनिया भर की मेजों तक—हम प्रीमियम मखाना और टिकाऊ कॉर्क डेकोर प्रदान करते हैं जो होरेका अनुभवों को बदल देता है। गुणवत्ता, स्थिरता और विश्वसनीयता के लिए 15+ देशों द्वारा भरोसा किया गया।",
+            badge: "प्रीमियम भारतीय निर्यातक",
+            subtitle: "प्रीमियम भारतीय निर्यात, दुनिया भर में वितरित",
+            description: "15+ देशों में भागीदारों की सेवा करते हुए, हम टिकाऊ स्रोत से प्राप्त, उच्च गुणवत्ता वाले उत्पादों की विविध श्रृंखला प्रदान करते हैं—आपकी उद्योग की जरूरतों के अनुकूल नवाचार समाधानों और निर्बाध लॉजिस्टिक्स द्वारा समर्थित।",
             cta: {
                 products: "उत्पाद देखें",
                 contact: "संपर्क में रहें"
@@ -609,11 +638,11 @@ const translations = {
             subtitle: "विश्वास पर निर्मित, गुणवत्ता द्वारा संचालित, स्थिरता द्वारा संचालित",
             story: {
                 title: "हमारी कहानी",
-                description: "ट्रेडआर्क की शुरुआत भारत की कृषि विरासत और वैश्विक बाजारों के बीच की खाई को पाटने के दृष्टिकोण से हुई। प्रीमियम भारतीय उत्पादों की क्षमता को समझने वाले उत्साही निर्यातकों द्वारा स्थापित, हम दुनिया भर के व्यवसायों के लिए एक विश्वसनीय भागीदार बन गए हैं।"
+                description: "ट्रेडआर्क का जन्म भारत के बेहतरीन उत्पादकों को दुनिया भर के बाजारों से जोड़ने के दृष्टिकोण से हुआ। जो समर्पित निर्यातकों की एक छोटी टीम के रूप में शुरू हुआ, वह 15 से अधिक देशों में व्यवसायों के लिए एक विश्वसनीय भागीदार बन गया है—हर शिपमेंट में स्थिरता, विश्वसनीयता और नवाचार लाता है।"
             },
             mission: {
                 title: "हमारा मिशन",
-                description: "असाधारण मखाना और टिकाऊ कॉर्क डेकोर समाधान प्रदान करना जो अपेक्षाओं से अधिक हो और स्थानीय समुदायों और पर्यावरणीय स्थिरता का समर्थन करे।"
+                description: "प्रीमियम, टिकाऊ स्रोत से प्राप्त उत्पाद प्रदान करना जो अपेक्षाओं से अधिक हो—कठोर गुणवत्ता नियंत्रण, निर्बाध लॉजिस्टिक्स, और समुदायों को सशक्त बनाने और हमारे ग्रह की सुरक्षा की प्रतिबद्धता द्वारा समर्थित।"
             },
             pillars: {
                 quality: {
@@ -650,7 +679,7 @@ const translations = {
             custom: {
                 title: "कस्टम सोर्सिंग",
                 subtitle: "हमारे कैटलॉग से आगे",
-                description: "कुछ विशिष्ट चाहिए? हम विश्वसनीय भारतीय आपूर्तिकर्ताओं से आपकी आवश्यकताओं के अनुरूप कस्टम उत्पादों की सोर्सिंग कर सकते हैं।",
+                description: "भारत भर में हमारे जांचे-परखे भागीदारों का व्यापक नेटवर्क हमें विशेष सामग्री और डेकोर सामग्री से लेकर बेस्पोक घटकों तक सब कुछ प्रदान करने में सक्षम बनाता है—आपकी विशिष्टताओं के अनुकूल और हमारी गुणवत्ता गारंटी द्वारा समर्थित।",
                 benefits: [
                     "समर्पित सोर्सिंग टीम",
                     "गुणवत्ता आश्वासन",
@@ -678,21 +707,45 @@ const translations = {
                     productCategories: {
                         title: "उत्पाद श्रेणियां",
                         subtitle: "आतिथ्य पेशेवरों के लिए व्यापक कॉर्क समाधान",
-                        placemats: {
-                            title: "प्लेसमैट्स और रनर",
-                            description: "सुरुचिपूर्ण ब्रांडिंग विकल्पों के साथ प्रीमियम टेबल सुरक्षा"
+                        drinkBar: {
+                            title: "ड्रिंक और बार एक्सेसरीज",
+                            description: "हर बार के लिए आवश्यक कॉर्क गियर",
+                            features: [
+                                "कोस्टर, चिलर और कैडीज पर लोगो दिखाएं",
+                                "स्लिप-रेसिस्टेंट कॉर्क टेबलटॉप्स की सुरक्षा करता है",
+                                "स्टैकेबल, हल्के डिज़ाइन",
+                                "कस्टम आकार और इंप्रिंट"
+                            ]
                         },
-                        coasters: {
-                            title: "कोस्टर और ड्रिंक मैट",
-                            description: "बार और रेस्तरां के लिए स्टाइलिश ड्रिंक सुरक्षा"
+                        tableware: {
+                            title: "टेबलवेयर और सर्विंग",
+                            description: "हर भोजन अनुभव को बेहतर बनाएं",
+                            features: [
+                                "समन्वित ट्रिवेट्स, ट्रे, मैट्स और रिंग्स",
+                                "गर्म कॉर्क प्राकृतिक आकर्षण जोड़ता है",
+                                "मेनू और इवेंट्स के लिए मिक्स-एंड-मैच",
+                                "कस्टम फिनिश पर तुरंत काम"
+                            ]
                         },
-                        menuBoards: {
-                            title: "मेनू बोर्ड और डिस्प्ले",
-                            description: "सुरुचिपूर्ण मेनू प्रस्तुति समाधान"
+                        tissue: {
+                            title: "टिश्यू और नैपकिन होल्डर",
+                            description: "हर टेबल के लिए व्यवस्थित सुंदरता",
+                            features: [
+                                "सीमलेस टिश्यू बॉक्स और होल्डर",
+                                "मुलायम, न्यूट्रल टोन में टिकाऊ कॉर्क",
+                                "मिनिमलिस्ट डिज़ाइन किसी भी डेकोर में फिट",
+                                "सूक्ष्म लेजर-एच्ड ब्रांडिंग"
+                            ]
                         },
-                        servingTrays: {
-                            title: "सर्विंग ट्रे",
-                            description: "फाइन डाइनिंग के लिए परिष्कृत सर्विंग समाधान"
+                        decor: {
+                            title: "डेकोर और फर्निशिंग",
+                            description: "आपके स्थान के लिए विशिष्ट कॉर्क एक्सेंट",
+                            features: [
+                                "लाइट्स, प्लांटर्स, स्टूल और बहुत कुछ",
+                                "इको-फ्रेंडली कॉर्क टेक्सचर जोड़ता है",
+                                "प्रभाव के लिए लेयर्ड डिस्प्ले",
+                                "कस्टम आकार, रंग और फिनिश"
+                            ]
                         }
                     },
                     sustainability: {
@@ -820,7 +873,7 @@ const translations = {
                         description: "कस्टम फ्लेवरिंग और ब्रांडिंग के लिए आदर्श प्राकृतिक, अप्रसंस्कृत मखाना।",
                         feature1: "शुद्ध सफेद रंग",
                         feature2: "कुरकुरी बनावट",
-                        feature3: "न्यूनतम ऑर्डर: 1000 किलो",
+                        feature3: "न्यूनतम ऑर्डर: 500 किलो",
                         feature4: "शेल्फ लाइफ: 12 महीने"
                     },
                     roasted: {
@@ -845,7 +898,7 @@ const translations = {
                     subtitle: "हमारे प्रीमियम मखाना उत्पादों और गुणवत्ता की खोज करें",
                     slide1: {
                         title: "प्रीमियम मखाना",
-                        description: "बिहार के खेतों से हाथ से चुने गए ग्रेड ए+ गुणवत्ता वाले फॉक्स नट्स उत्कृष्ट बनावट और स्वाद के साथ",
+                        description: "बिहार के खेतों से हाथ से चुने गए प्रोटीन और फाइबर से भरपूर फॉक्स नट्स उत्कृष्ट बनावट और स्वाद के साथ",
                         category: "मखाना"
                     },
                     slide2: {
@@ -869,11 +922,11 @@ const translations = {
                     },
                     packaging: {
                         title: "कस्टम पैकेजिंग",
-                        description: "आपकी ब्रांडिंग के साथ 50 ग्राम से 5 किलो तक लचीले पैकेजिंग विकल्प"
+                        description: "आपकी ब्रांडिंग के साथ 200 ग्राम से लचीले पैकेजिंग विकल्प"
                     },
                     shelf: {
-                        title: "लंबी शेल्फ लाइफ",
-                        description: "उचित भंडारण शर्तों के साथ 18 महीने तक की शेल्फ लाइफ"
+                        title: "कम कैलोरी स्नैक",
+                        description: "केवल 100 कैलोरी प्रति 30 ग्राम सर्विंग—सचेत स्नैकिंग और वजन प्रबंधन योजनाओं के लिए आदर्श।"
                     },
                     certified: {
                         title: "प्रमाणित गुणवत्ता",
@@ -896,31 +949,7 @@ const translations = {
                         description: "होटल, रेस्तरां और कैटरिंग सेवाओं के लिए बल्क आपूर्ति।"
                     }
                 },
-                packaging: {
-                    title: "पैकेजिंग विकल्प",
-                    subtitle: "हर बाजार की जरूरत के लिए लचीले पैकेजिंग समाधान",
-                    consumer: {
-                        title: "उपभोक्ता पैक",
-                        feature1: "50 ग्राम - 500 ग्राम पाउच",
-                        feature2: "रीसीलेबल पैकेजिंग",
-                        feature3: "कस्टम ब्रांडिंग",
-                        feature4: "आकर्षक शेल्फ अपील"
-                    },
-                    bulk: {
-                        title: "बल्क पैकेजिंग",
-                        feature1: "1 किलो - 5 किलो बैग",
-                        feature2: "फूड-ग्रेड सामग्री",
-                        feature3: "नाइट्रोजन फ्लशिंग",
-                        feature4: "विस्तारित शेल्फ लाइफ"
-                    },
-                    industrial: {
-                        title: "औद्योगिक आपूर्ति",
-                        feature1: "25 किलो - 50 किलो बोरे",
-                        feature2: "जूट या पीपी बैग",
-                        feature3: "नमी सुरक्षा",
-                        feature4: "बल्क मूल्य निर्धारण उपलब्ध"
-                    }
-                },
+
                 cta: {
                     title: "हमारे साथ साझेदारी के लिए तैयार हैं?",
                     description: "दुनिया भर के अग्रणी ब्रांडों में शामिल हों जो प्रीमियम फॉक्स नट आपूर्ति के लिए ट्रेडआर्क पर भरोसा करते हैं",
@@ -957,8 +986,8 @@ const translations = {
                     description: "उत्पाद उत्कृष्टता सुनिश्चित करने के लिए हर चरण में कठोर परीक्षण और गुणवत्ता नियंत्रण।"
                 },
                 {
-                    title: "24/7 समर्थन",
-                    description: "आपके प्रश्नों और समर्थन के लिए चौबीसों घंटे उपलब्ध समर्पित ग्राहक सेवा टीम।"
+                    title: "लचीली कस्टम सोर्सिंग",
+                    description: "अनुकूलित खरीदारी समाधान—यदि यह हमारे कैटलॉग में नहीं है, तो हम इसे आपके लिए ढूंढेंगे।"
                 },
                 {
                     title: "प्रतिस्पर्धी मूल्य निर्धारण",
@@ -1000,7 +1029,49 @@ const translations = {
         gallery: {
             title: "हमारी गैलरी",
             subtitle: "हमारे प्रीमियम उत्पादों और वैश्विक साझेदारी का प्रदर्शन",
-            viewDetails: "विवरण देखें"
+            viewDetails: "विवरण देखें",
+            items: {
+                makhana1: {
+                    title: "प्रीमियम मखाना",
+                    description: "बेहतरीन गुणवत्ता वाले फॉक्स नट्स"
+                },
+                makhana2: {
+                    title: "विश्व पर्यावरण एक्सपो 2025 में प्रवेश",
+                    description: "ग्रेटर नोएडा में पर्यावरणीय नवाचारकर्ताओं, नीति निर्माताओं और विचारशील नेताओं के भारत के प्रमुख सम्मेलन में कदम रखना"
+                },
+                makhana3: {
+                    title: "एक्सपो फ्लोर पर नेटवर्किंग",
+                    description: "स्वच्छ, कम कार्बन भविष्य के लिए प्रतिबद्ध उद्यमियों, शोधकर्ताओं और उद्योग नेताओं के साथ रणनीतिक साझेदारी बनाना"
+                },
+                cork1: {
+                    title: "बायोफ्यूल इनोवेशन्स की खोज",
+                    description: "अत्याधुनिक हरित प्रौद्योगिकियों, अपशिष्ट-कमी रणनीतियों और जीवित समाधानों का पोर्टल जो कल के पर्यावरणीय परिदृश्य को आकार देते हैं"
+                },
+                cork2: {
+                    title: "बायोफ्यूल इनोवेशन्स की खोज",
+                    description: "बायोफ्यूल क्रांति को शक्ति प्रदान करने वाले नवीनतम पेलेट प्रेसेस, कुशल स्ट्रॉ फीडिंग सिस्टम और उच्च-प्रदर्शन ग्राइंडर के साथ हाथों-हाथ जुड़ाव"
+                },
+                makhana4: {
+                    title: "6+ सुता एचपी मखाना (19 मिमी – 25 मिमी)",
+                    description: "अतिरिक्त-बड़े, उच्च-पॉप्ड कर्नल्स जो बेहतर बनावट और गूर्मे स्वाद प्रदान करते हैं।"
+                },
+                makhana5: {
+                    title: "5 सुता मखाना (15.8 मिमी – 18.5 मिमी)",
+                    description: "प्रीमियम-ग्रेड कमल बीज, हल्के और कुरकुरे—स्वस्थ, अपराध-मुक्त नाश्ते के लिए आदर्श।"
+                },
+                cork3: {
+                    title: "कॉर्क कटलरी और नैपकिन ऑर्गनाइज़र",
+                    description: "कांटे, चम्मच और नैपकिन को एक ही रोगाणुरोधी कॉर्क कैडी में व्यवस्थित रूप से रखें—हर टेबल के लिए कार्यात्मक डिज़ाइन।"
+                },
+                cork4: {
+                    title: "सस्टेनेबल कॉर्क होरेका कलेक्शन",
+                    description: "अपने डाइनिंग और सजावट को हमारे पर्यावरण-अनुकूल कॉर्क एक्सेसरीज़ के साथ उन्नत बनाएं—जहां प्राकृतिक बनावट आधुनिक आतिथ्य से मिलती है।"
+                },
+                cork5: {
+                    title: "गोल कॉर्क कोस्टर सेट",
+                    description: "मिनिमलिस्ट कॉर्क कोस्टर के साथ अपनी सतहों को स्टाइल में सुरक्षित रखें—गर्मी प्रतिरोधी, नमी रोधी, और लगातार पुन: उपयोग योग्य।"
+                }
+            }
         },
         
         // Contact Section
@@ -1040,7 +1111,36 @@ const translations = {
         // Footer
         footer: {
             description: "गुणवत्ता, स्थिरता और विश्वसनीयता के साथ दुनिया भर में वितरित प्रीमियम भारतीय निर्यात।",
-            copyright: "© 2025 ट्रेडआर्क। सभी अधिकार सुरक्षित।"
+            products: {
+                title: "उत्पाद",
+                makhana: "प्रीमियम मखाना",
+                cork: "कॉर्क डेकोर",
+                quality: "गुणवत्ता मानक",
+                certifications: "प्रमाणपत्र"
+            },
+            company: {
+                title: "कंपनी",
+                about: "हमारे बारे में",
+                whyUs: "हमें क्यों चुनें",
+                testimonials: "प्रशंसापत्र",
+                contact: "संपर्क"
+            },
+            copyright: "© 2025 ट्रेडआर्क। सभी अधिकार सुरक्षित।",
+            credit: "<a href='https://www.instagram.com/vedantmittal21/' target='_blank' rel='noopener' style='color: var(--saffron-accent); text-decoration: none;'>वेदांत मित्तल</a> द्वारा निर्मित"
+        },
+        
+        // Download Modal 
+        download: {
+            title: "कैटलॉग डाउनलोड करें",
+            description: "कृपया हमारी कैटलॉग डाउनलोड करने के लिए अपनी जानकारी प्रदान करें:",
+            form: {
+                name: "नाम *",
+                company: "कंपनी *",
+                phone: "फोन नंबर *",
+                email: "ईमेल *",
+                message: "संदेश (वैकल्पिक)"
+            },
+            button: "कैटलॉग डाउनलोड करें"
         }
     },
     
@@ -1052,17 +1152,20 @@ const translations = {
             products: "Productos",
             makhana: "Makhana Premium",
             horeca: "Decoración Cork HoReCa",
+            customSourcing: "Abastecimiento Personalizado",
             quality: "Calidad",
             "why-us": "Por Qué Elegirnos",
             gallery: "Galería",
             testimonials: "Testimonios",
-            contact: "Contacto"
+            contact: "Contacto",
+            language: "Idioma"
         },
         
         // Hero Section
         hero: {
-            subtitle: "Makhana Premium de India y Decoración Sostenible de Corcho",
-            description: "Desde los campos de Bihar hasta mesas de todo el mundo: entregamos Makhana premium y decoración sostenible de corcho que transforma las experiencias HoReCa. Confiado por más de 15 países por calidad, sostenibilidad y confiabilidad.",
+            badge: "Exportador Premium de India",
+            subtitle: "Exportaciones Premium de India, Entregadas Mundialmente",
+            description: "Sirviendo a socios en más de 15 países, ofrecemos una gama diversa de productos de alta calidad obtenidos de manera sostenible—respaldados por soluciones innovadoras y logística perfecta adaptada a las necesidades de su industria.",
             cta: {
                 products: "Explorar Productos",
                 contact: "Contáctanos"
@@ -1075,11 +1178,11 @@ const translations = {
             subtitle: "Construido sobre confianza, impulsado por calidad, potenciado por sostenibilidad",
             story: {
                 title: "Nuestra Historia",
-                description: "TradeArk comenzó con una visión de cerrar la brecha entre el patrimonio agrícola de India y los mercados globales. Fundado por exportadores apasionados que entendían el potencial de los productos premium indios, hemos crecido hasta convertirnos en un socio confiable para empresas de todo el mundo."
+                description: "TradeArk nació de una visión de conectar a los mejores productores de India con mercados alrededor del mundo. Lo que comenzó como un pequeño equipo de exportadores dedicados ha crecido hasta convertirse en un socio confiable para empresas en más de 15 países—aportando consistencia, confiabilidad e innovación a cada envío."
             },
             mission: {
                 title: "Nuestra Misión",
-                description: "Entregar soluciones excepcionales de Makhana y decoración de corcho sostenible que superen las expectativas mientras apoyamos a las comunidades locales y la sostenibilidad ambiental."
+                description: "Entregar productos premium obtenidos de manera sostenible que superen las expectativas—respaldados por controles de calidad rigurosos, logística perfecta y un compromiso de empoderar comunidades y proteger nuestro planeta."
             },
             pillars: {
                 quality: {
@@ -1105,13 +1208,310 @@ const translations = {
                 title: "Makhana Premium",
                 subtitle: "Las Mejores Nueces Fox de Bihar",
                 description: "Seleccionada a mano de los humedales prístinos de Bihar, nuestra Makhana premium ofrece calidad, textura y sabor superiores.",
-                cta: "Ver Detalles"
+                cta: "Ver Detalles",
+                hero: {
+                    title: "Makhana India Premium",
+                    subtitle: "Superalimento alto en proteínas y sin gluten listo para tu mercado",
+                    cta: {
+                        quote: "Solicitar Cotización",
+                        download: "Descargar Catálogo"
+                    }
+                },
+                about: {
+                    title: "Acerca de Makhana",
+                    description1: "Makhana, también conocida como nueces de zorro, son semillas reventadas de la planta de loto. Cultivadas naturalmente en los humedales de Bihar, estas semillas nutritivas se procesan en bocadillos crujientes ricos en proteínas, perfectos para consumidores conscientes de la salud en todo el mundo.",
+                    description2: "Nuestra makhana premium se cosecha cuidadosamente, se procesa bajo estrictos controles de calidad y está disponible en varias formas para satisfacer sus requisitos específicos del mercado."
+                },
+                types: {
+                    title: "Tipos de Productos",
+                    subtitle: "Elige de nuestra gama completa de productos makhana",
+                    raw: {
+                        title: "Makhana Cruda",
+                        description: "Makhana natural sin procesar perfecta para saborizantes y marcas personalizadas.",
+                        feature1: "Color blanco puro",
+                        feature2: "Textura crujiente",
+                        feature3: "MOQ: 500 kg",
+                        feature4: "Vida útil: 12 meses"
+                    },
+                    roasted: {
+                        title: "Makhana Tostada",
+                        description: "Ligeramente tostada con sabor mejorado y vida útil extendida.",
+                        feature1: "Color marrón dorado",
+                        feature2: "Crujiente mejorado",
+                        feature3: "MOQ: 500 kg",
+                        feature4: "Vida útil: 18 meses"
+                    },
+                    flavored: {
+                        title: "Makhana Saborizada",
+                        description: "Sabores premium como sal, pimienta, masala, y opciones personalizadas.",
+                        feature1: "Múltiples opciones de sabor",
+                        feature2: "Fórmulas personalizadas",
+                        feature3: "MOQ: 200 kg por sabor",
+                        feature4: "Vida útil: 15 meses"
+                    }
+                },
+                benefits: {
+                    title: "Beneficios del Producto",
+                    subtitle: "Por qué elegir nuestra makhana premium",
+                    protein: {
+                        title: "Rico en Proteínas",
+                        description: "Contiene 9.7g de proteína por 100g, ideal para consumidores conscientes de la salud"
+                    },
+                    packaging: {
+                        title: "Embalaje Personalizado",
+                        description: "Opciones de embalaje flexibles desde 200g con tu marca"
+                    },
+                    shelf: {
+                        title: "Bocadillo Bajo en Calorías",
+                        description: "Solo 100 cal por porción de 30g—perfecto para el snacking consciente y planes de manejo de peso."
+                    },
+                    certified: {
+                        title: "Calidad Certificada",
+                        description: "Certificaciones HACCP, ISO 22000 y orgánicas disponibles"
+                    }
+                },
+
+                usecases: {
+                    title: "Casos de Uso",
+                    subtitle: "Perfecto para varios segmentos de mercado",
+                    retail: {
+                        title: "Tiendas Minoristas",
+                        description: "Paquetes listos para vender para tiendas de alimentos saludables, supermercados y minoristas especializados."
+                    },
+                    gift: {
+                        title: "Regalos y Cestas",
+                        description: "Opciones de empaque premium perfectas para regalos corporativos y cestas festivas."
+                    },
+                    institutional: {
+                        title: "Uso Institucional",
+                        description: "Suministro a granel para hoteles, restaurantes y servicios de catering."
+                    }
+                },
+
+                cta: {
+                    title: "¿Listo para Asociarse con Nosotros?",
+                    description: "Únete a marcas líderes mundiales que confían en TradeArk para suministros premium de nueces de zorro",
+                    quote: "Solicitar Cotización",
+                    download: "Descargar PDF"
+                }
+            },
+            horeca: {
+                title: "Decoración Cork HoReCa",
+                hero: {
+                    title: "Decoración Cork HoReCa",
+                    subtitle: "Vajilla sostenible y elegante para la hospitalidad moderna",
+                    cta: {
+                        quote: "Solicitar Cotización",
+                        download: "Descargar PDF"
+                    }
+                },
+                sections: {
+                    whyCork: {
+                        title: "¿Por Qué Corcho?",
+                        description1: "El corcho es la solución perfecta de la naturaleza para la hospitalidad sostenible. Cosechado de robles sin dañarlos, el corcho se regenera naturalmente mientras proporciona durabilidad excepcional y estilo.",
+                        description2: "Nuestros productos de corcho combinan responsabilidad ambiental con diseño elegante, ayudando a hoteles y restaurantes a crear experiencias memorables mientras apoyan sus objetivos de sostenibilidad."
+                    },
+                    productCategories: {
+                        title: "Categorías de Productos",
+                        subtitle: "Soluciones de decoración de corcho para cada necesidad HoReCa",
+                        drinkBar: {
+                            title: "Accesorios de Bebidas y Bar",
+                            description: "Equipamiento esencial de corcho para cada bar",
+                            features: [
+                                "Muestra logos en posavasos, enfriadores y soportes",
+                                "Corcho antideslizante protege superficies de mesa",
+                                "Diseños apilables y ligeros",
+                                "Formas e impresiones personalizadas"
+                            ]
+                        },
+                        tableware: {
+                            title: "Vajilla y Servicio",
+                            description: "Eleva cada experiencia gastronómica",
+                            features: [
+                                "Salvamanteles, bandejas, alfombrillas y anillos coordinados",
+                                "El corcho cálido añade encanto natural",
+                                "Mezcla y combina para menús y eventos",
+                                "Acabados personalizados rápidos"
+                            ]
+                        },
+                        tissue: {
+                            title: "Portadores de Pañuelos y Servilletas",
+                            description: "Elegancia organizada para cada mesa",
+                            features: [
+                                "Cajas de pañuelos y portadores sin costuras",
+                                "Corcho duradero en tonos suaves y neutros",
+                                "Diseños minimalistas que se adaptan a cualquier decoración",
+                                "Marca sutil grabada con láser"
+                            ]
+                        },
+                        decor: {
+                            title: "Decoración y Mobiliario",
+                            description: "Acentos distintivos de corcho para tu espacio",
+                            features: [
+                                "Lámparas, marcos, tableros de menú y plantas",
+                                "Textura de corcho natural añade calidez",
+                                "Instalaciones personalizadas y exhibiciones",
+                                "Piezas de declaración y acentos sutiles"
+                            ]
+                        }
+                    },
+                    gallery: {
+                        title: "Galería Cork HoReCa",
+                        subtitle: "Descubre nuestras soluciones sostenibles de decoración de corcho para hospitalidad",
+                        slides: {
+                            slide1: {
+                                title: "Decoración Sostenible de Corcho",
+                                description: "Decoración de mesa HoReCa ecológica hecha de corcho 100% sostenible, perfecta para hospitalidad moderna",
+                                category: "Decoración de Corcho"
+                            },
+                            slide2: {
+                                title: "Accesorios de Vino de Corcho",
+                                description: "Decoración premium para hospitalidad y accesorios de vino para restaurantes y cafés con diseño elegante",
+                                category: "Decoración de Corcho"
+                            },
+                            slide3: {
+                                title: "Aplicaciones HoReCa",
+                                description: "Soluciones premium para restaurantes y hospitalidad mostrando nuestros productos de decoración de corcho en entornos reales",
+                                category: "Negocio"
+                            }
+                        },
+                        viewFullSize: "Ver Tamaño Completo"
+                    },
+                    branding: {
+                        title: "Opciones de Marca",
+                        subtitle: "Personaliza tus productos de corcho con marca profesional",
+                        laserEngraving: {
+                            title: "Grabado Láser",
+                            description: "Marca precisa y permanente con detalle nítido y acabado profesional"
+                        },
+                        screenPrinting: {
+                            title: "Serigrafía",
+                            description: "Colores vibrantes y diseños grandes perfectos para logos y gráficos"
+                        },
+                        hotStamping: {
+                            title: "Estampado en Caliente",
+                            description: "Acabados metálicos premium para aplicaciones de marca de lujo"
+                        }
+                    },
+                    sustainabilityNotes: {
+                        title: "Notas de Sostenibilidad",
+                        subtitle: "Beneficios ambientales que mejoran tu marca",
+                        renewable: {
+                            title: "100% Renovable",
+                            description: "Cosechado de árboles vivos sin daño, el corcho se regenera cada 9 años"
+                        },
+                        biodegradable: {
+                            title: "Biodegradable",
+                            description: "Se descompone naturalmente sin impacto ambiental dañino"
+                        },
+                        waterResistant: {
+                            title: "Resistente al Agua",
+                            description: "La resistencia natural al agua reduce la necesidad de tratamientos químicos"
+                        },
+                        antimicrobial: {
+                            title: "Antimicrobiano",
+                            description: "Las propiedades naturales inhiben el crecimiento bacteriano para un servicio de alimentos más seguro"
+                        }
+                    },
+                    brandingOptions: {
+                        title: "Opciones de Marca",
+                        subtitle: "Personaliza productos de corcho con la identidad de tu marca",
+                        laser: {
+                            title: "Grabado Láser",
+                            description: "Grabado preciso y permanente en superficies de corcho"
+                        },
+                        screen: {
+                            title: "Serigrafía",
+                            description: "Impresión colorida y vibrante para diseños más grandes"
+                        },
+                        hot: {
+                            title: "Estampado en Caliente",
+                            description: "Acabados metálicos premium para branding de lujo"
+                        }
+                    },
+                    targetMarkets: {
+                        title: "Mercados Objetivo",
+                        subtitle: "Soluciones perfectas para diversos segmentos de hospitalidad",
+                        hotels: {
+                            title: "Hoteles Boutique",
+                            description: "Amenidades únicas y accesorios de servicio de habitaciones que refuerzan la identidad de marca"
+                        },
+                        wineBars: {
+                            title: "Bares de Vino y Cafés",
+                            description: "Posavasos sofisticados y accesorios de servicio para el servicio premium de bebidas"
+                        },
+                        corporate: {
+                            title: "Catering Corporativo",
+                            description: "Presentación profesional para cenas ejecutivas y eventos corporativos"
+                        }
+                    },
+                    cta: {
+                        title: "¿Listo para Transformar Tu Espacio?",
+                        subtitle: "Únete a marcas de hospitalidad con visión de futuro creando experiencias memorables con decoración sostenible de corcho",
+                        requestQuote: "Solicitar Cotización",
+                        downloadPdf: "Descargar PDF"
+                    }
+                }
             },
             cork: {
                 title: "Decoración Cork HoReCa",
                 subtitle: "Soluciones de Mesa Sostenibles",
                 description: "Decoración de mesa de corcho ecológica perfecta para hoteles, restaurantes y cafés. Duradera, sostenible y estéticamente agradable.",
-                cta: "Ver Detalles"
+                cta: "Ver Detalles",
+                productCategories: {
+                    title: "Categorías de Productos",
+                    subtitle: "Soluciones de decoración de corcho para cada necesidad HoReCa",
+                    drinkBar: {
+                        title: "Accesorios de Bebidas y Bar",
+                        description: "Equipamiento esencial de corcho para cada bar"
+                    },
+                    tableware: {
+                        title: "Vajilla y Servicio",
+                        description: "Eleva cada experiencia gastronómica"
+                    },
+                    tissue: {
+                        title: "Portadores de Pañuelos y Servilletas",
+                        description: "Elegancia organizada para cada mesa"
+                    },
+                    decor: {
+                        title: "Decoración y Mobiliario",
+                        description: "Acentos distintivos de corcho para tu espacio"
+                    }
+                }
+            },
+            custom: {
+                title: "Abastecimiento Personalizado a Pedido",
+                subtitle: "¿No encuentras lo que buscas? Proveemos más allá de nuestro catálogo para satisfacer tus requisitos únicos.",
+                description: "Nuestra extensa red de socios verificados en toda India nos permite entregar todo, desde ingredientes especializados y materiales decorativos hasta componentes personalizados—adaptados a tus especificaciones y respaldados por nuestra garantía de calidad.",
+                benefits: [
+                    "Acceso a proveedores exclusivos en toda India",
+                    "Control de calidad y certificación de extremo a extremo",
+                    "Precios competitivos a través del abastecimiento directo"
+                ],
+                cta: "Obtener Cotización Personalizada",
+                overlay: "Red de Abastecimiento Global"
+            }
+        },
+        
+        // Quality Section
+        quality: {
+            title: "Calidad y Certificaciones",
+            subtitle: "Cumpliendo estándares internacionales con cada envío",
+            promise: {
+                title: "Nuestra Promesa de Calidad",
+                description: "Mantenemos los más altos estándares en toda nuestra cadena de suministro, desde la granja hasta su mesa. Nuestros procesos de control de calidad aseguran consistencia y excelencia en cada producto."
+            },
+            stats: {
+                quality: "Tasa de Aprobación de Calidad",
+                countries: "Países Servidos",
+                customers: "Clientes Satisfechos"
+            },
+            certifications: {
+                title: "Certificaciones",
+                iso: "ISO 9001:2015",
+                organic: "Certificado Orgánico",
+                haccp: "Certificado HACCP",
+                export: "Licencia de Exportación"
             }
         },
         
@@ -1129,8 +1529,8 @@ const translations = {
                     description: "Pruebas rigurosas y control de calidad en cada etapa para asegurar la excelencia del producto."
                 },
                 {
-                    title: "Soporte 24/7",
-                    description: "Equipo de servicio al cliente dedicado disponible las 24 horas para sus consultas y soporte."
+                    title: "Abastecimiento Personalizado Flexible",
+                    description: "Soluciones de adquisición a medida—si no está en nuestro catálogo, lo encontraremos para usted."
                 },
                 {
                     title: "Precios Competitivos",
@@ -1149,7 +1549,49 @@ const translations = {
         gallery: {
             title: "Nuestra Galería",
             subtitle: "Mostrando nuestros productos premium y asociaciones globales",
-            viewDetails: "Ver Detalles"
+            viewDetails: "Ver Detalles",
+            items: {
+                makhana1: {
+                    title: "Makhana Premium",
+                    description: "Nueces de zorro de calidad superior"
+                },
+                makhana2: {
+                    title: "Entrada a la Expo Mundial del Medio Ambiente 2025",
+                    description: "Ingresando a la principal reunión de India de innovadores ambientales, responsables de políticas y líderes de opinión en Greater Noida"
+                },
+                makhana3: {
+                    title: "Networking en el Piso de la Expo",
+                    description: "Construyendo asociaciones estratégicas con empresarios, investigadores y líderes industriales comprometidos con un futuro más limpio y de bajo carbono"
+                },
+                cork1: {
+                    title: "Explorando Innovaciones de Biocombustibles",
+                    description: "Un portal a tecnologías verdes de vanguardia, estrategias de reducción de residuos y soluciones vivas que dan forma al paisaje ecológico del mañana"
+                },
+                cork2: {
+                    title: "Explorando Innovaciones de Biocombustibles",
+                    description: "Compromiso práctico con las últimas prensas de pellets, sistemas de alimentación de paja eficientes y molinos de alto rendimiento que impulsan la revolución de biocombustibles"
+                },
+                makhana4: {
+                    title: "6+ Suta HP Makhana (19 mm – 25 mm)",
+                    description: "Granos extragrandes y muy inflados que ofrecen textura superior y sabor gourmet."
+                },
+                makhana5: {
+                    title: "5 Suta Makhana (15.8 mm – 18.5 mm)",
+                    description: "Semillas de loto de grado premium, ligeras y crujientes—ideales para un snack saludable y libre de culpa."
+                },
+                cork3: {
+                    title: "Organizador de Cubiertos y Servilletas de Corcho",
+                    description: "Guarde ordenadamente tenedores, cucharas y servilletas en un solo contenedor antimicrobiano de corcho—diseño funcional para cada mesa."
+                },
+                cork4: {
+                    title: "Colección Sostenible de Corcho HoReCa",
+                    description: "Eleve su comedor y decoración con nuestros accesorios ecológicos de corcho—donde la textura natural se encuentra con la hospitalidad moderna."
+                },
+                cork5: {
+                    title: "Juego de Portavasos Redondos de Corcho",
+                    description: "Proteja sus superficies con estilo con portavasos minimalistas de corcho—resistentes al calor, impermeables y reutilizables infinitamente."
+                }
+            }
         },
         
         // Testimonials Section
@@ -1212,7 +1654,36 @@ const translations = {
         // Footer
         footer: {
             description: "Exportaciones premium de India entregadas mundialmente con calidad, sostenibilidad y confiabilidad.",
-            copyright: "© 2025 TradeArk. Todos los derechos reservados."
+            products: {
+                title: "Productos",
+                makhana: "Makhana Premium",
+                cork: "Decoración Cork",
+                quality: "Estándares de Calidad",
+                certifications: "Certificaciones"
+            },
+            company: {
+                title: "Empresa",
+                about: "Acerca de Nosotros",
+                whyUs: "Por Qué Elegirnos",
+                testimonials: "Testimonios",
+                contact: "Contacto"
+            },
+            copyright: "© 2025 TradeArk. Todos los derechos reservados.",
+            credit: "Hecho por <a href='https://www.instagram.com/vedantmittal21/' target='_blank' rel='noopener' style='color: var(--saffron-accent); text-decoration: none;'>Vedant Mittal</a>"
+        },
+        
+        // Download Modal 
+        download: {
+            title: "Descargar Catálogo",
+            description: "Por favor proporcione sus datos para descargar nuestro catálogo:",
+            form: {
+                name: "Nombre *",
+                company: "Empresa *",
+                phone: "Número de Teléfono *",
+                email: "Correo Electrónico *",
+                message: "Mensaje (Opcional)"
+            },
+            button: "Descargar Catálogo"
         }
     },
     
@@ -1224,17 +1695,20 @@ const translations = {
             products: "Produits",
             makhana: "Makhana Premium",
             horeca: "Décor Cork HoReCa",
+            customSourcing: "Approvisionnement Personnalisé",
             quality: "Qualité",
             "why-us": "Pourquoi Nous",
             gallery: "Galerie",
             testimonials: "Témoignages",
-            contact: "Contact"
+            contact: "Contact",
+            language: "Langue"
         },
         
         // Hero Section
         hero: {
-            subtitle: "Makhana Premium Indien et Décor Durable en Liège",
-            description: "Des champs du Bihar aux tables du monde entier — nous livrons du Makhana premium et de la décoration durable en liège qui transforme les expériences HoReCa. Fait confiance par plus de 15 pays pour la qualité, la durabilité et la fiabilité.",
+            badge: "Exportateur Premium Indien",
+            subtitle: "Exportations Premium Indiennes, Livrées dans le Monde Entier",
+            description: "Servant des partenaires dans plus de 15 pays, nous offrons une gamme diversifiée de produits de haute qualité obtenus de manière durable—soutenus par des solutions innovantes et une logistique transparente adaptée aux besoins de votre industrie.",
             cta: {
                 products: "Explorer les Produits",
                 contact: "Nous Contacter"
@@ -1247,11 +1721,11 @@ const translations = {
             subtitle: "Construit sur la confiance, guidé par la qualité, alimenté par la durabilité",
             story: {
                 title: "Notre Histoire",
-                description: "TradeArk a commencé avec une vision de combler le fossé entre l'héritage agricole de l'Inde et les marchés mondiaux. Fondée par des exportateurs passionnés qui comprenaient le potentiel des produits premium indiens, nous sommes devenus un partenaire de confiance pour les entreprises du monde entier."
+                description: "TradeArk est né d'une vision de connecter les meilleurs producteurs de l'Inde avec les marchés du monde entier. Ce qui a commencé comme une petite équipe d'exportateurs dévoués est devenu un partenaire de confiance pour les entreprises de plus de 15 pays—apportant cohérence, fiabilité et innovation à chaque expédition."
             },
             mission: {
                 title: "Notre Mission",
-                description: "Livrer des solutions exceptionnelles de Makhana et de décoration durable en liège qui dépassent les attentes tout en soutenant les communautés locales et la durabilité environnementale."
+                description: "Livrer des produits premium obtenus de manière durable qui dépassent les attentes—soutenus par des contrôles qualité rigoureux, une logistique transparente et un engagement à autonomiser les communautés et protéger notre planète."
             },
             pillars: {
                 quality: {
@@ -1269,6 +1743,321 @@ const translations = {
             }
         },
         
+        // Products Section
+        products: {
+            title: "Nos Produits Premium",
+            subtitle: "Découvrez notre gamme d'exportations de haute qualité",
+            makhana: {
+                title: "Makhana Premium",
+                subtitle: "Les Meilleures Noix Fox du Bihar",
+                description: "Cueillies à la main dans les zones humides pristines du Bihar, notre Makhana premium offre une qualité, texture et saveur supérieures.",
+                cta: "Voir les Détails",
+                hero: {
+                    title: "Makhana Premium d'Inde",
+                    subtitle: "Superaliment riche en protéines et sans gluten prêt pour votre marché",
+                    cta: {
+                        quote: "Demander un Devis",
+                        download: "Télécharger le Catalogue"
+                    }
+                },
+                about: {
+                    title: "À Propos de Makhana",
+                    description1: "Makhana, également connue sous le nom de noix de renard, sont des graines éclatées de la plante de lotus. Cultivées naturellement dans les zones humides du Bihar, ces graines nutritives sont transformées en collations croquantes riches en protéines, parfaites pour les consommateurs soucieux de leur santé du monde entier.",
+                    description2: "Notre makhana premium est soigneusement récoltée, transformée sous des contrôles de qualité stricts et disponible sous diverses formes pour répondre à vos exigences spécifiques du marché."
+                },
+                types: {
+                    title: "Types de Produits",
+                    subtitle: "Choisissez parmi notre gamme complète de produits makhana",
+                    raw: {
+                        title: "Makhana Crue",
+                        description: "Makhana naturelle non transformée parfaite pour l'aromatisation et la marque personnalisées.",
+                        feature1: "Couleur blanc pur",
+                        feature2: "Texture croquante",
+                        feature3: "MOQ: 500 kg",
+                        feature4: "Durée de vie: 12 mois"
+                    },
+                    roasted: {
+                        title: "Makhana Grillée",
+                        description: "Légèrement grillée avec une saveur améliorée et une durée de vie prolongée.",
+                        feature1: "Couleur brun doré",
+                        feature2: "Croquant amélioré",
+                        feature3: "MOQ: 500 kg",
+                        feature4: "Durée de vie: 18 mois"
+                    },
+                    flavored: {
+                        title: "Makhana Aromatisée",
+                        description: "Saveurs premium comme sel, poivre, masala, et options personnalisées.",
+                        feature1: "Multiples options de saveur",
+                        feature2: "Formules personnalisées",
+                        feature3: "MOQ: 200 kg par saveur",
+                        feature4: "Durée de vie: 15 mois"
+                    }
+                },
+                benefits: {
+                    title: "Avantages du Produit",
+                    subtitle: "Pourquoi choisir notre makhana premium",
+                    protein: {
+                        title: "Riche en Protéines",
+                        description: "Contient 9.7g de protéine par 100g, idéal pour les consommateurs soucieux de leur santé"
+                    },
+                    packaging: {
+                        title: "Emballage Personnalisé",
+                        description: "Options d'emballage flexibles à partir de 200g avec votre marque"
+                    },
+                    shelf: {
+                        title: "Collation Faible en Calories",
+                        description: "Seulement 100 cal par portion de 30g—parfait pour les collations conscientes et les plans de gestion du poids."
+                    },
+                    certified: {
+                        title: "Qualité Certifiée",
+                        description: "Certifications HACCP, ISO 22000 et biologiques disponibles"
+                    }
+                },
+
+                usecases: {
+                    title: "Cas d'Usage",
+                    subtitle: "Parfait pour divers segments de marché",
+                    retail: {
+                        title: "Magasins de Détail",
+                        description: "Emballages prêts à vendre pour magasins d'aliments naturels, supermarchés et détaillants spécialisés."
+                    },
+                    gift: {
+                        title: "Cadeaux et Paniers",
+                        description: "Options d'emballage premium parfaites pour les cadeaux d'entreprise et les paniers de fête."
+                    },
+                    institutional: {
+                        title: "Usage Institutionnel",
+                        description: "Approvisionnement en vrac pour hôtels, restaurants et services de restauration."
+                    }
+                },
+
+                cta: {
+                    title: "Prêt à Vous Associer avec Nous ?",
+                    description: "Rejoignez les marques leaders mondiales qui font confiance à TradeArk pour les approvisionnements premium en noix de renard",
+                    quote: "Demander un Devis",
+                    download: "Télécharger PDF"
+                }
+            },
+            horeca: {
+                title: "Décoration Cork HoReCa",
+                hero: {
+                    title: "Décoration Cork HoReCa",
+                    subtitle: "Vaisselle durable et élégante pour l'hospitalité moderne",
+                    cta: {
+                        quote: "Demander un Devis",
+                        download: "Télécharger PDF"
+                    }
+                },
+                sections: {
+                    whyCork: {
+                        title: "Pourquoi le Liège ?",
+                        description1: "Le liège est la solution parfaite de la nature pour l'hospitalité durable. Récolté sur les chênes sans les endommager, le liège se régénère naturellement tout en offrant une durabilité et un style exceptionnels.",
+                        description2: "Nos produits en liège combinent responsabilité environnementale et design élégant, aidant les hôtels et restaurants à créer des expériences mémorables tout en soutenant leurs objectifs de durabilité."
+                    },
+                    productCategories: {
+                        title: "Catégories de Produits",
+                        subtitle: "Solutions de décoration en liège pour chaque besoin HoReCa",
+                        drinkBar: {
+                            title: "Accessoires de Boissons et Bar",
+                            description: "Équipement en liège essentiel pour chaque bar",
+                            features: [
+                                "Présentez les logos sur dessous de verre, refroidisseurs et supports",
+                                "Le liège antidérapant protège les surfaces de table",
+                                "Designs empilables et légers",
+                                "Formes et impressions personnalisées"
+                            ]
+                        },
+                        tableware: {
+                            title: "Vaisselle et Service",
+                            description: "Élevez chaque expérience culinaire",
+                            features: [
+                                "Dessous de plat, plateaux, tapis et anneaux coordonnés",
+                                "Le liège chaud ajoute un charme naturel",
+                                "Mélangez et assortissez pour menus et événements",
+                                "Finitions personnalisées rapides"
+                            ]
+                        },
+                        tissue: {
+                            title: "Porte-Mouchoirs et Serviettes",
+                            description: "Élégance organisée pour chaque table",
+                            features: [
+                                "Boîtes à mouchoirs et supports sans couture",
+                                "Liège durable dans des tons doux et neutres",
+                                "Designs minimalistes s'adaptant à tout décor",
+                                "Marquage laser subtil"
+                            ]
+                        },
+                        decor: {
+                            title: "Décoration et Ameublement",
+                            description: "Accents distinctifs en liège pour votre espace",
+                            features: [
+                                "Lampes, cadres, menus et plantes",
+                                "La texture naturelle du liège ajoute de la chaleur",
+                                "Installations personnalisées et présentoirs",
+                                "Pièces phares et accents subtils"
+                            ]
+                        }
+                    },
+                    gallery: {
+                        title: "Galerie Cork HoReCa",
+                        subtitle: "Découvrez nos solutions durables de décoration en liège pour l'hospitalité",
+                        slides: {
+                            slide1: {
+                                title: "Décoration Durable en Liège",
+                                description: "Décoration de table HoReCa écologique faite de liège 100% durable, parfaite pour l'hospitalité moderne",
+                                category: "Décoration en Liège"
+                            },
+                            slide2: {
+                                title: "Accessoires de Vin en Liège",
+                                description: "Décoration premium pour l'hospitalité et accessoires de vin pour restaurants et cafés avec design élégant",
+                                category: "Décoration en Liège"
+                            },
+                            slide3: {
+                                title: "Applications HoReCa",
+                                description: "Solutions premium pour restaurants et hospitalité montrant nos produits de décoration en liège dans des environnements réels",
+                                category: "Affaires"
+                            }
+                        },
+                        viewFullSize: "Voir Taille Complète"
+                    },
+                    branding: {
+                        title: "Options de Marquage",
+                        subtitle: "Personnalisez vos produits en liège avec un marquage professionnel",
+                        laserEngraving: {
+                            title: "Gravure Laser",
+                            description: "Marquage précis et permanent avec détail net et finition professionnelle"
+                        },
+                        screenPrinting: {
+                            title: "Sérigraphie",
+                            description: "Couleurs vibrantes et grands designs parfaits pour logos et graphiques"
+                        },
+                        hotStamping: {
+                            title: "Estampage à Chaud",
+                            description: "Finitions métalliques premium pour applications de marquage de luxe"
+                        }
+                    },
+                    sustainabilityNotes: {
+                        title: "Notes de Durabilité",
+                        subtitle: "Avantages environnementaux qui améliorent votre marque",
+                        renewable: {
+                            title: "100% Renouvelable",
+                            description: "Récolté d'arbres vivants sans dommage, le liège se régénère tous les 9 ans"
+                        },
+                        biodegradable: {
+                            title: "Biodégradable",
+                            description: "Se décompose naturellement sans impact environnemental nuisible"
+                        },
+                        waterResistant: {
+                            title: "Résistant à l'Eau",
+                            description: "La résistance naturelle à l'eau réduit le besoin de traitements chimiques"
+                        },
+                        antimicrobial: {
+                            title: "Antimicrobien",
+                            description: "Les propriétés naturelles inhibent la croissance bactérienne pour un service alimentaire plus sûr"
+                        }
+                    },
+                    brandingOptions: {
+                        title: "Options de Marquage",
+                        subtitle: "Personnalisez les produits en liège avec l'identité de votre marque",
+                        laser: {
+                            title: "Gravure Laser",
+                            description: "Gravure précise et permanente sur surfaces de liège"
+                        },
+                        screen: {
+                            title: "Sérigraphie",
+                            description: "Impression colorée et vibrante pour designs plus grands"
+                        },
+                        hot: {
+                            title: "Estampage à Chaud",
+                            description: "Finitions métalliques premium pour marquage de luxe"
+                        }
+                    },
+                    targetMarkets: {
+                        title: "Marchés Cibles",
+                        subtitle: "Solutions parfaites pour divers segments d'hospitalité",
+                        hotels: {
+                            title: "Hôtels Boutique",
+                            description: "Commodités uniques et accessoires de service en chambre qui renforcent l'identité de marque"
+                        },
+                        wineBars: {
+                            title: "Bars à Vin et Cafés",
+                            description: "Dessous de verre sophistiqués et accessoires de service pour service premium de boissons"
+                        },
+                        corporate: {
+                            title: "Restauration d'Entreprise",
+                            description: "Présentation professionnelle pour dîners d'entreprise et événements corporatifs"
+                        }
+                    },
+                    cta: {
+                        title: "Prêt à Transformer Votre Espace ?",
+                        subtitle: "Rejoignez les marques d'hospitalité visionnaires créant des expériences mémorables avec la décoration durable en liège",
+                        requestQuote: "Demander un Devis",
+                        downloadPdf: "Télécharger PDF"
+                    }
+                }
+            },
+            cork: {
+                title: "Décoration Cork HoReCa",
+                subtitle: "Solutions de Table Durables",
+                description: "Décoration de table en liège écologique parfaite pour hôtels, restaurants et cafés. Durable, durable et esthétiquement plaisante.",
+                cta: "Voir les Détails",
+                productCategories: {
+                    title: "Catégories de Produits",
+                    subtitle: "Solutions de décoration en liège pour chaque besoin HoReCa",
+                    drinkBar: {
+                        title: "Accessoires de Boissons et Bar",
+                        description: "Équipement en liège essentiel pour chaque bar"
+                    },
+                    tableware: {
+                        title: "Vaisselle et Service",
+                        description: "Élevez chaque expérience culinaire"
+                    },
+                    tissue: {
+                        title: "Porte-Mouchoirs et Serviettes",
+                        description: "Élégance organisée pour chaque table"
+                    },
+                    decor: {
+                        title: "Décoration et Ameublement",
+                        description: "Accents distinctifs en liège pour votre espace"
+                    }
+                }
+            },
+            custom: {
+                title: "Approvisionnement Personnalisé sur Demande",
+                subtitle: "Vous ne trouvez pas ce que vous cherchez ? Nous nous approvisionnons au-delà de notre catalogue pour répondre à vos exigences uniques.",
+                description: "Notre vaste réseau de partenaires vérifiés à travers l'Inde nous permet de livrer tout, des ingrédients spécialisés et matériaux décoratifs aux composants sur mesure—adaptés à vos spécifications et soutenus par notre garantie de qualité.",
+                benefits: [
+                    "Accès à des fournisseurs exclusifs dans toute l'Inde",
+                    "Contrôle qualité et certification de bout en bout",
+                    "Tarifs compétitifs grâce à l'approvisionnement direct"
+                ],
+                cta: "Obtenir un Devis Personnalisé",
+                overlay: "Réseau d'Approvisionnement Mondial"
+            }
+        },
+        
+        // Quality Section
+        quality: {
+            title: "Qualité et Certifications",
+            subtitle: "Respecter les normes internationales à chaque expédition",
+            promise: {
+                title: "Notre Promesse Qualité",
+                description: "Nous maintenons les plus hauts standards dans toute notre chaîne d'approvisionnement, de la ferme à votre table. Nos processus de contrôle qualité assurent cohérence et excellence dans chaque produit."
+            },
+            stats: {
+                quality: "Taux de Réussite Qualité",
+                countries: "Pays Servis",
+                customers: "Clients Satisfaits"
+            },
+            certifications: {
+                title: "Certifications",
+                iso: "ISO 9001:2015",
+                organic: "Certifié Biologique",
+                haccp: "Certifié HACCP",
+                export: "Licence d'Exportation"
+            }
+        },
+        
         // Why Us Section
         whyUs: {
             title: "Pourquoi Choisir TradeArk ?",
@@ -1283,8 +2072,8 @@ const translations = {
                     description: "Tests rigoureux et contrôle qualité à chaque étape pour assurer l'excellence du produit."
                 },
                 {
-                    title: "Support 24/7",
-                    description: "Équipe de service client dédiée disponible 24h/24 pour vos questions et support."
+                    title: "Approvisionnement Personnalisé Flexible",
+                    description: "Solutions d'approvisionnement sur mesure—si ce n'est pas dans notre catalogue, nous le trouverons pour vous."
                 },
                 {
                     title: "Prix Compétitifs",
@@ -1303,7 +2092,49 @@ const translations = {
         gallery: {
             title: "Notre Galerie",
             subtitle: "Présentation de nos produits premium et partenariats mondiaux",
-            viewDetails: "Voir les Détails"
+            viewDetails: "Voir les Détails",
+            items: {
+                makhana1: {
+                    title: "Makhana Premium",
+                    description: "Noix de renard de qualité supérieure"
+                },
+                makhana2: {
+                    title: "Entrée à l'Expo Mondiale de l'Environnement 2025",
+                    description: "Entrer dans le principal rassemblement indien d'innovateurs environnementaux, de décideurs politiques et de leaders d'opinion à Greater Noida"
+                },
+                makhana3: {
+                    title: "Réseautage sur le Sol de l'Expo",
+                    description: "Construire des partenariats stratégiques avec des entrepreneurs, chercheurs et leaders industriels engagés pour un avenir plus propre et bas carbone"
+                },
+                cork1: {
+                    title: "Explorer les Innovations de Biocarburants",
+                    description: "Un portail vers les technologies vertes de pointe, les stratégies de réduction des déchets et les solutions vivantes qui façonnent le paysage écologique de demain"
+                },
+                cork2: {
+                    title: "Explorer les Innovations de Biocarburants",
+                    description: "Engagement pratique avec les dernières presses à granulés, systèmes d'alimentation en paille efficaces et broyeurs haute performance alimentant la révolution des biocarburants"
+                },
+                makhana4: {
+                    title: "6+ Suta HP Makhana (19 mm – 25 mm)",
+                    description: "Graines extra-larges et très gonflées offrant une texture supérieure et un goût gourmet."
+                },
+                makhana5: {
+                    title: "5 Suta Makhana (15.8 mm – 18.5 mm)",
+                    description: "Graines de lotus de qualité premium, légères et croustillantes—idéales pour une collation saine et sans culpabilité."
+                },
+                cork3: {
+                    title: "Organisateur de Couverts et Serviettes en Liège",
+                    description: "Rangez soigneusement fourchettes, cuillères et serviettes dans un seul caddy antimicrobien en liège—design fonctionnel pour chaque table."
+                },
+                cork4: {
+                    title: "Collection Liège HoReCa Durable",
+                    description: "Élevez votre salle à manger et décor avec nos accessoires écologiques en liège—où la texture naturelle rencontre l'hospitalité moderne."
+                },
+                cork5: {
+                    title: "Ensemble de Dessous de Verre Ronds en Liège",
+                    description: "Protégez vos surfaces avec style avec des dessous de verre minimalistes en liège—résistants à la chaleur, imperméables et réutilisables à l'infini."
+                }
+            }
         },
         
         // Testimonials Section
@@ -1366,7 +2197,36 @@ const translations = {
         // Footer
         footer: {
             description: "Exportations premium indiennes livrées dans le monde entier avec qualité, durabilité et fiabilité.",
-            copyright: "© 2025 TradeArk. Tous droits réservés."
+            products: {
+                title: "Produits",
+                makhana: "Makhana Premium",
+                cork: "Décor Liège",
+                quality: "Normes de Qualité",
+                certifications: "Certifications"
+            },
+            company: {
+                title: "Entreprise",
+                about: "À Propos de Nous",
+                whyUs: "Pourquoi Nous Choisir",
+                testimonials: "Témoignages",
+                contact: "Contact"
+            },
+            copyright: "© 2025 TradeArk. Tous droits réservés.",
+            credit: "Fait par <a href='https://www.instagram.com/vedantmittal21/' target='_blank' rel='noopener' style='color: var(--saffron-accent); text-decoration: none;'>Vedant Mittal</a>"
+        },
+        
+        // Download Modal 
+        download: {
+            title: "Télécharger le Catalogue",
+            description: "Veuillez fournir vos coordonnées pour télécharger notre catalogue:",
+            form: {
+                name: "Nom *",
+                company: "Entreprise *",
+                phone: "Numéro de Téléphone *",
+                email: "E-mail *",
+                message: "Message (Optionnel)"
+            },
+            button: "Télécharger le Catalogue"
         }
     },
     
@@ -1378,17 +2238,20 @@ const translations = {
             products: "Produkte",
             makhana: "Premium Makhana",
             horeca: "Kork HoReCa Dekor",
+            customSourcing: "Individuelle Beschaffung",
             quality: "Qualität",
             "why-us": "Warum Wir",
             gallery: "Galerie",
             testimonials: "Testimonials",
-            contact: "Kontakt"
+            contact: "Kontakt",
+            language: "Sprache"
         },
         
         // Hero Section
         hero: {
-            subtitle: "Premium Indische Makhana & Nachhaltige Kork Dekoration",
-            description: "Von den Feldern Bihars zu Tischen weltweit — wir liefern premium Makhana und nachhaltige Kork Dekoration, die HoReCa Erfahrungen transformiert. Vertraut von 15+ Ländern für Qualität, Nachhaltigkeit und Zuverlässigkeit.",
+            badge: "Premium Indischer Exporteur",
+            subtitle: "Premium Indische Exporte, Weltweit Geliefert",
+            description: "Wir bedienen Partner in über 15 Ländern und bieten eine vielfältige Palette nachhaltiger, hochwertiger Produkte—unterstützt von innovativen Lösungen und nahtloser Logistik, die auf Ihre Branchenbedürfnisse zugeschnitten ist.",
             cta: {
                 products: "Produkte Erkunden",
                 contact: "Kontakt Aufnehmen"
@@ -1401,11 +2264,11 @@ const translations = {
             subtitle: "Auf Vertrauen aufgebaut, von Qualität angetrieben, von Nachhaltigkeit geprägt",
             story: {
                 title: "Unsere Geschichte",
-                description: "TradeArk begann mit der Vision, die Lücke zwischen Indiens landwirtschaftlichem Erbe und globalen Märkten zu schließen. Gegründet von leidenschaftlichen Exporteuren, die das Potenzial premium indischer Produkte verstanden, sind wir zu einem vertrauenswürdigen Partner für Unternehmen weltweit gewachsen."
+                description: "TradeArk entstand aus der Vision, Indiens beste Produzenten mit Märkten auf der ganzen Welt zu verbinden. Was als kleines Team engagierter Exporteure begann, ist zu einem vertrauenswürdigen Partner für Unternehmen in über 15 Ländern gewachsen—mit Beständigkeit, Zuverlässigkeit und Innovation bei jeder Lieferung."
             },
             mission: {
                 title: "Unsere Mission",
-                description: "Außergewöhnliche Makhana und nachhaltige Kork-Dekor-Lösungen zu liefern, die Erwartungen übertreffen und gleichzeitig lokale Gemeinschaften und Umweltnachhaltigkeit unterstützen."
+                description: "Premium, nachhaltig bezogene Produkte zu liefern, die Erwartungen übertreffen—unterstützt von rigorosen Qualitätskontrollen, nahtloser Logistik und einem Engagement zur Stärkung von Gemeinschaften und zum Schutz unseres Planeten."
             },
             pillars: {
                 quality: {
@@ -1423,6 +2286,321 @@ const translations = {
             }
         },
         
+        // Products Section
+        products: {
+            title: "Unsere Premium-Produkte",
+            subtitle: "Entdecken Sie unser Sortiment hochwertiger Exporte",
+            makhana: {
+                title: "Premium Makhana",
+                subtitle: "Die Besten Fuchsnüsse aus Bihar",
+                description: "Handverlesen aus den unberührten Feuchtgebieten von Bihar bietet unser Premium-Makhana überlegene Qualität, Textur und Geschmack.",
+                cta: "Details Anzeigen",
+                hero: {
+                    title: "Premium Indisches Makhana",
+                    subtitle: "Proteinreiches, glutenfreies Superfood bereit für Ihren Markt",
+                    cta: {
+                        quote: "Angebot Anfordern",
+                        download: "Katalog Herunterladen"
+                    }
+                },
+                about: {
+                    title: "Über Makhana",
+                    description1: "Makhana, auch bekannt als Fuchsnüsse, sind geplatzte Samen der Lotuspflanze. Natürlich in den Feuchtgebieten von Bihar angebaut, werden diese nährstoffreichen Samen zu knusprigen, proteinreichen Snacks verarbeitet, die perfekt für gesundheitsbewusste Verbraucher weltweit sind.",
+                    description2: "Unser Premium-Makhana wird sorgfältig geerntet, unter strengen Qualitätskontrollen verarbeitet und ist in verschiedenen Formen erhältlich, um Ihre spezifischen Marktanforderungen zu erfüllen."
+                },
+                types: {
+                    title: "Produkttypen",
+                    subtitle: "Wählen Sie aus unserem umfassenden Sortiment von Makhana-Produkten",
+                    raw: {
+                        title: "Rohes Makhana",
+                        description: "Natürliches, unverarbeitetes Makhana perfekt für individuelle Aromatisierung und Markenbildung.",
+                        feature1: "Reinweiße Farbe",
+                        feature2: "Knusprige Textur",
+                        feature3: "MOQ: 500 kg",
+                        feature4: "Haltbarkeit: 12 Monate"
+                    },
+                    roasted: {
+                        title: "Geröstetes Makhana",
+                        description: "Leicht geröstet mit verbessertem Geschmack und verlängerter Haltbarkeit.",
+                        feature1: "Goldbraune Farbe",
+                        feature2: "Verbesserte Knusprigkeit",
+                        feature3: "MOQ: 500 kg",
+                        feature4: "Haltbarkeit: 18 Monate"
+                    },
+                    flavored: {
+                        title: "Aromatisiertes Makhana",
+                        description: "Premium-Geschmäcker wie Salz, Pfeffer, Masala und individuelle Optionen.",
+                        feature1: "Mehrere Geschmacksoptionen",
+                        feature2: "Individuelle Formeln",
+                        feature3: "MOQ: 200 kg pro Geschmack",
+                        feature4: "Haltbarkeit: 15 Monate"
+                    }
+                },
+                benefits: {
+                    title: "Produktvorteile",
+                    subtitle: "Warum unser Premium-Makhana wählen",
+                    protein: {
+                        title: "Proteinreich",
+                        description: "Enthält 9.7g Protein pro 100g, ideal für gesundheitsbewusste Verbraucher"
+                    },
+                    packaging: {
+                        title: "Individuelle Verpackung",
+                        description: "Flexible Verpackungsoptionen ab 200g mit Ihrer Marke"
+                    },
+                    shelf: {
+                        title: "Kalorienarmer Snack",
+                        description: "Nur 100 Kalorien pro 30g Portion—perfekt für bewusstes Snacking und Gewichtsmanagement-Pläne."
+                    },
+                    certified: {
+                        title: "Zertifizierte Qualität",
+                        description: "HACCP-, ISO 22000- und Bio-Zertifizierungen verfügbar"
+                    }
+                },
+
+                usecases: {
+                    title: "Anwendungsfälle",
+                    subtitle: "Perfekt für verschiedene Marktsegmente",
+                    retail: {
+                        title: "Einzelhandelsgeschäfte",
+                        description: "Verkaufsfertige Verpackungen für Naturkostläden, Supermärkte und Fachhändler."
+                    },
+                    gift: {
+                        title: "Geschenke & Körbe",
+                        description: "Premium-Verpackungsoptionen perfekt für Firmengeschenke und Festkörbe."
+                    },
+                    institutional: {
+                        title: "Institutioneller Gebrauch",
+                        description: "Großmengenversorgung für Hotels, Restaurants und Catering-Services."
+                    }
+                },
+
+                cta: {
+                    title: "Bereit für eine Partnerschaft mit Uns?",
+                    description: "Schließen Sie sich führenden Marken weltweit an, die TradeArk für Premium-Fuchsnuss-Lieferungen vertrauen",
+                    quote: "Angebot Anfordern",
+                    download: "PDF Herunterladen"
+                }
+            },
+            horeca: {
+                title: "Kork HoReCa Dekor",
+                hero: {
+                    title: "Kork HoReCa Dekor",
+                    subtitle: "Nachhaltiges, elegantes Geschirr für moderne Gastlichkeit",
+                    cta: {
+                        quote: "Angebot Anfordern",
+                        download: "PDF Herunterladen"
+                    }
+                },
+                sections: {
+                    whyCork: {
+                        title: "Warum Kork?",
+                        description1: "Kork ist die perfekte Lösung der Natur für nachhaltige Gastlichkeit. Geerntet von Eichen ohne sie zu schädigen, regeneriert sich Kork natürlich und bietet außergewöhnliche Haltbarkeit und Stil.",
+                        description2: "Unsere Korkprodukte verbinden Umweltverantwortung mit elegantem Design und helfen Hotels und Restaurants, unvergessliche Erfahrungen zu schaffen und gleichzeitig ihre Nachhaltigkeitsziele zu unterstützen."
+                    },
+                    productCategories: {
+                        title: "Produktkategorien",
+                        subtitle: "Kork-Dekorationslösungen für jeden HoReCa-Bedarf",
+                        drinkBar: {
+                            title: "Getränke- und Bar-Zubehör",
+                            description: "Wesentliche Kork-Ausrüstung für jede Bar",
+                            features: [
+                                "Logos auf Untersetzern, Kühlern und Haltern präsentieren",
+                                "Rutschfester Kork schützt Tischoberflächen",
+                                "Stapelbare, leichte Designs",
+                                "Individuelle Formen und Aufdrucke"
+                            ]
+                        },
+                        tableware: {
+                            title: "Geschirr und Service",
+                            description: "Verbessern Sie jedes kulinarische Erlebnis",
+                            features: [
+                                "Koordinierte Untersetzer, Tabletts, Matten und Ringe",
+                                "Warmer Kork verleiht natürlichen Charme",
+                                "Mix-and-Match für Menüs und Veranstaltungen",
+                                "Schnelle individuelle Oberflächen"
+                            ]
+                        },
+                        tissue: {
+                            title: "Gewebe- und Serviettenhalter",
+                            description: "Organisierte Eleganz für jeden Tisch",
+                            features: [
+                                "Nahtlose Taschentuchboxen und Halter",
+                                "Langlebiger Kork in weichen, neutralen Tönen",
+                                "Minimalistische Designs passen zu jedem Dekor",
+                                "Subtile Lasergravur für Branding"
+                            ]
+                        },
+                        decor: {
+                            title: "Dekoration und Einrichtung",
+                            description: "Unverwechselbare Kork-Akzente für Ihren Raum",
+                            features: [
+                                "Lampen, Rahmen, Menütafeln und Pflanzen",
+                                "Natürliche Korktextur verleiht Wärme",
+                                "Individuelle Installationen und Displays",
+                                "Statement-Stücke und subtile Akzente"
+                            ]
+                        }
+                    },
+                    gallery: {
+                        title: "Cork HoReCa Galerie",
+                        subtitle: "Entdecken Sie unsere nachhaltigen Kork-Dekorationslösungen für die Gastronomie",
+                        slides: {
+                            slide1: {
+                                title: "Nachhaltige Kork-Dekoration",
+                                description: "Umweltfreundliche HoReCa-Tischdekoration aus 100% nachhaltigem Kork, perfekt für moderne Gastfreundschaft",
+                                category: "Kork-Dekoration"
+                            },
+                            slide2: {
+                                title: "Kork-Weinzubehör",
+                                description: "Premium-Gastronomie-Dekoration und Weinzubehör für Restaurants und Cafés mit elegantem Design",
+                                category: "Kork-Dekoration"
+                            },
+                            slide3: {
+                                title: "HoReCa-Anwendungen",
+                                description: "Premium-Restaurant- und Gastgewerbelösungen zeigen unsere Kork-Dekorationsprodukte in realen Umgebungen",
+                                category: "Geschäft"
+                            }
+                        },
+                        viewFullSize: "Vollgröße Anzeigen"
+                    },
+                    branding: {
+                        title: "Branding-Optionen",
+                        subtitle: "Personalisieren Sie Ihre Korkprodukte mit professionellem Branding",
+                        laserEngraving: {
+                            title: "Lasergravur",
+                            description: "Präzises, permanentes Branding mit scharfen Details und professionellem Finish"
+                        },
+                        screenPrinting: {
+                            title: "Siebdruck",
+                            description: "Lebendige Farben und große Designs perfekt für Logos und Grafiken"
+                        },
+                        hotStamping: {
+                            title: "Heißprägung",
+                            description: "Premium-Metalloberflächen für Luxus-Branding-Anwendungen"
+                        }
+                    },
+                    sustainabilityNotes: {
+                        title: "Nachhaltigkeitshinweise",
+                        subtitle: "Umweltvorteile, die Ihre Marke stärken",
+                        renewable: {
+                            title: "100% Erneuerbar",
+                            description: "Geerntet von lebenden Bäumen ohne Schaden, regeneriert sich Kork alle 9 Jahre"
+                        },
+                        biodegradable: {
+                            title: "Biologisch Abbaubar",
+                            description: "Zersetzt sich natürlich ohne schädliche Umweltauswirkungen"
+                        },
+                        waterResistant: {
+                            title: "Wasserbeständig",
+                            description: "Natürliche Wasserbeständigkeit reduziert den Bedarf an chemischen Behandlungen"
+                        },
+                        antimicrobial: {
+                            title: "Antimikrobiell",
+                            description: "Natürliche Eigenschaften hemmen Bakterienwachstum für sichereren Lebensmittelservice"
+                        }
+                    },
+                    brandingOptions: {
+                        title: "Branding-Optionen",
+                        subtitle: "Korkprodukte mit Ihrer Markenidentität personalisieren",
+                        laser: {
+                            title: "Lasergravur",
+                            description: "Präzise und dauerhafte Gravur auf Korkoberflächen"
+                        },
+                        screen: {
+                            title: "Siebdruck",
+                            description: "Farbenfroher und lebendiger Druck für größere Designs"
+                        },
+                        hot: {
+                            title: "Heißprägung",
+                            description: "Premium-Metalloberflächen für Luxus-Branding"
+                        }
+                    },
+                    targetMarkets: {
+                        title: "Zielmärkte",
+                        subtitle: "Perfekte Lösungen für verschiedene Gastgewerbesegmente",
+                        hotels: {
+                            title: "Boutique-Hotels",
+                            description: "Einzigartige Annehmlichkeiten und Zimmerservice-Zubehör, das die Markenidentität stärkt"
+                        },
+                        wineBars: {
+                            title: "Weinbars und Cafés",
+                            description: "Anspruchsvolle Untersetzer und Service-Zubehör für Premium-Getränkeservice"
+                        },
+                        corporate: {
+                            title: "Firmen-Catering",
+                            description: "Professionelle Präsentation für Führungskräfte-Dinner und Firmenveranstaltungen"
+                        }
+                    },
+                    cta: {
+                        title: "Bereit, Ihren Raum zu Transformieren?",
+                        subtitle: "Schließen Sie sich zukunftsorientierten Gastgewerbemarken an, die mit nachhaltiger Korkdekoration unvergessliche Erfahrungen schaffen",
+                        requestQuote: "Angebot Anfordern",
+                        downloadPdf: "PDF Herunterladen"
+                    }
+                }
+            },
+            cork: {
+                title: "Kork HoReCa Dekor",
+                subtitle: "Nachhaltige Tischlösungen",
+                description: "Umweltfreundliche Kork-Tischdekorationen perfekt für Hotels, Restaurants und Cafés. Langlebig, nachhaltig und ästhetisch ansprechend.",
+                cta: "Details Anzeigen",
+                productCategories: {
+                    title: "Produktkategorien",
+                    subtitle: "Kork-Dekoration für jeden HoReCa-Bedarf",
+                    drinkBar: {
+                        title: "Getränke- und Bar-Zubehör",
+                        description: "Wesentliche Kork-Ausrüstung für jede Bar"
+                    },
+                    tableware: {
+                        title: "Geschirr und Service",
+                        description: "Verbessern Sie jede kulinarische Erfahrung"
+                    },
+                    tissue: {
+                        title: "Tuch- und Serviettenhalter",
+                        description: "Organisierte Eleganz für jeden Tisch"
+                    },
+                    decor: {
+                        title: "Dekoration und Einrichtung",
+                        description: "Unverwechselbare Kork-Akzente für Ihren Raum"
+                    }
+                }
+            },
+            custom: {
+                title: "Maßgeschneiderte Beschaffung auf Anfrage",
+                subtitle: "Finden Sie nicht, was Sie suchen? Wir beschaffen über unseren Katalog hinaus, um Ihre einzigartigen Anforderungen zu erfüllen.",
+                description: "Unser umfangreiches Netzwerk geprüfter Partner in ganz Indien ermöglicht es uns, alles von Spezialzutaten und Dekorationsmaterialien bis hin zu maßgefertigten Komponenten zu liefern—auf Ihre Spezifikationen zugeschnitten und durch unsere Qualitätsgarantie abgesichert.",
+                benefits: [
+                    "Zugang zu exklusiven Lieferanten in ganz Indien",
+                    "End-to-End-Qualitätskontrolle und Zertifizierung",
+                    "Wettbewerbsfähige Preise durch direkte Beschaffung"
+                ],
+                cta: "Maßgeschneidertes Angebot Einholen",
+                overlay: "Globales Beschaffungsnetzwerk"
+            }
+        },
+        
+        // Quality Section
+        quality: {
+            title: "Qualität und Zertifizierungen",
+            subtitle: "Internationale Standards bei jeder Sendung erfüllen",
+            promise: {
+                title: "Unser Qualitätsversprechen",
+                description: "Wir halten die höchsten Standards in unserer gesamten Lieferkette aufrecht, vom Bauernhof bis zu Ihrem Tisch. Unsere Qualitätskontrollprozesse gewährleisten Konsistenz und Exzellenz in jedem Produkt."
+            },
+            stats: {
+                quality: "Qualitäts-Erfolgsquote",
+                countries: "Bediente Länder",
+                customers: "Zufriedene Kunden"
+            },
+            certifications: {
+                title: "Zertifizierungen",
+                iso: "ISO 9001:2015",
+                organic: "Bio-Zertifiziert",
+                haccp: "HACCP-Zertifiziert",
+                export: "Exportlizenz"
+            }
+        },
+        
         // Why Us Section
         whyUs: {
             title: "Warum TradeArk Wählen?",
@@ -1437,8 +2615,8 @@ const translations = {
                     description: "Rigorose Tests und Qualitätskontrolle in jeder Phase, um Produktexzellenz zu gewährleisten."
                 },
                 {
-                    title: "24/7 Support",
-                    description: "Dediziertes Kundenservice-Team rund um die Uhr für Ihre Anfragen und Unterstützung verfügbar."
+                    title: "Flexibles Maßgeschneidertes Sourcing",
+                    description: "Maßgeschneiderte Beschaffungslösungen—wenn es nicht in unserem Katalog steht, finden wir es für Sie."
                 },
                 {
                     title: "Wettbewerbsfähige Preise",
@@ -1457,7 +2635,49 @@ const translations = {
         gallery: {
             title: "Unsere Galerie",
             subtitle: "Präsentation unserer Premium-Produkte und globalen Partnerschaften",
-            viewDetails: "Details Anzeigen"
+            viewDetails: "Details Anzeigen",
+            items: {
+                makhana1: {
+                    title: "Premium Makhana",
+                    description: "Überlegene Qualität Fuchsnüsse"
+                },
+                makhana2: {
+                    title: "Eingang zur Weltumwelt-Expo 2025",
+                    description: "Einsteigen in Indiens führende Versammlung von Umweltinnovatoren, Politikern und Meinungsführern in Greater Noida"
+                },
+                makhana3: {
+                    title: "Networking auf dem Expo-Boden",
+                    description: "Strategische Partnerschaften mit Unternehmern, Forschern und Branchenführern aufbauen, die sich für eine sauberere, kohlenstoffarme Zukunft einsetzen"
+                },
+                cork1: {
+                    title: "Biokraftstoff-Innovationen Erkunden",
+                    description: "Ein Portal zu modernsten grünen Technologien, Abfallreduzierungsstrategien und lebenden Lösungen, die die Öko-Landschaft von morgen prägen"
+                },
+                cork2: {
+                    title: "Biokraftstoff-Innovationen Erkunden",
+                    description: "Praktisches Engagement mit den neuesten Pelletpressen, effizienten Strohfütterungssystemen und Hochleistungsschleifern, die die Biokraftstoff-Revolution antreiben"
+                },
+                makhana4: {
+                    title: "6+ Suta HP Makhana (19 mm – 25 mm)",
+                    description: "Extra-große, hoch-gepuffte Kerne mit überlegener Textur und Gourmet-Geschmack."
+                },
+                makhana5: {
+                    title: "5 Suta Makhana (15.8 mm – 18.5 mm)",
+                    description: "Premium-grade Lotussamen, leicht und knusprig—ideal für gesunde, schuldfreie Snacks."
+                },
+                cork3: {
+                    title: "Kork Besteck- und Servietten-Organizer",
+                    description: "Gabeln, Löffel und Servietten ordentlich in einem einzigen, antimikrobiellen Kork-Caddy verstauen—funktionales Design für jeden Tisch."
+                },
+                cork4: {
+                    title: "Nachhaltige Kork HoReCa Kollektion",
+                    description: "Verbessern Sie Ihr Esszimmer und Dekor mit unseren umweltfreundlichen Kork-Accessoires—wo natürliche Textur auf moderne Gastfreundschaft trifft."
+                },
+                cork5: {
+                    title: "Runde Kork-Untersetzer Set",
+                    description: "Schützen Sie Ihre Oberflächen stilvoll mit minimalistischen Kork-Untersetzern—hitzebeständig, feuchtigkeitsabweisend und endlos wiederverwendbar."
+                }
+            }
         },
         
         // Testimonials Section
@@ -1520,7 +2740,36 @@ const translations = {
         // Footer
         footer: {
             description: "Premium indische Exporte weltweit geliefert mit Qualität, Nachhaltigkeit und Zuverlässigkeit.",
-            copyright: "© 2025 TradeArk. Alle Rechte vorbehalten."
+            products: {
+                title: "Produkte",
+                makhana: "Premium Makhana",
+                cork: "Kork Dekor",
+                quality: "Qualitätsstandards",
+                certifications: "Zertifizierungen"
+            },
+            company: {
+                title: "Unternehmen",
+                about: "Über Uns",
+                whyUs: "Warum Uns Wählen",
+                testimonials: "Testimonials",
+                contact: "Kontakt"
+            },
+            copyright: "© 2025 TradeArk. Alle Rechte vorbehalten.",
+            credit: "Gemacht von <a href='https://www.instagram.com/vedantmittal21/' target='_blank' rel='noopener' style='color: var(--saffron-accent); text-decoration: none;'>Vedant Mittal</a>"
+        },
+        
+        // Download Modal 
+        download: {
+            title: "Katalog Herunterladen",
+            description: "Bitte geben Sie Ihre Daten an, um unseren Katalog herunterzuladen:",
+            form: {
+                name: "Name *",
+                company: "Unternehmen *",
+                phone: "Telefonnummer *",
+                email: "E-Mail *",
+                message: "Nachricht (Optional)"
+            },
+            button: "Katalog Herunterladen"
         }
     },
     
@@ -1532,17 +2781,20 @@ const translations = {
             products: "المنتجات",
             makhana: "ماخانا بريميوم",
             horeca: "ديكور الفلين للمطاعم",
+            customSourcing: "التوريد المخصص",
             quality: "الجودة",
             "why-us": "لماذا نحن",
             gallery: "المعرض",
             testimonials: "الشهادات",
-            contact: "اتصل بنا"
+            contact: "اتصل بنا",
+            language: "اللغة"
         },
         
         // Hero Section
         hero: {
-            subtitle: "ماخانا هندية بريميوم وديكور فلين مستدام",
-            description: "من حقول بيهار إلى طاولات العالم — نحن نقدم ماخانا بريميوم وديكور فلين مستدام يحول تجارب الفنادق والمطاعم والمقاهي. موثوق به من قبل أكثر من 15 دولة للجودة والاستدامة والموثوقية.",
+            badge: "مُصدّر هندي بريميوم",
+            subtitle: "صادرات هندية بريميوم، تُسلم عالمياً",
+            description: "نخدم شركاء في أكثر من 15 دولة، ونقدم مجموعة متنوعة من المنتجات عالية الجودة المستدامة—مدعومة بحلول مبتكرة ولوجستيات سلسة مصممة خصيصاً لاحتياجات صناعتك.",
             cta: {
                 products: "استكشف المنتجات",
                 contact: "تواصل معنا"
@@ -1555,11 +2807,11 @@ const translations = {
             subtitle: "مبني على الثقة، مدفوع بالجودة، مُفعّل بالاستدامة",
             story: {
                 title: "قصتنا",
-                description: "بدأت تريد آرك برؤية لسد الفجوة بين التراث الزراعي الهندي والأسواق العالمية. تأسست من قبل مصدرين شغوفين فهموا إمكانات المنتجات الهندية المتميزة، ونمونا لنصبح شريكاً موثوقاً للشركات في جميع أنحاء العالم."
+                description: "وُلدت تريد آرك من رؤية لربط أفضل منتجي الهند بأسواق حول العالم. ما بدأ كفريق صغير من المصدرين المتفانين نما ليصبح شريكاً موثوقاً للشركات في أكثر من 15 دولة—يجلب الاتساق والموثوقية والابتكار إلى كل شحنة."
             },
             mission: {
                 title: "مهمتنا",
-                description: "تقديم حلول استثنائية للماخانا وديكور الفلين المستدام التي تتجاوز التوقعات بينما تدعم المجتمعات المحلية والاستدامة البيئية."
+                description: "تقديم منتجات بريميوم مستدامة المصدر تتجاوز التوقعات—مدعومة بضوابط جودة صارمة، ولوجستيات سلسة، والتزام بتمكين المجتمعات وحماية كوكبنا."
             },
             pillars: {
                 quality: {
@@ -1577,6 +2829,321 @@ const translations = {
             }
         },
         
+        // Products Section
+        products: {
+            title: "منتجاتنا المتميزة",
+            subtitle: "اكتشف مجموعة صادراتنا عالية الجودة",
+            makhana: {
+                title: "ماخانا بريميوم",
+                subtitle: "أفضل مكسرات الثعلب من بيهار",
+                description: "منتقاة يدوياً من الأراضي الرطبة النقية في بيهار، ماخانا المتميزة لدينا تقدم جودة ونسيج ونكهة فائقة.",
+                cta: "عرض التفاصيل",
+                hero: {
+                    title: "ماخانا هندية متميزة",
+                    subtitle: "غذاء فائق غني بالبروتين وخالٍ من الغلوتين جاهز لسوقك",
+                    cta: {
+                        quote: "طلب عرض سعر",
+                        download: "تحميل الكتالوج"
+                    }
+                },
+                about: {
+                    title: "حول الماخانا",
+                    description1: "الماخانا، المعروفة أيضاً باسم مكسرات الثعلب، هي بذور منبثقة من نبات اللوتس. تُزرع طبيعياً في الأراضي الرطبة في بيهار، هذه البذور المغذية تُعالج إلى وجبات خفيفة مقرمشة غنية بالبروتين، مثالية للمستهلكين المهتمين بالصحة حول العالم.",
+                    description2: "ماخانا المتميزة لدينا تُحصد بعناية، تُعالج تحت ضوابط جودة صارمة وتتوفر بأشكال مختلفة لتلبية متطلبات السوق المحددة لديكم."
+                },
+                types: {
+                    title: "أنواع المنتجات",
+                    subtitle: "اختر من مجموعتنا الشاملة من منتجات الماخانا",
+                    raw: {
+                        title: "ماخانا خام",
+                        description: "ماخانا طبيعية غير معالجة مثالية للنكهات والعلامات التجارية المخصصة.",
+                        feature1: "لون أبيض نقي",
+                        feature2: "ملمس مقرمش",
+                        feature3: "MOQ: 500 كيلو",
+                        feature4: "مدة الصلاحية: 12 شهر"
+                    },
+                    roasted: {
+                        title: "ماخانا محمصة",
+                        description: "محمصة بخفة مع نكهة محسنة ومدة صلاحية ممتدة.",
+                        feature1: "لون بني ذهبي",
+                        feature2: "قرمشة محسنة",
+                        feature3: "MOQ: 500 كيلو",
+                        feature4: "مدة الصلاحية: 18 شهر"
+                    },
+                    flavored: {
+                        title: "ماخانا بالنكهات",
+                        description: "نكهات متميزة مثل الملح، الفلفل، الماسالا، وخيارات مخصصة.",
+                        feature1: "خيارات نكهات متعددة",
+                        feature2: "تركيبات مخصصة",
+                        feature3: "MOQ: 200 كيلو لكل نكهة",
+                        feature4: "مدة الصلاحية: 15 شهر"
+                    }
+                },
+                benefits: {
+                    title: "فوائد المنتج",
+                    subtitle: "لماذا تختار ماخانا المتميزة لدينا",
+                    protein: {
+                        title: "غنية بالبروتين",
+                        description: "تحتوي على 9.7 جرام بروتين لكل 100 جرام، مثالية للمستهلكين المهتمين بالصحة"
+                    },
+                    packaging: {
+                        title: "تغليف مخصص",
+                        description: "خيارات تغليف مرنة من 200 جرام مع علامتكم التجارية"
+                    },
+                    shelf: {
+                        title: "وجبة خفيفة منخفضة السعرات",
+                        description: "100 سعرة حرارية فقط لكل 30 جرام—مثالية للوجبات الخفيفة الواعية وخطط إدارة الوزن."
+                    },
+                    certified: {
+                        title: "جودة معتمدة",
+                        description: "شهادات HACCP و ISO 22000 والعضوية متاحة"
+                    }
+                },
+
+                usecases: {
+                    title: "حالات الاستخدام",
+                    subtitle: "مثالية لقطاعات السوق المختلفة",
+                    retail: {
+                        title: "متاجر التجزئة",
+                        description: "عبوات جاهزة للبيع لمتاجر الأطعمة الصحية والسوبر ماركت وتجار التجزئة المتخصصين."
+                    },
+                    gift: {
+                        title: "الهدايا والسلال",
+                        description: "خيارات تغليف فاخرة مثالية للهدايا المؤسسية والسلال الاحتفالية."
+                    },
+                    institutional: {
+                        title: "الاستخدام المؤسسي",
+                        description: "توريد بالجملة للفنادق والمطاعم وخدمات التموين."
+                    }
+                },
+
+                cta: {
+                    title: "مستعد للشراكة معنا؟",
+                    description: "انضم إلى العلامات التجارية الرائدة عالمياً التي تثق في تريد آرك لتوريدات مكسرات الثعلب المتميزة",
+                    quote: "طلب عرض سعر",
+                    download: "تحميل PDF"
+                }
+            },
+            horeca: {
+                title: "ديكور الفلين للمطاعم",
+                hero: {
+                    title: "ديكور الفلين للمطاعم",
+                    subtitle: "أدوات مائدة مستدامة وأنيقة للضيافة الحديثة",
+                    cta: {
+                        quote: "طلب عرض سعر",
+                        download: "تحميل PDF"
+                    }
+                },
+                sections: {
+                    whyCork: {
+                        title: "لماذا الفلين؟",
+                        description1: "الفلين هو الحل الطبيعي المثالي للضيافة المستدامة. يُحصد من أشجار البلوط دون إلحاق الضرر بها، يتجدد الفلين طبيعياً بينما يوفر متانة واستايل استثنائيين.",
+                        description2: "منتجاتنا من الفلين تجمع بين المسؤولية البيئية والتصميم الأنيق، مما يساعد الفنادق والمطاعم على خلق تجارب لا تُنسى مع دعم أهدافهم في الاستدامة."
+                    },
+                    productCategories: {
+                        title: "فئات المنتجات",
+                        subtitle: "حلول ديكور الفلين لكل احتياج في قطاع الضيافة",
+                        drinkBar: {
+                            title: "إكسسوارات المشروبات والبار",
+                            description: "معدات الفلين الأساسية لكل بار",
+                            features: [
+                                "اعرض الشعارات على الحصائر والمبردات والحوامل",
+                                "الفلين المقاوم للانزلاق يحمي أسطح الطاولات",
+                                "تصاميم قابلة للتكديس وخفيفة الوزن",
+                                "أشكال ونقوش مخصصة"
+                            ]
+                        },
+                        tableware: {
+                            title: "أدوات المائدة والخدمة",
+                            description: "ارقِ بكل تجربة طعام",
+                            features: [
+                                "حصائر وصواني وسجاد وحلقات متناسقة",
+                                "الفلين الدافئ يضيف سحراً طبيعياً",
+                                "امزج وطابق للقوائم والمناسبات",
+                                "لمسات نهائية مخصصة سريعة"
+                            ]
+                        },
+                        tissue: {
+                            title: "حاملات المناديل والمحارم",
+                            description: "أناقة منظمة لكل طاولة",
+                            features: [
+                                "صناديق مناديل وحاملات سلسة",
+                                "فلين متين بألوان ناعمة ومحايدة",
+                                "تصاميم بسيطة تناسب أي ديكور",
+                                "نقش ليزر خفي للعلامة التجارية"
+                            ]
+                        },
+                        decor: {
+                            title: "الديكور والأثاث",
+                            description: "لمسات فلين مميزة لمساحتك",
+                            features: [
+                                "مصابيح وإطارات ولوحات قوائم ونباتات",
+                                "ملمس الفلين الطبيعي يضيف دفئاً",
+                                "تركيبات ومعارض مخصصة",
+                                "قطع بارزة ولمسات خفية"
+                            ]
+                        }
+                    },
+                    gallery: {
+                        title: "معرض كورك هوريكا",
+                        subtitle: "اكتشف حلول ديكور الفلين المستدام للضيافة",
+                        slides: {
+                            slide1: {
+                                title: "ديكور الفلين المستدام",
+                                description: "ديكور طاولة هوريكا صديق للبيئة مصنوع من الفلين المستدام 100%، مثالي للضيافة الحديثة",
+                                category: "ديكور الفلين"
+                            },
+                            slide2: {
+                                title: "إكسسوارات النبيذ من الفلين",
+                                description: "ديكور ضيافة فاخر وإكسسوارات نبيذ للمطاعم والمقاهي بتصميم أنيق",
+                                category: "ديكور الفلين"
+                            },
+                            slide3: {
+                                title: "تطبيقات هوريكا",
+                                description: "حلول فاخرة للمطاعم والضيافة تعرض منتجات ديكور الفلين الخاصة بنا في بيئات حقيقية",
+                                category: "أعمال"
+                            }
+                        },
+                        viewFullSize: "عرض الحجم الكامل"
+                    },
+                    branding: {
+                        title: "خيارات العلامة التجارية",
+                        subtitle: "خصص منتجات الفلين الخاصة بك بعلامة تجارية مهنية",
+                        laserEngraving: {
+                            title: "النقش بالليزر",
+                            description: "علامة تجارية دقيقة ودائمة بتفاصيل واضحة ولمسة نهائية مهنية"
+                        },
+                        screenPrinting: {
+                            title: "الطباعة الحريرية",
+                            description: "ألوان حيوية وتصاميم كبيرة مثالية للشعارات والرسوميات"
+                        },
+                        hotStamping: {
+                            title: "الختم الساخن",
+                            description: "لمسات نهائية معدنية فاخرة لتطبيقات العلامات التجارية الفاخرة"
+                        }
+                    },
+                    sustainabilityNotes: {
+                        title: "ملاحظات الاستدامة",
+                        subtitle: "الفوائد البيئية التي تعزز علامتك التجارية",
+                        renewable: {
+                            title: "100% متجدد",
+                            description: "يُحصد من الأشجار الحية دون ضرر، يتجدد الفلين كل 9 سنوات"
+                        },
+                        biodegradable: {
+                            title: "قابل للتحلل الحيوي",
+                            description: "يتحلل طبيعياً دون تأثير بيئي ضار"
+                        },
+                        waterResistant: {
+                            title: "مقاوم للماء",
+                            description: "المقاومة الطبيعية للماء تقلل الحاجة للمعالجات الكيميائية"
+                        },
+                        antimicrobial: {
+                            title: "مضاد للميكروبات",
+                            description: "الخصائص الطبيعية تثبط نمو البكتيريا لخدمة طعام أكثر أماناً"
+                        }
+                    },
+                    brandingOptions: {
+                        title: "خيارات العلامة التجارية",
+                        subtitle: "خصص منتجات الفلين بهوية علامتك التجارية",
+                        laser: {
+                            title: "النقش بالليزر",
+                            description: "نقش دقيق ودائم على أسطح الفلين"
+                        },
+                        screen: {
+                            title: "الطباعة الحريرية",
+                            description: "طباعة ملونة وحيوية للتصاميم الأكبر"
+                        },
+                        hot: {
+                            title: "الختم الساخن",
+                            description: "لمسات نهائية معدنية فاخرة للعلامات التجارية الفاخرة"
+                        }
+                    },
+                    targetMarkets: {
+                        title: "الأسواق المستهدفة",
+                        subtitle: "حلول مثالية لقطاعات الضيافة المختلفة",
+                        hotels: {
+                            title: "الفنادق البوتيكية",
+                            description: "وسائل راحة فريدة وإكسسوارات خدمة الغرف التي تعزز هوية العلامة التجارية"
+                        },
+                        wineBars: {
+                            title: "بارات النبيذ والمقاهي",
+                            description: "حصائر أنيقة وإكسسوارات خدمة لتقديم المشروبات الفاخرة"
+                        },
+                        corporate: {
+                            title: "التموين المؤسسي",
+                            description: "عرض مهني للعشاء التنفيذي والفعاليات المؤسسية"
+                        }
+                    },
+                    cta: {
+                        title: "مستعد لتحويل مساحتك؟",
+                        subtitle: "انضم لعلامات الضيافة الرائدة التي تخلق تجارب لا تُنسى بديكور الفلين المستدام",
+                        requestQuote: "طلب عرض سعر",
+                        downloadPdf: "تحميل PDF"
+                    }
+                }
+            },
+            cork: {
+                title: "ديكور الفلين للمطاعم",
+                subtitle: "حلول طاولة مستدامة",
+                description: "ديكور طاولة من الفلين صديق للبيئة مثالي للفنادق والمطاعم والمقاهي. متين ومستدام وجميل جمالياً.",
+                cta: "عرض التفاصيل",
+                productCategories: {
+                    title: "فئات المنتجات",
+                    subtitle: "حلول ديكور الفلين لكل احتياج في قطاع الضيافة",
+                    drinkBar: {
+                        title: "إكسسوارات المشروبات والبار",
+                        description: "معدات الفلين الأساسية لكل بار"
+                    },
+                    tableware: {
+                        title: "أدوات المائدة والخدمة",
+                        description: "ارقِ بكل تجربة طعام"
+                    },
+                    tissue: {
+                        title: "حاملات المناديل والمحارم",
+                        description: "أناقة منظمة لكل طاولة"
+                    },
+                    decor: {
+                        title: "الديكور والأثاث",
+                        description: "لمسات فلين مميزة لمساحتك"
+                    }
+                }
+            },
+            custom: {
+                title: "التوريد المخصص عند الطلب",
+                subtitle: "لا تجد ما تبحث عنه؟ نحن نوفر ما هو أبعد من كتالوجنا لتلبية متطلباتك الفريدة.",
+                description: "شبكتنا الواسعة من الشركاء المدققين في جميع أنحاء الهند تمكننا من تقديم كل شيء من المكونات المتخصصة ومواد الديكور إلى المكونات المخصصة—مصممة وفقاً لمواصفاتك ومدعومة بضمان الجودة لدينا.",
+                benefits: [
+                    "الوصول إلى موردين حصريين في جميع أنحاء الهند",
+                    "مراقبة الجودة والشهادات من البداية إلى النهاية",
+                    "أسعار تنافسية من خلال التوريد المباشر"
+                ],
+                cta: "احصل على عرض أسعار مخصص",
+                overlay: "شبكة التوريد العالمية"
+            }
+        },
+        
+        // Quality Section
+        quality: {
+            title: "الجودة والشهادات",
+            subtitle: "تلبية المعايير الدولية مع كل شحنة",
+            promise: {
+                title: "وعدنا بالجودة",
+                description: "نحن نحافظ على أعلى المعايير في جميع أنحاء سلسلة التوريد لدينا، من المزرعة إلى طاولتكم. عمليات مراقبة الجودة لدينا تضمن الاتساق والتميز في كل منتج."
+            },
+            stats: {
+                quality: "معدل نجاح الجودة",
+                countries: "البلدان المخدومة",
+                customers: "العملاء الراضون"
+            },
+            certifications: {
+                title: "الشهادات",
+                iso: "ISO 9001:2015",
+                organic: "معتمد عضوي",
+                haccp: "معتمد HACCP",
+                export: "رخصة التصدير"
+            }
+        },
+        
         // Why Us Section
         whyUs: {
             title: "لماذا تختار تريد آرك؟",
@@ -1591,8 +3158,8 @@ const translations = {
                     description: "اختبارات صارمة ومراقبة الجودة في كل مرحلة لضمان تميز المنتج."
                 },
                 {
-                    title: "دعم 24/7",
-                    description: "فريق خدمة عملاء مخصص متاح على مدار الساعة لاستفساراتكم ودعمكم."
+                    title: "التوريد المخصص المرن",
+                    description: "حلول تموين مصممة خصيصاً—إذا لم تكن في كتالوجنا، سنجدها لكم."
                 },
                 {
                     title: "أسعار تنافسية",
@@ -1611,7 +3178,49 @@ const translations = {
         gallery: {
             title: "معرضنا",
             subtitle: "عرض منتجاتنا المتميزة والشراكات العالمية",
-            viewDetails: "عرض التفاصيل"
+            viewDetails: "عرض التفاصيل",
+            items: {
+                makhana1: {
+                    title: "ماخانا بريميوم",
+                    description: "جوز الثعلب عالي الجودة"
+                },
+                makhana2: {
+                    title: "الدخول إلى معرض البيئة العالمي 2025",
+                    description: "الدخول إلى أهم تجمع هندي لمبتكري البيئة وصناع السياسات وقادة الرأي في غريتر نويدا"
+                },
+                makhana3: {
+                    title: "التواصل في أرضية المعرض",
+                    description: "بناء شراكات استراتيجية مع رجال الأعمال والباحثين وقادة الصناعة الملتزمين بمستقبل أنظف ومنخفض الكربون"
+                },
+                cork1: {
+                    title: "استكشاف ابتكارات الوقود الحيوي",
+                    description: "بوابة إلى التقنيات الخضراء المتطورة واستراتيجيات تقليل النفايات والحلول الحية التي تشكل المشهد البيئي للغد"
+                },
+                cork2: {
+                    title: "استكشاف ابتكارات الوقود الحيوي",
+                    description: "المشاركة العملية مع أحدث مكابس الحبيبات وأنظمة تغذية القش الفعالة والطواحين عالية الأداء التي تقود ثورة الوقود الحيوي"
+                },
+                makhana4: {
+                    title: "6+ سوتا إتش بي ماخانا (19 مم – 25 مم)",
+                    description: "حبوب كبيرة الحجم ومنتفخة للغاية تقدم نسيجًا فائقًا وطعمًا للذواقة."
+                },
+                makhana5: {
+                    title: "5 سوتا ماخانا (15.8 مم – 18.5 مم)",
+                    description: "بذور اللوتس من الدرجة الممتازة، خفيفة ومقرمشة—مثالية للوجبات الخفيفة الصحية الخالية من الشعور بالذنب."
+                },
+                cork3: {
+                    title: "منظم أدوات المائدة والمناديل من الفلين",
+                    description: "قم بتخزين الشوك والملاعق والمناديل بأناقة في حامل واحد مضاد للميكروبات من الفلين—تصميم عملي لكل طاولة."
+                },
+                cork4: {
+                    title: "مجموعة الفلين المستدام للضيافة",
+                    description: "ارفع مستوى طعامك وديكورك بإكسسوارات الفلين الصديقة للبيئة—حيث تلتقي النسيج الطبيعي بالضيافة الحديثة."
+                },
+                cork5: {
+                    title: "طقم قواعد الأكواب الدائرية من الفلين",
+                    description: "احم أسطحك بأناقة مع قواعد الأكواب البسيطة من الفلين—مقاومة للحرارة، مقاومة للرطوبة، وقابلة لإعادة الاستخدام إلى ما لا نهاية."
+                }
+            }
         },
         
         // Testimonials Section
@@ -1674,7 +3283,36 @@ const translations = {
         // Footer
         footer: {
             description: "صادرات هندية متميزة تُسلم في جميع أنحاء العالم بجودة واستدامة وموثوقية.",
-            copyright: "© 2025 تريد آرك. جميع الحقوق محفوظة."
+            products: {
+                title: "المنتجات",
+                makhana: "ماخانا بريميوم",
+                cork: "ديكور الفلين",
+                quality: "معايير الجودة",
+                certifications: "الشهادات"
+            },
+            company: {
+                title: "الشركة",
+                about: "عن الشركة",
+                whyUs: "لماذا تختارنا",
+                testimonials: "الشهادات",
+                contact: "اتصل بنا"
+            },
+            copyright: "© 2025 تريد آرك. جميع الحقوق محفوظة.",
+            credit: "من صنع <a href='https://www.instagram.com/vedantmittal21/' target='_blank' rel='noopener' style='color: var(--saffron-accent); text-decoration: none;'>فيدانت ميتال</a>"
+        },
+        
+        // Download Modal 
+        download: {
+            title: "تحميل الكتالوج",
+            description: "يرجى تقديم التفاصيل الخاصة بك لتحميل الكتالوج:",
+            form: {
+                name: "الاسم *",
+                company: "الشركة *",
+                phone: "رقم الهاتف *",
+                email: "البريد الإلكتروني *",
+                message: "الرسالة (اختياري)"
+            },
+            button: "تحميل الكتالوج"
         }
     }
 };
@@ -1780,6 +3418,9 @@ class LanguageManager {
                         const chevron = element.querySelector('.mobile-menu-chevron');
                         const chevronHtml = chevron ? chevron.outerHTML : '<span class="mobile-menu-chevron">→</span>';
                         element.innerHTML = `<span>${translation}</span>${chevronHtml}`;
+                    } else if (translation.includes('<a href=') || translation.includes('<')) {
+                        // Use innerHTML for content that contains HTML tags (like links)
+                        element.innerHTML = translation;
                     } else {
                         element.textContent = translation;
                     }

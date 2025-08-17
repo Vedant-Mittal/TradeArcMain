@@ -16,8 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollIndicator();
     initializeLanguageManager();
     initializeGallery();
+    forceImageRefresh();
 
 });
+
+// Force refresh of cached images
+function forceImageRefresh() {
+    const corkImages = document.querySelectorAll('img[src*="Cork HoReCa Catalogue"]');
+    corkImages.forEach(img => {
+        const originalSrc = img.src;
+        const timestamp = new Date().getTime();
+        img.src = originalSrc.split('?')[0] + '?v=' + timestamp;
+    });
+}
 
 // Language Manager Initialization
 function initializeLanguageManager() {
@@ -92,7 +103,7 @@ function toggleMobileDropdown(dropdown) {
     }
 }
 
-// Mobile menu helper functions (correct implementation is below with initializeMobileMenu)
+
 
 // Smooth Scrolling Function
 function scrollToSection(sectionId) {
@@ -260,6 +271,14 @@ function handleContactForm(form) {
     const submitButton = form.querySelector('.form-submit');
     const originalText = submitButton.textContent;
     
+    // Prevent double submission
+    if (submitButton.dataset.submitting === 'true') {
+        return;
+    }
+    
+    // Mark as submitting
+    submitButton.dataset.submitting = 'true';
+    
     // Show loading state with spinner
     submitButton.innerHTML = '<span class="btn-spinner"></span> Sending...';
     submitButton.disabled = true;
@@ -315,6 +334,8 @@ function handleContactForm(form) {
         submitButton.innerHTML = originalText;
         submitButton.disabled = false;
         submitButton.classList.remove('btn-loading');
+        // Reset submission flag
+        submitButton.dataset.submitting = 'false';
     });
 }
 
@@ -328,22 +349,54 @@ function handleNewsletterForm(form) {
     submitButton.textContent = 'Subscribing...';
     submitButton.disabled = true;
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        const email = formData.get('email');
-        
-        // Newsletter subscription processed
-        
-        // Show success message
-        showNotification('Successfully subscribed to our newsletter!', 'success');
-        
-        // Reset form
-        form.reset();
-        
-        // Reset button
+    // Prepare data for Web3Forms
+    const data = {
+        access_key: '74f025aa-6671-48aa-9181-7922d4e71f7c',
+        email: formData.get('email'),
+        subject: 'Newsletter Subscription from TradeArk Website',
+        from_name: 'TradeArk Newsletter Form',
+        action: 'newsletter_subscription'
+    };
+    
+    // Submit to Web3Forms API
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data),
+        signal: controller.signal
+    })
+    .then(async (response) => {
+        let responseData = await response.json();
+        if (response.status == 200) {
+            // Success - show success message and reset form
+            showNotification('Successfully subscribed to our newsletter!', 'success');
+            form.reset();
+        } else {
+            // Error - show error message
+            showNotification(responseData.message || 'Sorry, there was an error subscribing. Please try again.', 'error');
+        }
+    })
+    .catch(error => {
+        clearTimeout(timeoutId);
+        // Handle network error
+        if (error.name === 'AbortError') {
+            showNotification('Request timed out. Please check your connection and try again.', 'error');
+        } else {
+            showNotification('Network error: Unable to subscribe. Please check your connection and try again.', 'error');
+        }
+    })
+    .finally(() => {
+        clearTimeout(timeoutId);
+        // Reset button state
         submitButton.textContent = originalText;
         submitButton.disabled = false;
-    }, 1000);
+    });
 }
 
 // Testimonials Carousel
@@ -448,8 +501,10 @@ function initializeAnimations() {
     const stats = document.querySelectorAll('.stat-number');
     const statsObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
                 animateNumber(entry.target);
+                statsObserver.unobserve(entry.target); // Stop observing after animation
             }
         });
     });
@@ -464,10 +519,10 @@ function animateNumber(element) {
     const finalNumber = element.textContent;
     const isPercentage = finalNumber.includes('%');
     const isPlus = finalNumber.includes('+');
-    const numericValue = parseInt(finalNumber.replace(/[^\d]/g, ''));
+    const numericValue = parseFloat(finalNumber.replace(/[^\d.]/g, ''));
     
     let currentNumber = 0;
-    const increment = Math.ceil(numericValue / 50);
+    const increment = numericValue / 50;
     
     const timer = setInterval(() => {
         currentNumber += increment;
@@ -478,6 +533,13 @@ function animateNumber(element) {
         }
         
         let displayValue = currentNumber.toString();
+        // Handle decimal formatting for percentages
+        if (isPercentage && numericValue % 1 !== 0) {
+            displayValue = currentNumber.toFixed(1);
+        } else {
+            displayValue = Math.round(currentNumber).toString();
+        }
+        
         if (isPercentage) displayValue += '%';
         if (isPlus) displayValue += '+';
         
@@ -785,37 +847,71 @@ function handleDownloadForm(form) {
     submitButton.innerHTML = '<i data-lucide="loader-2"></i> Processing...';
     submitButton.disabled = true;
     
-    // Get form data
+    // Get form data and prepare for Web3Forms
     const formData = new FormData(form);
+    const currentPath = window.location.pathname;
+    const catalogType = currentPath.includes('/makhana') ? 'Makhana' : 'HoReCa Cork Décor';
+    
     const data = {
+        access_key: '74f025aa-6671-48aa-9181-7922d4e71f7c',
         name: formData.get('name'),
         company: formData.get('company'),
         phone: formData.get('phone'),
         email: formData.get('email'),
         message: formData.get('message') || '',
+        subject: `Download Request - ${catalogType} Catalogue from TradeArk Website`,
+        from_name: 'TradeArk Download Form',
         action: 'download_catalogue'
     };
     
-    // Simulate form processing (you can integrate with your backend here)
-    setTimeout(() => {
-        // Show success notification
-        showNotification('Thank you! Your download will start shortly.', 'success');
-        
-        // Close modal
-        closeDownloadModal();
-        
-        // Start the actual download - determine catalog type based on current page
-        const currentPath = window.location.pathname;
-        const catalogType = currentPath.includes('/makhana') ? 'makhana' : 'horeca';
-        triggerCatalogueDownload(catalogType);
-        
-        // Reset button
+    // Submit to Web3Forms API
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data),
+        signal: controller.signal
+    })
+    .then(async (response) => {
+        let responseData = await response.json();
+        if (response.status == 200) {
+            // Success - show notification and start download
+            showNotification('Thank you! Your download will start shortly.', 'success');
+            
+            // Close modal
+            closeDownloadModal();
+            
+            // Start the actual download
+            const catalogType = currentPath.includes('/makhana') ? 'makhana' : 'horeca';
+            triggerCatalogueDownload(catalogType);
+            
+            // Reset form
+            form.reset();
+        } else {
+            // Error - show error message
+            showNotification(responseData.message || 'Sorry, there was an error processing your request. Please try again.', 'error');
+        }
+    })
+    .catch(error => {
+        clearTimeout(timeoutId);
+        // Handle network error
+        if (error.name === 'AbortError') {
+            showNotification('Request timed out. Please check your connection and try again.', 'error');
+        } else {
+            showNotification('Network error: Unable to process request. Please check your connection and try again.', 'error');
+        }
+    })
+    .finally(() => {
+        clearTimeout(timeoutId);
+        // Reset button state
         submitButton.innerHTML = originalText;
         submitButton.disabled = false;
-        
-        // Reset form
-        form.reset();
-    }, 1500);
+    });
 }
 
 // Global function to trigger catalogue download (used by product pages)
