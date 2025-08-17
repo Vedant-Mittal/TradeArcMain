@@ -19,6 +19,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     <!-- Translations -->
     <script src="../assets/js/translations.js"></script>
     
@@ -998,6 +1001,10 @@
                         <textarea id="downloadMessage" name="message" rows="3" placeholder="Tell us about your business requirements..."></textarea>
                     </div>
                     
+                    <div class="form-group recaptcha-group">
+                        <div class="g-recaptcha" data-sitekey="6Le8GakrAAAAAB1mWGiHgL29hRX9E5c3m_W6kOVO" id="downloadRecaptcha"></div>
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary download-submit">
                         <i data-lucide="download"></i>
                         Download Catalogue
@@ -1013,7 +1020,7 @@
             <div class="footer-content">
                 <div class="footer-section footer-brand">
                     <img src="../assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="footer-logo">
-                    <p>Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
+                    <p data-i18n="footer.brand.description">Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61578574832708" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
                         <a href="https://wa.me/918797102793?text=Hello!" target="_blank" rel="noopener" title="WhatsApp: +91 8797102793">
@@ -1027,32 +1034,32 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Products</h4>
+                    <h4 data-i18n="footer.products.title">Products</h4>
                     <ul>
-                        <li><a href="makhana.html">Premium Makhana</a></li>
-                        <li><a href="horeca.html">Cork Décor</a></li>
-                        <li><a href="../index.html#quality">Quality Standards</a></li>
-                        <li><a href="../index.html#quality">Certifications</a></li>
+                        <li><a href="makhana.html" data-i18n="footer.products.makhana">Premium Makhana</a></li>
+                        <li><a href="horeca.html" data-i18n="footer.products.cork">Cork Décor</a></li>
+                        <li><a href="../index.html#quality" data-i18n="footer.products.quality">Quality Standards</a></li>
+                        <li><a href="../index.html#quality" data-i18n="footer.products.certifications">Certifications</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer.company.title">Company</h4>
                     <ul>
-                        <li><a href="../index.html#about">About Us</a></li>
-                        <li><a href="../index.html#why-us">Why Choose Us</a></li>
-                        <li><a href="../index.html#testimonials">Testimonials</a></li>
-                        <li><a href="../index.html#contact">Contact</a></li>
+                        <li><a href="../index.html#about" data-i18n="footer.company.about">About Us</a></li>
+                        <li><a href="../index.html#why-us" data-i18n="footer.company.whyChoose">Why Choose Us</a></li>
+                        <li><a href="../index.html#testimonials" data-i18n="footer.company.testimonials">Testimonials</a></li>
+                        <li><a href="../index.html#contact" data-i18n="footer.company.contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    <p>&copy; 2025 TradeArk. All rights reserved.</p>
+                    <p data-i18n="footer.copyright">&copy; 2025 TradeArk. All rights reserved.</p>
                 </div>
                 <div class="footer-credit">
-                    <p>Made by <a href="https://www.instagram.com/vedantmittal21/" target="_blank" rel="noopener" style="color: var(--saffron-accent); text-decoration: none;">Vedant Mittal</a></p>
+                    <p data-i18n="footer.credit">Made by <a href="https://www.instagram.com/vedantmittal21/" target="_blank" rel="noopener" style="color: var(--saffron-accent); text-decoration: none;">Vedant Mittal</a></p>
                 </div>
             </div>
         </div>
@@ -1270,5 +1277,9 @@
             window.languageManager = new LanguageManager();
         }
     </script>
+
+    <!-- Main JS for notifications and other functionality -->
+    <script src="../assets/js/main.js"></script>
+
 </body>
 </html>

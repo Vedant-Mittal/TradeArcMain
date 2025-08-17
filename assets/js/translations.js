@@ -662,31 +662,45 @@ const translations = {
         
         // Products Section
         products: {
-            title: "हमारे उत्पाद",
-            subtitle: "भारत से दुनिया तक प्रीमियम निर्यात",
+            title: "हमारे प्रीमियम उत्पाद",
+            subtitle: "हमारे उच्च गुणवत्ता निर्यात की श्रृंखला खोजें",
+            badges: {
+                premium: "प्रीमियम",
+                sustainable: "टिकाऊ"
+            },
             makhana: {
-                title: "प्रीमियम मखाना",
-                subtitle: "बिहार का बेहतरीन फॉक्स नट",
-                description: "बिहार की प्राचीन आर्द्रभूमि से हाथ से चुना गया, हमारा प्रीमियम मखाना उत्कृष्ट गुणवत्ता, बनावट और स्वाद प्रदान करता है।",
-                cta: "विवरण देखें"
+                title: "प्रीमियम मखाना (फॉक्स नट)",
+                description: "बिहार के बेहतरीन फार्मों से हाथ से चुना गया, हमारा मखाना अपनी उत्कृष्ट गुणवत्ता, आकार और पोषणीय मूल्य के लिए प्रसिद्ध है।",
+                features: [
+                    "प्रोटीन और फाइबर से भरपूर",
+                    "प्राकृतिक रूप से कम वसा",
+                    "बल्क और रिटेल पैकेजिंग",
+                    "ग्लोबल शिपिंग"
+                ],
+                cta: "और जानें"
             },
             cork: {
-                title: "कॉर्क होरेका डेकोर",
-                subtitle: "टिकाऊ टेबल समाधान",
-                description: "होटल, रेस्तरां और कैफे के लिए पर्यावरण-अनुकूल कॉर्क टेबलटॉप डेकोर। टिकाऊ, स्थायी और सौंदर्यपूर्ण।",
-                cta: "विवरण देखें"
+                title: "टिकाऊ कॉर्क होरेका डेकोर",
+                description: "दुनिया भर के होटल, रेस्तरां और कैफे के लिए विशेष रूप से डिज़ाइन किया गया सुरुचिपूर्ण और पर्यावरण-अनुकूल कॉर्क टेबलटॉप डेकोर।",
+                features: [
+                    "100% टिकाऊ कॉर्क",
+                    "कस्टम ब्रांडिंग उपलब्ध",
+                    "मजबूत और हल्का",
+                    "साफ करने और रखरखाव में आसान"
+                ],
+                cta: "और जानें"
             },
             custom: {
-                title: "कस्टम सोर्सिंग",
-                subtitle: "हमारे कैटलॉग से आगे",
+                title: "कस्टम सोर्सिंग ऑन डिमांड",
+                subtitle: "क्या आपको वह नहीं मिल रहा जिसकी आप तलाश कर रहे हैं? हम आपकी अनूठी आवश्यकताओं को पूरा करने के लिए अपने कैटलॉग से आगे सोर्स करते हैं।",
                 description: "भारत भर में हमारे जांचे-परखे भागीदारों का व्यापक नेटवर्क हमें विशेष सामग्री और डेकोर सामग्री से लेकर बेस्पोक घटकों तक सब कुछ प्रदान करने में सक्षम बनाता है—आपकी विशिष्टताओं के अनुकूल और हमारी गुणवत्ता गारंटी द्वारा समर्थित।",
                 benefits: [
-                    "समर्पित सोर्सिंग टीम",
-                    "गुणवत्ता आश्वासन",
-                    "प्रतिस्पर्धी मूल्य",
-                    "विश्वसनीय डिलीवरी"
+                    "भारत भर में विशेष आपूर्तिकर्ताओं तक पहुंच",
+                    "एंड-टू-एंड गुणवत्ता नियंत्रण और प्रमाणन",
+                    "प्रत्यक्ष सोर्सिंग के माध्यम से प्रतिस्पर्धी मूल्य निर्धारण"
                 ],
-                cta: "कस्टम कोट प्राप्त करें"
+                cta: "कस्टम कोट प्राप्त करें",
+                overlay: "ग्लोबल सोर्सिंग नेटवर्क"
             },
             horeca: {
                 title: "कॉर्क होरेका डेकोर",
@@ -1202,13 +1216,22 @@ const translations = {
         
         // Products Section
         products: {
-            title: "Nuestros Productos",
-            subtitle: "Exportaciones premium de India al mundo",
+            title: "Nuestros Productos Premium",
+            subtitle: "Descubre nuestra gama de exportaciones de alta calidad",
+            badges: {
+                premium: "Premium",
+                sustainable: "Sostenible"
+            },
             makhana: {
-                title: "Makhana Premium",
-                subtitle: "Las Mejores Nueces Fox de Bihar",
-                description: "Seleccionada a mano de los humedales prístinos de Bihar, nuestra Makhana premium ofrece calidad, textura y sabor superiores.",
-                cta: "Ver Detalles",
+                title: "Makhana Premium (Nuez Fox)",
+                description: "Seleccionadas a mano de las mejores granjas de Bihar, nuestras Makhana son reconocidas por su calidad superior, tamaño y valor nutricional.",
+                features: [
+                    "Rica en proteínas y fibra",
+                    "Naturalmente baja en grasa",
+                    "Empaque a granel y al por menor",
+                    "Envío global"
+                ],
+                cta: "Saber Más",
                 hero: {
                     title: "Makhana India Premium",
                     subtitle: "Superalimento alto en proteínas y sin gluten listo para tu mercado",
@@ -1454,10 +1477,15 @@ const translations = {
                 }
             },
             cork: {
-                title: "Decoración Cork HoReCa",
-                subtitle: "Soluciones de Mesa Sostenibles",
-                description: "Decoración de mesa de corcho ecológica perfecta para hoteles, restaurantes y cafés. Duradera, sostenible y estéticamente agradable.",
-                cta: "Ver Detalles",
+                title: "Decoración Cork HoReCa Sostenible",
+                description: "Decoración de mesa de corcho elegante y ecológica diseñada específicamente para hoteles, restaurantes y cafés de todo el mundo.",
+                features: [
+                    "100% corcho sostenible",
+                    "Marca personalizada disponible",
+                    "Duradero y ligero",
+                    "Fácil de limpiar y mantener"
+                ],
+                cta: "Saber Más",
                 productCategories: {
                     title: "Categorías de Productos",
                     subtitle: "Soluciones de decoración de corcho para cada necesidad HoReCa",
@@ -1747,11 +1775,20 @@ const translations = {
         products: {
             title: "Nos Produits Premium",
             subtitle: "Découvrez notre gamme d'exportations de haute qualité",
+            badges: {
+                premium: "Premium",
+                sustainable: "Durable"
+            },
             makhana: {
-                title: "Makhana Premium",
-                subtitle: "Les Meilleures Noix Fox du Bihar",
-                description: "Cueillies à la main dans les zones humides pristines du Bihar, notre Makhana premium offre une qualité, texture et saveur supérieures.",
-                cta: "Voir les Détails",
+                title: "Makhana Premium (Noix Fox)",
+                description: "Sélectionnées à la main dans les meilleures fermes du Bihar, nos Makhana sont réputées pour leur qualité supérieure, leur taille et leur valeur nutritionnelle.",
+                features: [
+                    "Riche en protéines et fibres",
+                    "Naturellement faible en graisse",
+                    "Emballage en vrac et au détail",
+                    "Expédition mondiale"
+                ],
+                cta: "En Savoir Plus",
                 hero: {
                     title: "Makhana Premium d'Inde",
                     subtitle: "Superaliment riche en protéines et sans gluten prêt pour votre marché",
@@ -1997,10 +2034,15 @@ const translations = {
                 }
             },
             cork: {
-                title: "Décoration Cork HoReCa",
-                subtitle: "Solutions de Table Durables",
-                description: "Décoration de table en liège écologique parfaite pour hôtels, restaurants et cafés. Durable, durable et esthétiquement plaisante.",
-                cta: "Voir les Détails",
+                title: "Décoration Cork HoReCa Durable",
+                description: "Décoration de table en liège élégante et écologique conçue spécifiquement pour les hôtels, restaurants et cafés du monde entier.",
+                features: [
+                    "100% liège durable",
+                    "Marquage personnalisé disponible",
+                    "Durable et léger",
+                    "Facile à nettoyer et entretenir"
+                ],
+                cta: "En Savoir Plus",
                 productCategories: {
                     title: "Catégories de Produits",
                     subtitle: "Solutions de décoration en liège pour chaque besoin HoReCa",
@@ -2290,11 +2332,20 @@ const translations = {
         products: {
             title: "Unsere Premium-Produkte",
             subtitle: "Entdecken Sie unser Sortiment hochwertiger Exporte",
+            badges: {
+                premium: "Premium",
+                sustainable: "Nachhaltig"
+            },
             makhana: {
-                title: "Premium Makhana",
-                subtitle: "Die Besten Fuchsnüsse aus Bihar",
-                description: "Handverlesen aus den unberührten Feuchtgebieten von Bihar bietet unser Premium-Makhana überlegene Qualität, Textur und Geschmack.",
-                cta: "Details Anzeigen",
+                title: "Premium Makhana (Fuchsnuss)",
+                description: "Handverlesen von den besten Farmen in Bihar sind unsere Makhana für ihre überlegene Qualität, Größe und ihren Nährwert bekannt.",
+                features: [
+                    "Reich an Proteinen und Ballaststoffen",
+                    "Natürlich fettarm",
+                    "Groß- und Einzelhandelsverpackung",
+                    "Weltweiter Versand"
+                ],
+                cta: "Mehr Erfahren",
                 hero: {
                     title: "Premium Indisches Makhana",
                     subtitle: "Proteinreiches, glutenfreies Superfood bereit für Ihren Markt",
@@ -2540,10 +2591,15 @@ const translations = {
                 }
             },
             cork: {
-                title: "Kork HoReCa Dekor",
-                subtitle: "Nachhaltige Tischlösungen",
-                description: "Umweltfreundliche Kork-Tischdekorationen perfekt für Hotels, Restaurants und Cafés. Langlebig, nachhaltig und ästhetisch ansprechend.",
-                cta: "Details Anzeigen",
+                title: "Nachhaltige Kork HoReCa Dekor",
+                description: "Elegante und umweltfreundliche Kork-Tischdekorationen, speziell für Hotels, Restaurants und Cafés weltweit entworfen.",
+                features: [
+                    "100% nachhaltiger Kork",
+                    "Individuelle Markengestaltung verfügbar",
+                    "Langlebig und leicht",
+                    "Einfach zu reinigen und zu pflegen"
+                ],
+                cta: "Mehr Erfahren",
                 productCategories: {
                     title: "Produktkategorien",
                     subtitle: "Kork-Dekoration für jeden HoReCa-Bedarf",
@@ -2833,11 +2889,20 @@ const translations = {
         products: {
             title: "منتجاتنا المتميزة",
             subtitle: "اكتشف مجموعة صادراتنا عالية الجودة",
+            badges: {
+                premium: "بريميوم",
+                sustainable: "مستدام"
+            },
             makhana: {
-                title: "ماخانا بريميوم",
-                subtitle: "أفضل مكسرات الثعلب من بيهار",
-                description: "منتقاة يدوياً من الأراضي الرطبة النقية في بيهار، ماخانا المتميزة لدينا تقدم جودة ونسيج ونكهة فائقة.",
-                cta: "عرض التفاصيل",
+                title: "ماخانا بريميوم (جوز الثعلب)",
+                description: "منتقاة يدوياً من أفضل المزارع في بيهار، ماخانا لدينا مشهورة بجودتها الفائقة وحجمها وقيمتها الغذائية.",
+                features: [
+                    "غنية بالبروتين والألياف",
+                    "قليلة الدهون طبيعياً",
+                    "تعبئة بالجملة والتجزئة",
+                    "شحن عالمي"
+                ],
+                cta: "اعرف المزيد",
                 hero: {
                     title: "ماخانا هندية متميزة",
                     subtitle: "غذاء فائق غني بالبروتين وخالٍ من الغلوتين جاهز لسوقك",
@@ -3083,10 +3148,15 @@ const translations = {
                 }
             },
             cork: {
-                title: "ديكور الفلين للمطاعم",
-                subtitle: "حلول طاولة مستدامة",
-                description: "ديكور طاولة من الفلين صديق للبيئة مثالي للفنادق والمطاعم والمقاهي. متين ومستدام وجميل جمالياً.",
-                cta: "عرض التفاصيل",
+                title: "ديكور الفلين المستدام للمطاعم",
+                description: "ديكور طاولة من الفلين أنيق وصديق للبيئة مصمم خصيصاً للفنادق والمطاعم والمقاهي حول العالم.",
+                features: [
+                    "100% فلين مستدام",
+                    "علامة تجارية مخصصة متاحة",
+                    "متين وخفيف الوزن",
+                    "سهل التنظيف والصيانة"
+                ],
+                cta: "اعرف المزيد",
                 productCategories: {
                     title: "فئات المنتجات",
                     subtitle: "حلول ديكور الفلين لكل احتياج في قطاع الضيافة",
@@ -3379,8 +3449,12 @@ class LanguageManager {
     }
     
     changeLanguage(lang) {
-        if (!this.supportedLanguages.includes(lang)) return;
+        if (!this.supportedLanguages.includes(lang)) {
+            console.log('Language not supported:', lang);
+            return;
+        }
         
+        console.log('Changing language to:', lang);
         this.currentLanguage = lang;
         this.setStoredLanguage(lang);
         this.translatePage();
@@ -3392,6 +3466,7 @@ class LanguageManager {
         
         // Show notification
         this.showLanguageNotification(lang);
+        console.log('Language change completed for:', lang);
     }
     
     translatePage() {
@@ -3405,24 +3480,27 @@ class LanguageManager {
             const translation = this.getNestedTranslation(currentTranslations, key);
             
             if (translation) {
+                // Ensure translation is a string for text operations
+                const translationText = typeof translation === 'string' ? translation : String(translation);
+                
                 // Handle different element types
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     if (element.type === 'submit' || element.type === 'button') {
-                        element.value = translation;
+                        element.value = translationText;
                     } else {
-                        element.placeholder = translation;
+                        element.placeholder = translationText;
                     }
                 } else {
                     // Special handling for mobile menu toggle buttons to preserve arrows
                     if (element.classList.contains('mobile-menu-toggle-btn')) {
                         const chevron = element.querySelector('.mobile-menu-chevron');
                         const chevronHtml = chevron ? chevron.outerHTML : '<span class="mobile-menu-chevron">→</span>';
-                        element.innerHTML = `<span>${translation}</span>${chevronHtml}`;
-                    } else if (translation.includes('<a href=') || translation.includes('<')) {
+                        element.innerHTML = `<span>${translationText}</span>${chevronHtml}`;
+                    } else if (typeof translation === 'string' && (translation.includes('<a href=') || translation.includes('<'))) {
                         // Use innerHTML for content that contains HTML tags (like links)
                         element.innerHTML = translation;
                     } else {
-                        element.textContent = translation;
+                        element.textContent = translationText;
                     }
                 }
             }
@@ -3530,10 +3608,14 @@ class LanguageManager {
         };
         
         const message = `Language changed to ${languageNames[lang]}`;
+        console.log('Showing notification:', message);
         
         // Use existing notification system if available
         if (typeof showNotification === 'function') {
+            console.log('showNotification function found, calling it');
             showNotification(message, 'success');
+        } else {
+            console.log('showNotification function not found');
         }
     }
     

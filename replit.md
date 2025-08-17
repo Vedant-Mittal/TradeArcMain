@@ -32,6 +32,8 @@ Preferred communication style: Simple, everyday language.
 **Gallery Removal - August 17, 2025:**
 - **Makhana Gallery Removal**: Completely removed the "Makhana Gallery" image slider from the Makhana product page
 - **Cork HoReCa Gallery Removal**: Completely removed the "Cork HoReCa Gallery" image slider from the HoReCa product page
+- **Homepage Gallery Update**: Removed "Networking on the Expo Floor" image (third slide) from homepage "Our Gallery" section
+- **Navigation Update**: Updated slideshow navigation dots from 10 to 9 dots to match current gallery count
 - **Page Optimization**: Streamlined both product page layouts by eliminating redundant image galleries
 - **Content Focus**: Enhanced focus on product information, benefits, and use cases without gallery distractions
 - **Consistent Experience**: Both product pages now have clean, focused layouts without slideshow interruptions

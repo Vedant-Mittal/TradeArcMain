@@ -5,11 +5,18 @@ let currentTestimonial = 0;
 const testimonials = document.querySelectorAll('.testimonial-card');
 const testimonialDots = document.querySelectorAll('.dot');
 
+// reCAPTCHA Configuration
+const RECAPTCHA_CONFIG = {
+    siteKey: null,
+    initialized: false
+};
+
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollEffects();
     initializeParallax();
+    initializeRecaptcha();
     initializeForms();
     initializeTestimonials();
     initializeAnimations();
@@ -34,6 +41,87 @@ function forceImageRefresh() {
 function initializeLanguageManager() {
     if (typeof LanguageManager !== 'undefined') {
         window.languageManager = new LanguageManager();
+    }
+}
+
+// reCAPTCHA Initialization
+function initializeRecaptcha() {
+    // Check if site key is already set in HTML
+    const recaptchaElements = document.querySelectorAll('.g-recaptcha');
+    if (recaptchaElements.length > 0) {
+        const firstElement = recaptchaElements[0];
+        const siteKey = firstElement.getAttribute('data-sitekey');
+        
+        if (siteKey && siteKey !== '') {
+            RECAPTCHA_CONFIG.siteKey = siteKey;
+            RECAPTCHA_CONFIG.initialized = true;
+            
+            // Initialize reCAPTCHA when script loads
+            if (typeof grecaptcha !== 'undefined') {
+                // Script already loaded, initialize immediately
+                setTimeout(initializeRecaptchaWidgets, 100);
+            } else {
+                // Wait for script to load
+                window.addEventListener('load', () => {
+                    setTimeout(initializeRecaptchaWidgets, 100);
+                });
+            }
+        }
+    }
+}
+
+// Initialize reCAPTCHA widgets
+function initializeRecaptchaWidgets() {
+    if (typeof grecaptcha !== 'undefined' && RECAPTCHA_CONFIG.siteKey) {
+        document.querySelectorAll('.g-recaptcha').forEach((element, index) => {
+            if (!element.hasAttribute('data-widget-id')) {
+                try {
+                    const widgetId = grecaptcha.render(element, {
+                        'sitekey': RECAPTCHA_CONFIG.siteKey,
+                        'theme': 'light',
+                        'size': 'normal'
+                    });
+                    element.setAttribute('data-widget-id', widgetId);
+                } catch (error) {
+                    console.error('Failed to render reCAPTCHA widget:', error);
+                }
+            }
+        });
+    }
+}
+
+// reCAPTCHA Validation Helper
+function validateRecaptcha(recaptchaId) {
+    if (!RECAPTCHA_CONFIG.initialized) {
+        throw new Error('reCAPTCHA not initialized');
+    }
+    
+    const recaptchaElement = document.getElementById(recaptchaId);
+    if (!recaptchaElement) {
+        throw new Error('reCAPTCHA element not found');
+    }
+    
+    const widgetId = recaptchaElement.getAttribute('data-widget-id');
+    if (!widgetId) {
+        throw new Error('reCAPTCHA widget not properly initialized');
+    }
+    
+    const response = grecaptcha.getResponse(parseInt(widgetId));
+    if (!response) {
+        throw new Error('Please complete the reCAPTCHA verification');
+    }
+    
+    return response;
+}
+
+// Reset reCAPTCHA
+function resetRecaptcha(recaptchaId) {
+    const recaptchaElement = document.getElementById(recaptchaId);
+    if (recaptchaElement) {
+        const widgetId = recaptchaElement.getAttribute('data-widget-id');
+        if (widgetId && typeof grecaptcha !== 'undefined') {
+            grecaptcha.reset(parseInt(widgetId));
+        }
     }
 }
 
@@ -276,6 +364,15 @@ function handleContactForm(form) {
         return;
     }
     
+    // Validate reCAPTCHA first
+    try {
+        const recaptchaResponse = validateRecaptcha('contactRecaptcha');
+        console.log('reCAPTCHA validated successfully');
+    } catch (error) {
+        showNotification(error.message, 'error');
+        return;
+    }
+    
     // Mark as submitting
     submitButton.dataset.submitting = 'true';
     
@@ -287,6 +384,16 @@ function handleContactForm(form) {
     // Convert form data to JSON as required by Web3Forms
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
+    
+    // Add reCAPTCHA response
+    try {
+        const recaptchaResponse = validateRecaptcha('contactRecaptcha');
+        object['g-recaptcha-response'] = recaptchaResponse;
+    } catch (error) {
+        // This shouldn't happen since we already validated, but handle gracefully
+        console.error('reCAPTCHA validation failed during submission:', error);
+    }
+    
     const json = JSON.stringify(object);
     
     // Submit to Web3Forms API with proper headers and timeout
@@ -307,6 +414,8 @@ function handleContactForm(form) {
         if (response.status == 200) {
             // Success - reset form and show success message
             form.reset();
+            // Reset reCAPTCHA
+            resetRecaptcha('contactRecaptcha');
             // Also hide the custom sourcing field after form reset
             const customSourcingField = document.getElementById('customSourcingField');
             if (customSourcingField) {
@@ -314,13 +423,15 @@ function handleContactForm(form) {
             }
             showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
         } else {
-            // Error - show error message
-            // Handle error response
+            // Error - show error message and reset reCAPTCHA
+            resetRecaptcha('contactRecaptcha');
             showNotification(responseData.message || 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
         }
     })
     .catch(error => {
         clearTimeout(timeoutId);
+        // Reset reCAPTCHA on error
+        resetRecaptcha('contactRecaptcha');
         // Handle network error
         if (error.name === 'AbortError') {
             showNotification('Request timed out. Please check your connection and try again.', 'error');
@@ -843,6 +954,15 @@ function handleDownloadForm(form) {
     const submitButton = form.querySelector('.download-submit');
     const originalText = submitButton.innerHTML;
     
+    // Validate reCAPTCHA first
+    try {
+        const recaptchaResponse = validateRecaptcha('downloadRecaptcha');
+        console.log('Download form reCAPTCHA validated successfully');
+    } catch (error) {
+        showNotification(error.message, 'error');
+        return;
+    }
+    
     // Show loading state
     submitButton.innerHTML = '<i data-lucide="loader-2"></i> Processing...';
     submitButton.disabled = true;
@@ -863,6 +983,14 @@ function handleDownloadForm(form) {
         from_name: 'TradeArk Download Form',
         action: 'download_catalogue'
     };
+    
+    // Add reCAPTCHA response
+    try {
+        const recaptchaResponse = validateRecaptcha('downloadRecaptcha');
+        data['g-recaptcha-response'] = recaptchaResponse;
+    } catch (error) {
+        console.error('reCAPTCHA validation failed during download submission:', error);
+    }
     
     // Submit to Web3Forms API
     const controller = new AbortController();
@@ -890,15 +1018,19 @@ function handleDownloadForm(form) {
             const catalogType = currentPath.includes('/makhana') ? 'makhana' : 'horeca';
             triggerCatalogueDownload(catalogType);
             
-            // Reset form
+            // Reset form and reCAPTCHA
             form.reset();
+            resetRecaptcha('downloadRecaptcha');
         } else {
-            // Error - show error message
+            // Error - show error message and reset reCAPTCHA
+            resetRecaptcha('downloadRecaptcha');
             showNotification(responseData.message || 'Sorry, there was an error processing your request. Please try again.', 'error');
         }
     })
     .catch(error => {
         clearTimeout(timeoutId);
+        // Reset reCAPTCHA on error
+        resetRecaptcha('downloadRecaptcha');
         // Handle network error
         if (error.name === 'AbortError') {
             showNotification('Request timed out. Please check your connection and try again.', 'error');

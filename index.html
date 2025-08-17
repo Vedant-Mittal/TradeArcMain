@@ -25,6 +25,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     <!-- Translations -->
     <script src="assets/js/translations.js"></script>
 </head>
@@ -533,19 +536,6 @@
                     </div>
                     
                     <div class="slide">
-                        <img src="assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.11 (1).webp" alt="TradeArk business operations and export excellence in action" loading="lazy" />
-                        <div class="slide-overlay">
-                            <div class="slide-caption">
-                                <h4 data-i18n="gallery.items.makhana3.title">Networking on the Expo Floor</h4>
-                                <p data-i18n="gallery.items.makhana3.description">Building strategic partnerships with entrepreneurs, researchers, and industry leaders committed to a cleaner, low‑carbon future</p>
-                            </div>
-                            <button class="slide-btn" onclick="openLightbox('assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.11 (1).webp', 'Networking on the Expo Floor', 'Building strategic partnerships with entrepreneurs, researchers, and industry leaders committed to a cleaner, low‑carbon future')" data-i18n="gallery.viewDetails">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="slide">
                         <img src="assets/images/TradeArk Images/Home page Slider Images/WhatsApp Image 2025-07-19 at 23.13.12.webp" alt="TradeArk sustainable products and innovative export solutions" loading="lazy" />
                         <div class="slide-overlay">
                             <div class="slide-caption">
@@ -660,7 +650,6 @@
                     <button class="dot" onclick="goToSlide(6)"></button>
                     <button class="dot" onclick="goToSlide(7)"></button>
                     <button class="dot" onclick="goToSlide(8)"></button>
-                    <button class="dot" onclick="goToSlide(9)"></button>
                 </div>
                 
 
@@ -676,7 +665,7 @@
                 <i data-lucide="x"></i>
             </button>
             <div class="lightbox-image-container">
-                <img id="lightboxImage" src="" alt="" />
+                <img id="lightboxImage" src="" alt="Gallery image preview" />
             </div>
             <div class="lightbox-info">
                 <h3 id="lightboxTitle"></h3>
@@ -825,6 +814,10 @@
                             <textarea id="message" name="message" rows="5" data-i18n="contact.form.requirements" placeholder="Tell us about your requirements..."></textarea>
                         </div>
                         
+                        <div class="form-group recaptcha-group">
+                            <div class="g-recaptcha" data-sitekey="6Le8GakrAAAAAB1mWGiHgL29hRX9E5c3m_W6kOVO" id="contactRecaptcha"></div>
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary form-submit" data-i18n="contact.form.submit">
                             Send Message
                         </button>
@@ -926,6 +919,10 @@
                     <div class="form-group">
                         <label for="downloadMessage" data-i18n="download.form.message">Message (Optional)</label>
                         <textarea id="downloadMessage" name="message" rows="3" placeholder="Tell us about your business requirements..."></textarea>
+                    </div>
+                    
+                    <div class="form-group recaptcha-group">
+                        <div class="g-recaptcha" data-sitekey="6Le8GakrAAAAAB1mWGiHgL29hRX9E5c3m_W6kOVO" id="downloadRecaptcha"></div>
                     </div>
                     
                     <button type="submit" class="btn btn-primary download-submit">
