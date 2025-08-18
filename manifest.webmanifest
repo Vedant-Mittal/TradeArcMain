@@ -1,0 +1,21 @@
+{
+  "name": "TradeArk",
+  "short_name": "TradeArk",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b2a3a",
+  "theme_color": "#0b2a3a",
+  "icons": [
+    {
+      "src": "/assets/images/TradeArk Images/Fevicon Icon.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/assets/images/TradeArk Images/Fevicon Icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+} 

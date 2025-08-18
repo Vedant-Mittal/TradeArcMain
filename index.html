@@ -71,7 +71,7 @@
     <link rel="dns-prefetch" href="https://www.google.com">
     
     <!-- Resource Preloading for Core Web Vitals -->
-    <link rel="preload" href="assets/images/TradeArk Images/Cargo Container Lot.webp" as="image" importance="high">
+    <link rel="preload" href="assets/images/TradeArk Images/Cargo Container Lot.webp" as="image" importance="high" fetchpriority="high">
     <link rel="preload" href="assets/css/style.css?v=2025-08-18-2" as="style">
     <link rel="preload" href="assets/js/main.js" as="script">
     
@@ -246,7 +246,7 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://tradeark-website.repl.co/"
+                "item": "https://www.tradeark.in/"
             }
         ]
     }
@@ -276,6 +276,46 @@
       ]
     }
     </script>
+
+    <meta name="theme-color" content="#0b2a3a">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; script-src 'self' https://unpkg.com https://www.google.com https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com;">
+
+    <!-- ItemList for homepage products -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.tradeark.in/products/makhana.html",
+          "item": {
+            "@type": "Product",
+            "name": "Premium Makhana (Fox Nut)",
+            "image": "https://www.tradeark.in/assets/images/TradeArk%20Images/Makhana%20Bowl%20Image.webp",
+            "brand": { "@type": "Brand", "name": "TradeArk" },
+            "category": "Food Products"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.tradeark.in/products/horeca.html",
+          "item": {
+            "@type": "Product",
+            "name": "Cork HoReCa Décor",
+            "image": "https://www.tradeark.in/assets/images/TradeArk%20Images/Leaves%20Growing%20on%20Cork%20Pot.webp",
+            "brand": { "@type": "Brand", "name": "TradeArk" },
+            "category": "Hospitality Products"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Minor image improvements are applied later in body -->
 </head>
 <body>
     <!-- Navigation -->
@@ -546,7 +586,7 @@
                 <div class="product-card">
                     <div class="product-image foxnut-bg">
                         <div class="product-badge" data-i18n="products.badges.premium">Premium</div>
-                        <img src="assets/images/TradeArk Images/Makhana Bowl Image.webp" alt="Premium Makhana (Fox Nut) in a bowl showing the quality and texture of the product" />
+                        <img src="assets/images/TradeArk Images/Makhana Bowl Image.webp" alt="Premium Makhana (Fox Nut) in a bowl showing the quality and texture of the product" width="1200" height="800" loading="lazy" />
                     </div>
                     <div class="product-content">
                         <h3 data-i18n="products.makhana.title">Premium Makhana (Fox Nut)</h3>
@@ -566,7 +606,7 @@
                 <div class="product-card">
                     <div class="product-image cork-bg">
                         <div class="product-badge" data-i18n="products.badges.sustainable">Sustainable</div>
-                        <img src="assets/images/TradeArk Images/Leaves Growing on Cork Pot.webp" alt="Sustainable cork décor showing plants growing in a cork pot, highlighting eco-friendly design" />
+                        <img src="assets/images/TradeArk Images/Leaves Growing on Cork Pot.webp" alt="Sustainable cork décor showing plants growing in a cork pot, highlighting eco-friendly design" width="1200" height="800" loading="lazy" />
                     </div>
                     <div class="product-content">
                         <h3 data-i18n="products.cork.title">Sustainable Cork HoReCa Décor</h3>

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://tradeark-website.repl.co/sitemap.xml
+Sitemap: https://www.tradeark.in/sitemap.xml
 
 # Optimize crawling for key pages
 Allow: /products/
