@@ -3658,11 +3658,44 @@ window.translations = translations;
             const t = translations[lang];
             if (!t) return;
 
-            // Ensure Makhana CTA is defined as a string
+            // Ensure Makhana CTA (homepage button text) is defined as a string
             if (!t.products) t.products = {};
             if (!t.products.makhana) t.products.makhana = {};
             t.products.makhana.cta = (
                 lang === 'hi' ? 'और जानें' : lang === 'es' ? 'Saber Más' : lang === 'fr' ? 'En Savoir Plus' : 'Learn More'
+            );
+
+            // Ensure Product page CTAs exist under sections.cta for Makhana
+            if (!t.products.makhana.sections) t.products.makhana.sections = {};
+            if (!t.products.makhana.sections.cta) t.products.makhana.sections.cta = {};
+            t.products.makhana.sections.cta.title = (
+                lang === 'hi' ? 'क्या आप हमारे साथ साझेदारी करने के लिए तैयार हैं?' : lang === 'es' ? '¿Listo para asociarte con nosotros?' : lang === 'fr' ? 'Prêt à vous associer avec nous ?' : 'Ready to Partner with Us?'
+            );
+            t.products.makhana.sections.cta.description = (
+                lang === 'hi' ? 'दुनिया भर के प्रमुख ब्रांडों के साथ जुड़ें जो TradeArk पर प्रीमियम मखाना सप्लाई के लिए भरोसा करते हैं' : lang === 'es' ? 'Únete a marcas líderes en todo el mundo que confían en TradeArk para suministros premium de makhana' : lang === 'fr' ? 'Rejoignez des marques leaders dans le monde entier qui font confiance à TradeArk pour des approvisionnements premium en makhana' : 'Join leading brands worldwide who trust TradeArk for premium fox nut supplies'
+            );
+            t.products.makhana.sections.cta.quote = (
+                lang === 'hi' ? 'कोटेशन का अनुरोध करें' : lang === 'es' ? 'Solicitar Cotización' : lang === 'fr' ? 'Demander un devis' : 'Request a Quote'
+            );
+            t.products.makhana.sections.cta.download = (
+                lang === 'hi' ? 'पीडीएफ डाउनलोड करें' : lang === 'es' ? 'Descargar PDF' : lang === 'fr' ? 'Télécharger le PDF' : 'Download PDF'
+            );
+
+            // Ensure HoReCa product page CTAs exist under sections.cta
+            if (!t.products.horeca) t.products.horeca = {};
+            if (!t.products.horeca.sections) t.products.horeca.sections = {};
+            if (!t.products.horeca.sections.cta) t.products.horeca.sections.cta = {};
+            t.products.horeca.sections.cta.title = (
+                lang === 'hi' ? 'अपने स्पेस को बदलने के लिए तैयार?' : lang === 'es' ? '¿Listo para transformar tu espacio?' : lang === 'fr' ? 'Prêt à transformer votre espace ?' : 'Ready to Transform Your Space?'
+            );
+            t.products.horeca.sections.cta.subtitle = (
+                lang === 'hi' ? 'सतत कॉर्क डेकोर के साथ यादगार अनुभव बनाने वाले अग्रणी ब्रांडों से जुड़ें' : lang === 'es' ? 'Únete a marcas visionarias que crean experiencias memorables con decoración de corcho sostenible' : lang === 'fr' ? 'Rejoignez des marques innovantes qui créent des expériences mémorables avec une décoration en liège durable' : 'Join forward-thinking hospitality brands creating memorable experiences with sustainable cork décor'
+            );
+            t.products.horeca.sections.cta.requestQuote = (
+                lang === 'hi' ? 'कोटेशन का अनुरोध करें' : lang === 'es' ? 'Solicitar Cotización' : lang === 'fr' ? 'Demander un devis' : 'Request a Quote'
+            );
+            t.products.horeca.sections.cta.downloadPdf = (
+                lang === 'hi' ? 'पीडीएफ डाउनलोड करें' : lang === 'es' ? 'Descargar PDF' : lang === 'fr' ? 'Télécharger le PDF' : 'Download PDF'
             );
 
             // Ensure Makhana description and features (homepage)
