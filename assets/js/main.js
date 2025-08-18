@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollEffects();
     initializeParallax();
-    initializeRecaptcha();
     initializeForms();
     initializeTestimonials();
     initializeAnimations();
@@ -364,14 +363,7 @@ function handleContactForm(form) {
         return;
     }
     
-    // Validate reCAPTCHA first
-    try {
-        const recaptchaResponse = validateRecaptcha('contactRecaptcha');
-        console.log('reCAPTCHA validated successfully');
-    } catch (error) {
-        showNotification(error.message, 'error');
-        return;
-    }
+    // reCAPTCHA removed
     
     // Mark as submitting
     submitButton.dataset.submitting = 'true';
@@ -385,14 +377,7 @@ function handleContactForm(form) {
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     
-    // Add reCAPTCHA response
-    try {
-        const recaptchaResponse = validateRecaptcha('contactRecaptcha');
-        object['g-recaptcha-response'] = recaptchaResponse;
-    } catch (error) {
-        // This shouldn't happen since we already validated, but handle gracefully
-        console.error('reCAPTCHA validation failed during submission:', error);
-    }
+    // reCAPTCHA removed
     
     const json = JSON.stringify(object);
     
@@ -414,8 +399,7 @@ function handleContactForm(form) {
         if (response.status == 200) {
             // Success - reset form and show success message
             form.reset();
-            // Reset reCAPTCHA
-            resetRecaptcha('contactRecaptcha');
+            
             // Also hide the custom sourcing field after form reset
             const customSourcingField = document.getElementById('customSourcingField');
             if (customSourcingField) {
@@ -423,15 +407,13 @@ function handleContactForm(form) {
             }
             showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
         } else {
-            // Error - show error message and reset reCAPTCHA
-            resetRecaptcha('contactRecaptcha');
+            // Error - show error message
             showNotification(responseData.message || 'Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
         }
     })
     .catch(error => {
         clearTimeout(timeoutId);
-        // Reset reCAPTCHA on error
-        resetRecaptcha('contactRecaptcha');
+        // No reCAPTCHA to reset
         // Handle network error
         if (error.name === 'AbortError') {
             showNotification('Request timed out. Please check your connection and try again.', 'error');
@@ -954,14 +936,7 @@ function handleDownloadForm(form) {
     const submitButton = form.querySelector('.download-submit');
     const originalText = submitButton.innerHTML;
     
-    // Validate reCAPTCHA first
-    try {
-        const recaptchaResponse = validateRecaptcha('downloadRecaptcha');
-        console.log('Download form reCAPTCHA validated successfully');
-    } catch (error) {
-        showNotification(error.message, 'error');
-        return;
-    }
+    // reCAPTCHA removed
     
     // Show loading state
     submitButton.innerHTML = '<i data-lucide="loader-2"></i> Processing...';
@@ -984,13 +959,7 @@ function handleDownloadForm(form) {
         action: 'download_catalogue'
     };
     
-    // Add reCAPTCHA response
-    try {
-        const recaptchaResponse = validateRecaptcha('downloadRecaptcha');
-        data['g-recaptcha-response'] = recaptchaResponse;
-    } catch (error) {
-        console.error('reCAPTCHA validation failed during download submission:', error);
-    }
+    // reCAPTCHA removed
     
     // Submit to Web3Forms API
     const controller = new AbortController();
@@ -1018,19 +987,17 @@ function handleDownloadForm(form) {
             const catalogType = currentPath.includes('/makhana') ? 'makhana' : 'horeca';
             triggerCatalogueDownload(catalogType);
             
-            // Reset form and reCAPTCHA
+            // Reset form
             form.reset();
-            resetRecaptcha('downloadRecaptcha');
+            
         } else {
-            // Error - show error message and reset reCAPTCHA
-            resetRecaptcha('downloadRecaptcha');
+            // Error - show error message
             showNotification(responseData.message || 'Sorry, there was an error processing your request. Please try again.', 'error');
         }
     })
     .catch(error => {
         clearTimeout(timeoutId);
-        // Reset reCAPTCHA on error
-        resetRecaptcha('downloadRecaptcha');
+        // No reCAPTCHA to reset
         // Handle network error
         if (error.name === 'AbortError') {
             showNotification('Request timed out. Please check your connection and try again.', 'error');

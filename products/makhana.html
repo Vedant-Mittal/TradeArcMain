@@ -7,7 +7,7 @@
     <meta name="description" content="Premium Indian makhana (fox nuts) exports - raw, roasted & flavored options for B2B buyers. Custom packaging, private-label solutions, and worldwide shipping.">
     <meta name="keywords" content="makhana export, fox nuts wholesale, premium makhana India, B2B makhana, custom packaging makhana, private label fox nuts, Indian snacks export">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.tradeark.in/products/makhana.html">
+    <link rel="canonical" href="https://tradeark-website.repl.co/products/makhana.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="../assets/images/TradeArk Images/Fevicon Icon.webp">
@@ -22,8 +22,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
-    <!-- Google reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     
     <!-- Translations -->
     <script src="../assets/js/translations.js"></script>
@@ -887,16 +886,16 @@
     <section class="section cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 data-i18n="products.makhana.sections.cta.title">Ready to Partner with Us?</h2>
-                <p data-i18n="products.makhana.sections.cta.subtitle">Join leading brands worldwide who trust TradeArk for premium fox nut supplies</p>
+                <h2 data-i18n="products.makhana.cta.title">Ready to Partner with Us?</h2>
+                <p data-i18n="products.makhana.cta.description">Join leading brands worldwide who trust TradeArk for premium fox nut supplies</p>
                 <div class="cta-buttons">
                     <a href="../index.html#contact" class="btn btn-secondary">
                         <i data-lucide="file-text"></i>
-                        <span data-i18n="products.makhana.sections.cta.requestQuote">Request a Quote</span>
+                        <span data-i18n="products.makhana.cta.quote">Request a Quote</span>
                     </a>
                     <a href="javascript:void(0)" class="btn btn-outline" onclick="showDownloadModal()">
                         <i data-lucide="download"></i>
-                        <span data-i18n="products.makhana.sections.cta.downloadPdf">Download PDF</span>
+                        <span data-i18n="products.makhana.cta.download">Download PDF</span>
                     </a>
                 </div>
             </div>
@@ -942,9 +941,7 @@
                         <textarea id="downloadMessage" name="message" rows="3" placeholder="Tell us about your business requirements..."></textarea>
                     </div>
                     
-                    <div class="form-group recaptcha-group">
-                        <div class="g-recaptcha" data-sitekey="6Le8GakrAAAAAB1mWGiHgL29hRX9E5c3m_W6kOVO" id="downloadRecaptcha"></div>
-                    </div>
+                    
                     
                     <button type="submit" class="btn btn-primary download-submit">
                         <i data-lucide="download"></i>
@@ -961,7 +958,7 @@
             <div class="footer-content">
                 <div class="footer-section footer-brand">
                     <img src="../assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="footer-logo">
-                    <p data-i18n="footer.description">Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
+                    <p data-i18n="footer.brand.description">Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61578574832708" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
                         <a href="https://wa.me/918797102793?text=Hello!" target="_blank" rel="noopener" title="WhatsApp: +91 8797102793">
@@ -988,7 +985,7 @@
                     <h4 data-i18n="footer.company.title">Company</h4>
                     <ul>
                         <li><a href="../index.html#about" data-i18n="footer.company.about">About Us</a></li>
-                        <li><a href="../index.html#why-us" data-i18n="footer.company.whyUs">Why Choose Us</a></li>
+                        <li><a href="../index.html#why-us" data-i18n="footer.company.whyChoose">Why Choose Us</a></li>
                         <li><a href="../index.html#testimonials" data-i18n="footer.company.testimonials">Testimonials</a></li>
                         <li><a href="../index.html#contact" data-i18n="footer.company.contact">Contact</a></li>
                     </ul>
@@ -1150,50 +1147,6 @@
         if (typeof LanguageManager !== 'undefined') {
             window.languageManager = new LanguageManager();
         }
-    </script>
-
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX');
-    </script>
-
-    <!-- Product Schema for Makhana -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Premium Makhana (Fox Nut)",
-      "image": [
-        "https://www.tradeark.in/assets/images/TradeArk%20Images/Makhana%20Bowl%20Image.webp"
-      ],
-      "brand": {"@type": "Brand", "name": "TradeArk"},
-      "category": "Food Products",
-      "description": "Premium Indian makhana exports - raw, roasted & flavored options for B2B buyers. Custom packaging, private-label solutions, and worldwide shipping.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.tradeark.in/products/makhana.html",
-        "availability": "https://schema.org/InStock",
-        "priceCurrency": "USD",
-        "price": "0.00"
-      }
-    }
-    </script>
-
-    <!-- Breadcrumbs JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tradeark.in/"},
-        {"@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.tradeark.in/#products"},
-        {"@type": "ListItem", "position": 3, "name": "Makhana (Fox Nut)", "item": "https://www.tradeark.in/products/makhana.html"}
-      ]
-    }
     </script>
 
     <!-- Main JS for notifications and other functionality -->
