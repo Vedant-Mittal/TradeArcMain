@@ -251,6 +251,31 @@
         ]
     }
     </script>
+    
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+    
+    <!-- Structured Data (Breadcrumbs) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tradeark.in/"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
