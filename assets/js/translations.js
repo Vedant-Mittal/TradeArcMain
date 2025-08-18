@@ -1940,19 +1940,19 @@ const translations = {
                         subtitle: "Découvrez nos solutions durables de décoration en liège pour l'hospitalité",
                         slides: {
                             slide1: {
-                                title: "Décoration Durable en Liège",
-                                description: "Décoration de table HoReCa écologique faite de liège 100% durable, parfaite pour l'hospitalité moderne",
-                                category: "Décoration en Liège"
+                                title: "Nachhaltige Kork-Dekoration",
+                                description: "Umweltfreundliche HoReCa-Tischdekoration aus 100% nachhaltigem Kork, perfekt für moderne Gastfreundschaft",
+                                category: "Kork-Dekoration"
                             },
                             slide2: {
-                                title: "Accessoires de Vin en Liège",
-                                description: "Décoration premium pour l'hospitalité et accessoires de vin pour restaurants et cafés avec design élégant",
-                                category: "Décoration en Liège"
+                                title: "Kork-Weinzubehör",
+                                description: "Premium-Gastronomie-Dekoration und Weinzubehör für Restaurants und Cafés mit elegantem Design",
+                                category: "Kork-Dekoration"
                             },
                             slide3: {
-                                title: "Applications HoReCa",
-                                description: "Solutions premium pour restaurants et hospitalité montrant nos produits de décoration en liège dans des environnements réels",
-                                category: "Affaires"
+                                title: "HoReCa-Anwendungen",
+                                description: "Premium-Restaurant- und Gastgewerbelösungen zeigen unsere Kork-Dekorationsprodukte in realen Umgebungen",
+                                category: "Geschäft"
                             }
                         },
                         viewFullSize: "Voir Taille Complète"
@@ -1981,8 +1981,8 @@ const translations = {
                             description: "Récolté d'arbres vivants sans dommage, le liège se régénère tous les 9 ans"
                         },
                         biodegradable: {
-                            title: "Biodégradable",
-                            description: "Se décompose naturellement sans impact environnemental nuisible"
+                            title: "Biologisch Abbaubar",
+                            description: "Zersetzt sich natürlich ohne schädliche Umweltauswirkungen"
                         },
                         waterResistant: {
                             title: "Résistant à l'Eau",
@@ -3477,31 +3477,46 @@ class LanguageManager {
         
         elements.forEach(element => {
             const key = element.dataset.i18n;
-            const translation = this.getNestedTranslation(currentTranslations, key);
+            let translation = this.getNestedTranslation(currentTranslations, key);
+
+            // Fallback to English if missing
+            if (translation === undefined || translation === null) {
+                const fallbackEn = this.getNestedTranslation(translations['en'], key);
+                if (fallbackEn !== undefined && fallbackEn !== null) {
+                    translation = fallbackEn;
+                }
+            }
             
-            if (translation) {
-                // Ensure translation is a string for text operations
-                const translationText = typeof translation === 'string' ? translation : String(translation);
-                
-                // Handle different element types
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    if (element.type === 'submit' || element.type === 'button') {
-                        element.value = translationText;
-                    } else {
-                        element.placeholder = translationText;
-                    }
+            // Skip if still not found
+            if (translation === undefined || translation === null) {
+                return;
+            }
+
+            // If translation resolves to an object/array, do not stringify to avoid "[object Object]"
+            if (typeof translation === 'object') {
+                return;
+            }
+            
+            const translationText = String(translation);
+            
+            // Handle different element types
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                if (element.type === 'submit' || element.type === 'button') {
+                    element.value = translationText;
                 } else {
-                    // Special handling for mobile menu toggle buttons to preserve arrows
-                    if (element.classList.contains('mobile-menu-toggle-btn')) {
-                        const chevron = element.querySelector('.mobile-menu-chevron');
-                        const chevronHtml = chevron ? chevron.outerHTML : '<span class="mobile-menu-chevron">→</span>';
-                        element.innerHTML = `<span>${translationText}</span>${chevronHtml}`;
-                    } else if (typeof translation === 'string' && (translation.includes('<a href=') || translation.includes('<'))) {
-                        // Use innerHTML for content that contains HTML tags (like links)
-                        element.innerHTML = translation;
-                    } else {
-                        element.textContent = translationText;
-                    }
+                    element.placeholder = translationText;
+                }
+            } else {
+                // Special handling for mobile menu toggle buttons to preserve arrows
+                if (element.classList.contains('mobile-menu-toggle-btn')) {
+                    const chevron = element.querySelector('.mobile-menu-chevron');
+                    const chevronHtml = chevron ? chevron.outerHTML : '<span class="mobile-menu-chevron">→</span>';
+                    element.innerHTML = `<span>${translationText}</span>${chevronHtml}`;
+                } else if (typeof translation === 'string' && (translation.includes('<a href=') || translation.includes('<'))) {
+                    // Use innerHTML for content that contains HTML tags (like links)
+                    element.innerHTML = translation;
+                } else {
+                    element.textContent = translationText;
                 }
             }
         });
@@ -3634,3 +3649,89 @@ class LanguageManager {
 // Export for use in other files
 window.LanguageManager = LanguageManager;
 window.translations = translations;
+
+// Runtime patch: ensure critical homepage keys translate in all languages
+(function fixHomepageI18n() {
+    try {
+        const langs = ['en', 'hi', 'es', 'fr'];
+        langs.forEach((lang) => {
+            const t = translations[lang];
+            if (!t) return;
+
+            // Ensure Makhana CTA is defined as a string
+            if (!t.products) t.products = {};
+            if (!t.products.makhana) t.products.makhana = {};
+            t.products.makhana.cta = (
+                lang === 'hi' ? 'और जानें' : lang === 'es' ? 'Saber Más' : lang === 'fr' ? 'En Savoir Plus' : 'Learn More'
+            );
+
+            // Ensure Makhana description and features (homepage)
+            if (!t.products.makhana.description) {
+                t.products.makhana.description = (
+                    lang === 'hi'
+                        ? 'बिहार के बेहतरीन फार्मों से हाथ से चुना गया, हमारा मखाना अपनी उत्कृष्ट गुणवत्ता, आकार और पोषणीय मूल्य के लिए प्रसिद्ध है।'
+                        : lang === 'es'
+                        ? 'Seleccionadas a mano de las mejores granjas de Bihar, nuestras Makhana son reconocidas por su calidad superior, tamaño y valor nutricional.'
+                        : lang === 'fr'
+                        ? 'Sélectionnées à la main dans les meilleures fermes du Bihar, nos Makhana sont réputées pour leur qualité supérieure, leur taille et leur valeur nutritionnelle.'
+                        : 'Hand-selected from the finest farms in Bihar, our Makhana are renowned for their superior quality, size, and nutritional value.'
+                );
+            }
+            if (!Array.isArray(t.products.makhana.features) || t.products.makhana.features.length < 4) {
+                t.products.makhana.features = (
+                    lang === 'hi'
+                        ? ['प्रोटीन और फाइबर से भरपूर', 'प्राकृतिक रूप से कम वसा', 'बल्क और रिटेल पैकेजिंग', 'ग्लोबल शिपिंग']
+                        : lang === 'es'
+                        ? ['Rica en proteínas y fibra', 'Naturalmente baja en grasa', 'Empaque a granel y al por menor', 'Envío global']
+                        : lang === 'fr'
+                        ? ['Riche en protéines et fibres', 'Naturellement faible en graisse', 'Emballage en vrac et au détail', 'Expédition mondiale']
+                        : ['Rich in protein & fiber', 'Naturally low in fat', 'Bulk & retail packaging', 'Global shipping']
+                );
+            }
+
+            // Quality section harmonization
+            if (!t.quality) t.quality = {};
+            if (!t.quality.promise) t.quality.promise = {};
+            if (!t.quality.promise.title) {
+                t.quality.promise.title = (
+                    lang === 'hi' ? 'हमारा गुणवत्ता वादा' : lang === 'es' ? 'Nuestra Promesa de Calidad' : lang === 'fr' ? 'Notre Promesse de Qualité' : 'Our Quality Promise'
+                );
+            }
+            if (!t.quality.promise.description) {
+                t.quality.promise.description = (
+                    lang === 'hi'
+                        ? 'हम अपनी आपूर्ति श्रृंखला में, खेत से आपकी टेबल तक, सर्वोच्च मानकों को बनाए रखते हैं। हमारे गुणवत्ता नियंत्रण प्रक्रियाएं हर उत्पाद में निरंतरता और उत्कृष्टता सुनिश्चित करती हैं।'
+                        : lang === 'es'
+                        ? 'Mantenemos los más altos estándares en toda nuestra cadena de suministro, desde la granja hasta su mesa. Nuestros procesos de control de calidad aseguran consistencia y excelencia en cada producto.'
+                        : lang === 'fr'
+                        ? "Nous maintenons les normes les plus élevées tout au long de notre chaîne d'approvisionnement, de la ferme à votre table. Nos processus de contrôle qualité garantissent la constance et l'excellence de chaque produit."
+                        : 'We maintain the highest standards throughout our supply chain, from farm to your table. Our quality control processes ensure consistency and excellence in every product.'
+                );
+            }
+            if (!t.quality.stats) t.quality.stats = {};
+            if (!t.quality.stats.quality) t.quality.stats.quality = (lang === 'hi' ? 'गुणवत्ता पास दर' : lang === 'es' ? 'Tasa de Aprobación de Calidad' : lang === 'fr' ? 'Taux de Réussite Qualité' : 'Quality Pass Rate');
+            if (!t.quality.stats.countries) t.quality.stats.countries = (lang === 'hi' ? 'सेवा प्राप्त देश' : lang === 'es' ? 'Países Servidos' : lang === 'fr' ? 'Pays Desservis' : 'Countries Served');
+            if (!t.quality.stats.customers) t.quality.stats.customers = (lang === 'hi' ? 'खुश ग्राहक' : lang === 'es' ? 'Clientes Satisfechos' : lang === 'fr' ? 'Clients Satisfaits' : 'Happy Customers');
+
+            // Certifications object
+            if (!t.quality.certifications || Array.isArray(t.quality.certifications)) {
+                t.quality.certifications = {
+                    title: lang === 'hi' ? 'प्रमाणपत्र' : lang === 'es' ? 'Certificaciones' : lang === 'fr' ? 'Certifications' : 'Certifications',
+                    iso: 'ISO 9001:2015',
+                    organic: lang === 'hi' ? 'ऑर्गेनिक प्रमाणित' : lang === 'es' ? 'Certificado Orgánico' : lang === 'fr' ? 'Certifié Bio' : 'Organic Certified',
+                    haccp: lang === 'hi' ? 'HACCP प्रमाणित' : lang === 'es' ? 'Certificado HACCP' : lang === 'fr' ? 'Certifié HACCP' : 'HACCP Certified',
+                    export: lang === 'hi' ? 'निर्यात लाइसेंस' : lang === 'es' ? 'Licencia de Exportación' : lang === 'fr' ? "Licence d'Exportation" : 'Export License'
+                };
+            }
+
+            // Address line
+            if (!t.contact) t.contact = {};
+            if (!t.contact.info) t.contact.info = {};
+            if (!t.contact.info.addressLine) {
+                t.contact.info.addressLine = lang === 'hi' ? 'जगतपुरा, जयपुर, राजस्थान, भारत' : 'Jagatpura, Jaipur, Rajasthan, India';
+            }
+        });
+    } catch (e) {
+        console.warn('i18n runtime patch failed:', e);
+    }
+})();
