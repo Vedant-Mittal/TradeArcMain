@@ -13,6 +13,7 @@ const RECAPTCHA_CONFIG = {
 
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function() {
+    normalizePrettyUrls();
     initializeNavigation();
     initializeScrollEffects();
     initializeParallax();
@@ -25,6 +26,27 @@ document.addEventListener('DOMContentLoaded', function() {
     forceImageRefresh();
 
 });
+
+// Replace .html in address bar with directory-style URLs (no page reload)
+function normalizePrettyUrls() {
+    try {
+        const currentPath = window.location.pathname;
+        if (currentPath.endsWith('/index.html')) {
+            history.replaceState(null, '', currentPath.replace('/index.html', '/'));
+            return;
+        }
+        if (currentPath.endsWith('/products/makhana.html')) {
+            history.replaceState(null, '', '/products/makhana/');
+            return;
+        }
+        if (currentPath.endsWith('/products/horeca.html')) {
+            history.replaceState(null, '', '/products/horeca/');
+            return;
+        }
+    } catch (e) {
+        // no-op
+    }
+}
 
 // Force refresh of cached images
 function forceImageRefresh() {
