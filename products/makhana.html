@@ -10,9 +10,9 @@
     <link rel="canonical" href="https://www.tradeark.in/products/makhana/">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="../assets/images/TradeArk Images/Fevicon Icon.webp">
-    <link rel="shortcut icon" type="image/webp" href="../assets/images/TradeArk Images/Fevicon Icon.webp">
-    <link rel="apple-touch-icon" href="../assets/images/TradeArk Images/Fevicon Icon.webp">
+    <link rel="icon" type="image/webp" href="/assets/images/TradeArk Images/Fevicon Icon.webp">
+    <link rel="shortcut icon" type="image/webp" href="/assets/images/TradeArk Images/Fevicon Icon.webp">
+    <link rel="apple-touch-icon" href="/assets/images/TradeArk Images/Fevicon Icon.webp">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -361,6 +361,14 @@
             margin-top: 3rem;
         }
 
+        /* 2x2 Grid for Key Benefits */
+        .benefits-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
         .card {
             background: white;
             border-radius: 20px;
@@ -557,6 +565,10 @@
             }
 
             .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-2x2 {
                 grid-template-columns: 1fr;
             }
 
@@ -800,45 +812,37 @@
                 <p class="section-subtitle" data-i18n="products.makhana.benefits.subtitle">Why makhana is perfect for your market</p>
             </div>
             
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+            <div class="benefits-2x2">
+                <div class="card">
+                    <div class="card-icon">
                         <i data-lucide="zap"></i>
                     </div>
-                    <div class="benefit-content">
-                        <h4 data-i18n="products.makhana.benefits.protein.title">High Protein</h4>
-                        <p data-i18n="products.makhana.benefits.protein.description">Contains 9.7g protein per 100g, ideal for health-conscious consumers</p>
-                    </div>
+                    <h3 data-i18n="products.makhana.benefits.protein.title">High Protein</h3>
+                    <p data-i18n="products.makhana.benefits.protein.description">Contains 9.7g protein per 100g, ideal for health-conscious consumers</p>
                 </div>
                 
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+                <div class="card">
+                    <div class="card-icon">
                         <i data-lucide="package"></i>
                     </div>
-                    <div class="benefit-content">
-                        <h4 data-i18n="products.makhana.benefits.packaging.title">Custom Packaging</h4>
-                        <p data-i18n="products.makhana.benefits.packaging.description">Flexible packaging options from 200g with your branding</p>
-                    </div>
+                    <h3 data-i18n="products.makhana.benefits.packaging.title">Custom Packaging</h3>
+                    <p data-i18n="products.makhana.benefits.packaging.description">Flexible packaging options from 200g with your branding</p>
                 </div>
                 
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+                <div class="card">
+                    <div class="card-icon">
                         <i data-lucide="clock"></i>
                     </div>
-                    <div class="benefit-content">
-                        <h4 data-i18n="products.makhana.benefits.shelf.title">Low‑Calorie Snack</h4>
-                        <p data-i18n="products.makhana.benefits.shelf.description">Just 100 cal per 30 g serving—perfect for mindful snacking and weight‑management plans.</p>
-                    </div>
+                    <h3 data-i18n="products.makhana.benefits.shelf.title">Low‑Calorie Snack</h3>
+                    <p data-i18n="products.makhana.benefits.shelf.description">Just 100 cal per 30 g serving—perfect for mindful snacking and weight‑management plans.</p>
                 </div>
                 
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+                <div class="card">
+                    <div class="card-icon">
                         <i data-lucide="shield-check"></i>
                     </div>
-                    <div class="benefit-content">
-                        <h4 data-i18n="products.makhana.benefits.certified.title">Certified Quality</h4>
-                        <p data-i18n="products.makhana.benefits.certified.description">HACCP, ISO 22000, and organic certifications available</p>
-                    </div>
+                    <h3 data-i18n="products.makhana.benefits.certified.title">Certified Quality</h3>
+                    <p data-i18n="products.makhana.benefits.certified.description">HACCP, ISO 22000, and organic certifications available</p>
                 </div>
             </div>
         </div>
@@ -886,8 +890,8 @@
     <section class="section cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 data-i18n="products.makhana.cta.title">Ready to Partner with Us?</h2>
-                <p data-i18n="products.makhana.cta.description">Join leading brands worldwide who trust TradeArk for premium fox nut supplies</p>
+                <h2 data-i18n="products.makhana.sections.cta.title">Ready to Partner with Us?</h2>
+                <p data-i18n="products.makhana.sections.cta.description">Join leading brands worldwide who trust TradeArk for premium fox nut supplies</p>
                 <div class="cta-buttons">
                     <a href="/#contact" class="btn btn-secondary">
                         <i data-lucide="file-text"></i>
@@ -958,7 +962,7 @@
             <div class="footer-content">
                 <div class="footer-section footer-brand">
                     <img src="../assets/images/TradeArk Images/tradeark-logo.webp" alt="TradeArk Logo" class="footer-logo">
-                    <p data-i18n="footer.brand.description">Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
+                    <p data-i18n="footer.description">Your trusted partner for premium Indian exports—agri‑goods, sustainable décor, and more.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61578574832708" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
                         <a href="https://wa.me/918797102793?text=Hello!" target="_blank" rel="noopener" title="WhatsApp: +91 8797102793">
@@ -985,7 +989,7 @@
                     <h4 data-i18n="footer.company.title">Company</h4>
                     <ul>
                         <li><a href="/#about" data-i18n="footer.company.about">About Us</a></li>
-                        <li><a href="/#why-us" data-i18n="footer.company.whyChoose">Why Choose Us</a></li>
+                        <li><a href="/#why-us" data-i18n="footer.company.whyUs">Why Choose Us</a></li>
                         <li><a href="/#testimonials" data-i18n="footer.company.testimonials">Testimonials</a></li>
                         <li><a href="/#contact" data-i18n="footer.company.contact">Contact</a></li>
                     </ul>
@@ -1020,137 +1024,7 @@
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
-        
-        // Initialize download form when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof initializeDownloadForm === 'function') {
-                initializeDownloadForm();
-            } else {
-                // Fallback initialization
-                initDownloadModalFallback();
-            }
-            
-            // Initialize gallery slideshow
-            if (typeof initializeGallery === 'function') {
-                initializeGallery();
-            }
-        });
-        
-        // Fallback functions in case main.js doesn't load properly
-        function showDownloadModal() {
-            const modal = document.getElementById('downloadModal');
-            if (modal) {
-                modal.style.display = 'flex';
-                setTimeout(() => {
-                    modal.classList.add('active');
-                }, 10);
-            }
-        }
-        
-        function closeDownloadModal() {
-            const modal = document.getElementById('downloadModal');
-            if (modal) {
-                modal.classList.remove('active');
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                    const form = document.getElementById('downloadForm');
-                    if (form) form.reset();
-                }, 300);
-            }
-        }
-        
-        function initDownloadModalFallback() {
-            const downloadForm = document.getElementById('downloadForm');
-            const modal = document.getElementById('downloadModal');
-            
-            if (downloadForm) {
-                downloadForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const submitButton = this.querySelector('.download-submit');
-                    const originalText = submitButton.innerHTML;
-                    
-                    submitButton.innerHTML = '<i data-lucide="loader-2"></i> Processing...';
-                    submitButton.disabled = true;
-                    
-                    setTimeout(() => {
-                        alert('Thank you! Your download will start shortly.');
-                        closeDownloadModal();
-                        
-                        // Start download (Makhana brochure)
-                        const link = document.createElement('a');
-                        link.href = '../Downloadables/TradeArk Makhana Brochure.pdf';
-                        link.download = 'TradeArk Makhana Brochure.pdf';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                        
-                        submitButton.innerHTML = originalText;
-                        submitButton.disabled = false;
-                        this.reset();
-                    }, 1500);
-                });
-            }
-            
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) closeDownloadModal();
-                });
-            }
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') closeDownloadModal();
-            });
-        }
-        
-        // Make functions globally available
-        window.showDownloadModal = showDownloadModal;
-        window.closeDownloadModal = closeDownloadModal;
-
-        // Initialize all navigation functions
-        if (typeof initializeNavigation === 'function') {
-            initializeNavigation();
-        }
-        if (typeof initializeMobileMenu === 'function') {
-            initializeMobileMenu();
-        }
-        if (typeof initializeLanguageManager === 'function') {
-            initializeLanguageManager();
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('.nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.boxShadow = 'none';
-            }
-        });
-        
-        // Initialize language manager
-        if (typeof LanguageManager !== 'undefined') {
-            window.languageManager = new LanguageManager();
-        }
     </script>
-
-    <!-- Main JS for notifications and other functionality -->
-    <script src="../assets/js/main.js"></script>
 
 </body>
 </html>

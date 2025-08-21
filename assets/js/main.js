@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollEffects();
     initializeParallax();
     initializeForms();
+    initializeDownloadForm(); // Initialize download forms on product pages
     initializeTestimonials();
     initializeAnimations();
     initializeScrollIndicator();
@@ -1053,16 +1054,38 @@ function triggerCatalogueDownload(catalogueType = 'horeca') {
         filePath = basePath + 'Downloadables/TradeArk Makhana Brochure.pdf';
     }
     
-    // Create a link element to trigger download
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
-    link.target = '_blank';
-    
-    // Append to body, click, and remove
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+        // Try direct download first
+        const link = document.createElement('a');
+        link.href = filePath;
+        link.download = fileName;
+        link.style.display = 'none';
+        
+        // Ensure the click is triggered as a user action
+        document.body.appendChild(link);
+        
+        // Add a small delay to ensure the element is properly attached
+        setTimeout(() => {
+            link.click();
+            
+            // Clean up after a delay
+            setTimeout(() => {
+                if (document.body.contains(link)) {
+                    document.body.removeChild(link);
+                }
+            }, 100);
+            
+            // Fallback: Open in new tab if download fails
+            setTimeout(() => {
+                window.open(filePath, '_blank');
+            }, 500);
+        }, 10);
+        
+    } catch (error) {
+        console.error('Download failed:', error);
+        // Fallback: Open in new tab
+        window.open(filePath, '_blank');
+    }
 }
 
 // Export functions for global use

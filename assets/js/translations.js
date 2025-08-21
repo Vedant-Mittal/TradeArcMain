@@ -461,42 +461,34 @@ const translations = {
                         drinkBar: {
                             title: "Drink & Bar Accessories",
                             description: "Essential cork gear for every bar",
-                            features: [
-                                "Showcase logos on coasters, chillers & caddies",
-                                "Slip-resistant cork protects tabletops",
-                                "Stackable, lightweight designs",
-                                "Custom shapes & imprints"
-                            ]
+                            feature1: "Showcase logos on coasters, chillers & caddies",
+                            feature2: "Slip-resistant cork protects tabletops",
+                            feature3: "Stackable, lightweight designs",
+                            feature4: "Custom shapes & imprints"
                         },
                         tableware: {
                             title: "Tableware & Serving",
                             description: "Elevate every dining experience",
-                            features: [
-                                "Coordinated trivets, trays, mats & rings",
-                                "Warm cork adds natural charm",
-                                "Mix-and-match for menus & events",
-                                "Quick turn on custom finishes"
-                            ]
+                            feature1: "Coordinated trivets, trays, mats & rings",
+                            feature2: "Warm cork adds natural charm",
+                            feature3: "Mix-and-match for menus & events",
+                            feature4: "Quick turn on custom finishes"
                         },
                         tissue: {
                             title: "Tissue & Napkin Holders",
                             description: "Organized elegance for every table",
-                            features: [
-                                "Seamless tissue boxes & holders",
-                                "Durable cork in soft, neutral tones",
-                                "Minimalist designs fit any décor",
-                                "Subtle laser-etched branding"
-                            ]
+                            feature1: "Seamless tissue boxes & holders",
+                            feature2: "Durable cork in soft, neutral tones",
+                            feature3: "Minimalist designs fit any décor",
+                            feature4: "Subtle laser-etched branding"
                         },
                         decor: {
                             title: "Décor & Furnishings",
                             description: "Distinctive cork accents for your space",
-                            features: [
-                                "Lights, planters, stools & more",
-                                "Eco-friendly cork adds texture",
-                                "Layered displays for impact",
-                                "Custom shapes, colors & finishes"
-                            ]
+                            feature1: "Lights, planters, stools & more",
+                            feature2: "Eco-friendly cork adds texture",
+                            feature3: "Layered displays for impact",
+                            feature4: "Custom shapes, colors & finishes"
                         }
                     },
                     sustainability: {
@@ -724,42 +716,34 @@ const translations = {
                         drinkBar: {
                             title: "ड्रिंक और बार एक्सेसरीज",
                             description: "हर बार के लिए आवश्यक कॉर्क गियर",
-                            features: [
-                                "कोस्टर, चिलर और कैडीज पर लोगो दिखाएं",
-                                "स्लिप-रेसिस्टेंट कॉर्क टेबलटॉप्स की सुरक्षा करता है",
-                                "स्टैकेबल, हल्के डिज़ाइन",
-                                "कस्टम आकार और इंप्रिंट"
-                            ]
+                            feature1: "कोस्टर, चिलर और कैडीज पर लोगो दिखाएं",
+                            feature2: "स्लिप-रेसिस्टेंट कॉर्क टेबलटॉप्स की सुरक्षा करता है",
+                            feature3: "स्टैकेबल, हल्के डिज़ाइन",
+                            feature4: "कस्टम आकार और इंप्रिंट"
                         },
                         tableware: {
                             title: "टेबलवेयर और सर्विंग",
                             description: "हर भोजन अनुभव को बेहतर बनाएं",
-                            features: [
-                                "समन्वित ट्रिवेट्स, ट्रे, मैट्स और रिंग्स",
-                                "गर्म कॉर्क प्राकृतिक आकर्षण जोड़ता है",
-                                "मेनू और इवेंट्स के लिए मिक्स-एंड-मैच",
-                                "कस्टम फिनिश पर तुरंत काम"
-                            ]
+                            feature1: "समन्वित ट्रिवेट्स, ट्रे, मैट्स और रिंग्स",
+                            feature2: "गर्म कॉर्क प्राकृतिक आकर्षण जोड़ता है",
+                            feature3: "मेनू और इवेंट्स के लिए मिक्स-एंड-मैच",
+                            feature4: "कस्टम फिनिश पर तुरंत काम"
                         },
                         tissue: {
                             title: "टिश्यू और नैपकिन होल्डर",
                             description: "हर टेबल के लिए व्यवस्थित सुंदरता",
-                            features: [
-                                "सीमलेस टिश्यू बॉक्स और होल्डर",
-                                "मुलायम, न्यूट्रल टोन में टिकाऊ कॉर्क",
-                                "मिनिमलिस्ट डिज़ाइन किसी भी डेकोर में फिट",
-                                "सूक्ष्म लेजर-एच्ड ब्रांडिंग"
-                            ]
+                            feature1: "सीमलेस टिश्यू बॉक्स और होल्डर",
+                            feature2: "मुलायम, न्यूट्रल टोन में टिकाऊ कॉर्क",
+                            feature3: "मिनिमलिस्ट डिज़ाइन किसी भी डेकोर में फिट",
+                            feature4: "सूक्ष्म लेजर-एच्ड ब्रांडिंग"
                         },
                         decor: {
                             title: "डेकोर और फर्निशिंग",
                             description: "आपके स्थान के लिए विशिष्ट कॉर्क एक्सेंट",
-                            features: [
-                                "लाइट्स, प्लांटर्स, स्टूल और बहुत कुछ",
-                                "इको-फ्रेंडली कॉर्क टेक्सचर जोड़ता है",
-                                "प्रभाव के लिए लेयर्ड डिस्प्ले",
-                                "कस्टम आकार, रंग और फिनिश"
-                            ]
+                            feature1: "लाइट्स, प्लांटर्स, स्टूल और बहुत कुछ",
+                            feature2: "इको-फ्रेंडली कॉर्क टेक्सचर जोड़ता है",
+                            feature3: "प्रभाव के लिए लेयर्ड डिस्प्ले",
+                            feature4: "कस्टम आकार, रंग और फिनिश"
                         }
                     },
                     sustainability: {
@@ -1340,42 +1324,34 @@ const translations = {
                         drinkBar: {
                             title: "Accesorios de Bebidas y Bar",
                             description: "Equipamiento esencial de corcho para cada bar",
-                            features: [
-                                "Muestra logos en posavasos, enfriadores y soportes",
-                                "Corcho antideslizante protege superficies de mesa",
-                                "Diseños apilables y ligeros",
-                                "Formas e impresiones personalizadas"
-                            ]
+                            feature1: "Muestra logos en posavasos, enfriadores y soportes",
+                            feature2: "Corcho antideslizante protege superficies de mesa",
+                            feature3: "Diseños apilables y ligeros",
+                            feature4: "Formas e impresiones personalizadas"
                         },
                         tableware: {
                             title: "Vajilla y Servicio",
                             description: "Eleva cada experiencia gastronómica",
-                            features: [
-                                "Salvamanteles, bandejas, alfombrillas y anillos coordinados",
-                                "El corcho cálido añade encanto natural",
-                                "Mezcla y combina para menús y eventos",
-                                "Acabados personalizados rápidos"
-                            ]
+                            feature1: "Salvamanteles, bandejas, alfombrillas y anillos coordinados",
+                            feature2: "El corcho cálido añade encanto natural",
+                            feature3: "Mezcla y combina para menús y eventos",
+                            feature4: "Acabados personalizados rápidos"
                         },
                         tissue: {
                             title: "Portadores de Pañuelos y Servilletas",
                             description: "Elegancia organizada para cada mesa",
-                            features: [
-                                "Cajas de pañuelos y portadores sin costuras",
-                                "Corcho duradero en tonos suaves y neutros",
-                                "Diseños minimalistas que se adaptan a cualquier decoración",
-                                "Marca sutil grabada con láser"
-                            ]
+                            feature1: "Cajas de pañuelos y portadores sin costuras",
+                            feature2: "Corcho duradero en tonos suaves y neutros",
+                            feature3: "Diseños minimalistas que se adaptan a cualquier decoración",
+                            feature4: "Marca sutil grabada con láser"
                         },
                         decor: {
                             title: "Decoración y Mobiliario",
                             description: "Acentos distintivos de corcho para tu espacio",
-                            features: [
-                                "Lámparas, marcos, tableros de menú y plantas",
-                                "Textura de corcho natural añade calidez",
-                                "Instalaciones personalizadas y exhibiciones",
-                                "Piezas de declaración y acentos sutiles"
-                            ]
+                            feature1: "Lámparas, marcos, tableros de menú y plantas",
+                            feature2: "Textura de corcho natural añade calidez",
+                            feature3: "Instalaciones personalizadas y exhibiciones",
+                            feature4: "Piezas de declaración y acentos sutiles"
                         }
                     },
                     gallery: {
@@ -1897,42 +1873,34 @@ const translations = {
                         drinkBar: {
                             title: "Accessoires de Boissons et Bar",
                             description: "Équipement en liège essentiel pour chaque bar",
-                            features: [
-                                "Présentez les logos sur dessous de verre, refroidisseurs et supports",
-                                "Le liège antidérapant protège les surfaces de table",
-                                "Designs empilables et légers",
-                                "Formes et impressions personnalisées"
-                            ]
+                            feature1: "Présentez les logos sur dessous de verre, refroidisseurs et supports",
+                            feature2: "Le liège antidérapant protège les surfaces de table",
+                            feature3: "Designs empilables et légers",
+                            feature4: "Formes et impressions personnalisées"
                         },
                         tableware: {
                             title: "Vaisselle et Service",
                             description: "Élevez chaque expérience culinaire",
-                            features: [
-                                "Dessous de plat, plateaux, tapis et anneaux coordonnés",
-                                "Le liège chaud ajoute un charme naturel",
-                                "Mélangez et assortissez pour menus et événements",
-                                "Finitions personnalisées rapides"
-                            ]
+                            feature1: "Dessous de plat, plateaux, tapis et anneaux coordonnés",
+                            feature2: "Le liège chaud ajoute un charme naturel",
+                            feature3: "Mélangez et assortissez pour menus et événements",
+                            feature4: "Finitions personnalisées rapides"
                         },
                         tissue: {
                             title: "Porte-Mouchoirs et Serviettes",
                             description: "Élégance organisée pour chaque table",
-                            features: [
-                                "Boîtes à mouchoirs et supports sans couture",
-                                "Liège durable dans des tons doux et neutres",
-                                "Designs minimalistes s'adaptant à tout décor",
-                                "Marquage laser subtil"
-                            ]
+                            feature1: "Boîtes à mouchoirs et supports sans couture",
+                            feature2: "Liège durable dans des tons doux et neutres",
+                            feature3: "Designs minimalistes s'adaptant à tout décor",
+                            feature4: "Marquage laser subtil"
                         },
                         decor: {
                             title: "Décoration et Ameublement",
                             description: "Accents distinctifs en liège pour votre espace",
-                            features: [
-                                "Lampes, cadres, menus et plantes",
-                                "La texture naturelle du liège ajoute de la chaleur",
-                                "Installations personnalisées et présentoirs",
-                                "Pièces phares et accents subtils"
-                            ]
+                            feature1: "Lampes, cadres, menus et plantes",
+                            feature2: "La texture naturelle du liège ajoute de la chaleur",
+                            feature3: "Installations personnalisées et présentoirs",
+                            feature4: "Pièces phares et accents subtils"
                         }
                     },
                     gallery: {
@@ -2454,42 +2422,34 @@ const translations = {
                         drinkBar: {
                             title: "Getränke- und Bar-Zubehör",
                             description: "Wesentliche Kork-Ausrüstung für jede Bar",
-                            features: [
-                                "Logos auf Untersetzern, Kühlern und Haltern präsentieren",
-                                "Rutschfester Kork schützt Tischoberflächen",
-                                "Stapelbare, leichte Designs",
-                                "Individuelle Formen und Aufdrucke"
-                            ]
+                            feature1: "Logos auf Untersetzern, Kühlern und Haltern präsentieren",
+                            feature2: "Rutschfester Kork schützt Tischoberflächen",
+                            feature3: "Stapelbare, leichte Designs",
+                            feature4: "Individuelle Formen und Aufdrucke"
                         },
                         tableware: {
                             title: "Geschirr und Service",
                             description: "Verbessern Sie jedes kulinarische Erlebnis",
-                            features: [
-                                "Koordinierte Untersetzer, Tabletts, Matten und Ringe",
-                                "Warmer Kork verleiht natürlichen Charme",
-                                "Mix-and-Match für Menüs und Veranstaltungen",
-                                "Schnelle individuelle Oberflächen"
-                            ]
+                            feature1: "Koordinierte Untersetzer, Tabletts, Matten und Ringe",
+                            feature2: "Warmer Kork verleiht natürlichen Charme",
+                            feature3: "Mix-and-Match für Menüs und Veranstaltungen",
+                            feature4: "Schnelle individuelle Oberflächen"
                         },
                         tissue: {
                             title: "Gewebe- und Serviettenhalter",
                             description: "Organisierte Eleganz für jeden Tisch",
-                            features: [
-                                "Nahtlose Taschentuchboxen und Halter",
-                                "Langlebiger Kork in weichen, neutralen Tönen",
-                                "Minimalistische Designs passen zu jedem Dekor",
-                                "Subtile Lasergravur für Branding"
-                            ]
+                            feature1: "Nahtlose Taschentuchboxen und Halter",
+                            feature2: "Langlebiger Kork in weichen, neutralen Tönen",
+                            feature3: "Minimalistische Designs passen zu jedem Dekor",
+                            feature4: "Subtile Lasergravur für Branding"
                         },
                         decor: {
                             title: "Dekoration und Einrichtung",
                             description: "Unverwechselbare Kork-Akzente für Ihren Raum",
-                            features: [
-                                "Lampen, Rahmen, Menütafeln und Pflanzen",
-                                "Natürliche Korktextur verleiht Wärme",
-                                "Individuelle Installationen und Displays",
-                                "Statement-Stücke und subtile Akzente"
-                            ]
+                            feature1: "Lampen, Rahmen, Menütafeln und Pflanzen",
+                            feature2: "Natürliche Korktextur verleiht Wärme",
+                            feature3: "Individuelle Installationen und Displays",
+                            feature4: "Statement-Stücke und subtile Akzente"
                         }
                     },
                     gallery: {
@@ -3011,42 +2971,34 @@ const translations = {
                         drinkBar: {
                             title: "إكسسوارات المشروبات والبار",
                             description: "معدات الفلين الأساسية لكل بار",
-                            features: [
-                                "اعرض الشعارات على الحصائر والمبردات والحوامل",
-                                "الفلين المقاوم للانزلاق يحمي أسطح الطاولات",
-                                "تصاميم قابلة للتكديس وخفيفة الوزن",
-                                "أشكال ونقوش مخصصة"
-                            ]
+                            feature1: "اعرض الشعارات على الحصائر والمبردات والحوامل",
+                            feature2: "الفلين المقاوم للانزلاق يحمي أسطح الطاولات",
+                            feature3: "تصاميم قابلة للتكديس وخفيفة الوزن",
+                            feature4: "أشكال ونقوش مخصصة"
                         },
                         tableware: {
                             title: "أدوات المائدة والخدمة",
                             description: "ارقِ بكل تجربة طعام",
-                            features: [
-                                "حصائر وصواني وسجاد وحلقات متناسقة",
-                                "الفلين الدافئ يضيف سحراً طبيعياً",
-                                "امزج وطابق للقوائم والمناسبات",
-                                "لمسات نهائية مخصصة سريعة"
-                            ]
+                            feature1: "حصائر وصواني وسجاد وحلقات متناسقة",
+                            feature2: "الفلين الدافئ يضيف سحراً طبيعياً",
+                            feature3: "امزج وطابق للقوائم والمناسبات",
+                            feature4: "لمسات نهائية مخصصة سريعة"
                         },
                         tissue: {
                             title: "حاملات المناديل والمحارم",
                             description: "أناقة منظمة لكل طاولة",
-                            features: [
-                                "صناديق مناديل وحاملات سلسة",
-                                "فلين متين بألوان ناعمة ومحايدة",
-                                "تصاميم بسيطة تناسب أي ديكور",
-                                "نقش ليزر خفي للعلامة التجارية"
-                            ]
+                            feature1: "صناديق مناديل وحاملات سلسة",
+                            feature2: "فلين متين بألوان ناعمة ومحايدة",
+                            feature3: "تصاميم بسيطة تناسب أي ديكور",
+                            feature4: "نقش ليزر خفي للعلامة التجارية"
                         },
                         decor: {
                             title: "الديكور والأثاث",
                             description: "لمسات فلين مميزة لمساحتك",
-                            features: [
-                                "مصابيح وإطارات ولوحات قوائم ونباتات",
-                                "ملمس الفلين الطبيعي يضيف دفئاً",
-                                "تركيبات ومعارض مخصصة",
-                                "قطع بارزة ولمسات خفية"
-                            ]
+                            feature1: "مصابيح وإطارات ولوحات قوائم ونباتات",
+                            feature2: "ملمس الفلين الطبيعي يضيف دفئاً",
+                            feature3: "تركيبات ومعارض مخصصة",
+                            feature4: "قطع بارزة ولمسات خفية"
                         }
                     },
                     gallery: {
