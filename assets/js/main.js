@@ -1041,18 +1041,20 @@ function triggerCatalogueDownload(catalogueType = 'horeca') {
     let fileName;
     let filePath;
     
-    // Determine the correct path based on current location
-    const currentPath = window.location.pathname;
-    const isInProductsFolder = currentPath.includes('/products/');
-    const basePath = isInProductsFolder ? '../' : './';
+    // Use absolute paths from the root to avoid path resolution issues
+    const protocol = window.location.protocol;
+    const host = window.location.host;
+    const baseUrl = `${protocol}//${host}`;
     
     if (catalogueType === 'horeca') {
         fileName = 'The Cork Studio HoReCa Catalogue.pdf';
-        filePath = basePath + 'Downloadables/The Cork Studio HoReCa Catalogue.pdf';
+        filePath = `${baseUrl}/Downloadables/The Cork Studio HoReCa Catalogue.pdf`;
     } else {
         fileName = 'TradeArk Makhana Brochure.pdf';
-        filePath = basePath + 'Downloadables/TradeArk Makhana Brochure.pdf';
+        filePath = `${baseUrl}/Downloadables/TradeArk Makhana Brochure.pdf`;
     }
+    
+    console.log('Attempting download:', filePath);
     
     try {
         // Try direct download first
@@ -1077,6 +1079,7 @@ function triggerCatalogueDownload(catalogueType = 'horeca') {
             
             // Fallback: Open in new tab if download fails
             setTimeout(() => {
+                console.log('Fallback: Opening in new tab:', filePath);
                 window.open(filePath, '_blank');
             }, 500);
         }, 10);
@@ -1084,6 +1087,7 @@ function triggerCatalogueDownload(catalogueType = 'horeca') {
     } catch (error) {
         console.error('Download failed:', error);
         // Fallback: Open in new tab
+        console.log('Exception fallback: Opening in new tab:', filePath);
         window.open(filePath, '_blank');
     }
 }
